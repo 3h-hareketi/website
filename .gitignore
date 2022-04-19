@@ -42,3 +42,6 @@ yarn-error.log*
 
 # ESLint
 .eslintcache
+
+# Sentry
+.sentryclirc

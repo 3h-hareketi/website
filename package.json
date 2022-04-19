@@ -11,6 +11,7 @@
     "generate": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
+    "@sentry/nextjs": "^6.19.6",
     "graphql": "^16.3.0",
     "graphql-request": "^4.2.0",
     "next": "12.1.5",
