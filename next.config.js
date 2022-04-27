@@ -17,4 +17,8 @@ const nextConfig = {
   reactStrictMode: true,
 };
 
-module.exports = withSentryConfig(nextConfig, sentryWebpackPluginOptions);
+module.exports = withSentryConfig(
+  { images: { domains: ["media.graphassets.com"] } },
+  nextConfig,
+  sentryWebpackPluginOptions
+);
