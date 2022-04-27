@@ -1,7 +1,4 @@
-import { setTags } from "@sentry/nextjs";
-import Image, { ImageProps } from "next/image";
-import { useState } from "react";
-import { Person } from "../interfaces";
+import Image from "next/image";
 
 type Props = {
   fullName: string;

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import BlurImage from "./BlurImage";
 import logo from "/public/3h-vector.png";
+
 const Navbar = () => {
   return (
     <section className="bg-primary-500">

@@ -1,8 +1,6 @@
 import { Tab } from "@headlessui/react";
-import BlogCard from "../components/BlogCard";
-import Newsletter from "../components/Newsletter";
 import PersonCard from "../components/PersonCard";
-import { getSdk, Person, Post } from "../interfaces";
+import { getSdk, Person } from "../interfaces";
 import { client } from "../lib/graphCmsClient";
 
 type Props = {

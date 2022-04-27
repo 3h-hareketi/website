@@ -2,9 +2,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import BlurImage from "./BlurImage";
 import logo from "/public/logo-alt.png";
-const Navbar = () => {
-  const router = useRouter();
 
+const Navbar = () => {
   return (
     <section
       // className={`relative w-full ${
