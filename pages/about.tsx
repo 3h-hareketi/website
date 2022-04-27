@@ -12,7 +12,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-const Home = ({ directors, supervisors }: Props) => {
+const About = ({ directors, supervisors }: Props) => {
   return (
     <>
       <div className="flex flex-col mx-auto bg-primary-500">
@@ -179,4 +179,4 @@ export async function getStaticProps() {
   };
 }
 
-export default Home;
+export default About;
