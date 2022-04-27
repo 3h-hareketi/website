@@ -14,14 +14,18 @@ const Layout = ({ children }: Props) => {
   return (
     <div
       className="flex flex-col justify-between h-screen subpixel-antialiased "
-      style={{
-        background:
-          "radial-gradient(50% 50% at 50% 50%, #1BC3D5 2.1%, #1696BE 100%), #12ABBB",
-        backgroundImage: `url("/background.svg")`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "fit",
-        backgroundPosition: "center",
-      }}
+      style={
+        router.pathname === "/"
+          ? {
+              background:
+                "radial-gradient(50% 50% at 50% 50%, #1BC3D5 2.1%, #1696BE 100%), #12ABBB",
+              backgroundImage: `url("/background.svg")`,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "fit",
+              backgroundPosition: "center",
+            }
+          : {}
+      }
     >
       <DefaultSeo
         titleTemplate="%s | 3H Akademi"
