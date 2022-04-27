@@ -7,11 +7,12 @@ const Navbar = () => {
 
   return (
     <section
-      className={`relative w-full ${
-        router.pathname !== ""
-          ? "backdrop-filter backdrop-blur-md bg-opacity-0"
-          : null
-      }`}
+      // className={`relative w-full ${
+      //   router.pathname !== ""
+      //     ? "backdrop-filter backdrop-blur-md bg-opacity-0"
+      //     : null
+      // }`}
+      className={`relative w-full bg-primary-500`}
     >
       <nav className="relative flex">
         <div className="flex items-center flex-grow md:grow-0 md:space-x-60 md:mx-auto">
