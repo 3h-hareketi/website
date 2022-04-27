@@ -1,6 +1,7 @@
 import { Tab } from "@headlessui/react";
 import BlogCard from "../components/BlogCard";
 import Newsletter from "../components/Newsletter";
+import PersonCard from "../components/PersonCard";
 import { getSdk, Person, Post } from "../interfaces";
 import { client } from "../lib/graphCmsClient";
 
@@ -33,6 +34,136 @@ const Home = ({ directors, supervisors }: Props) => {
         <strong className="mx-auto mt-3 text-center">
           Believe in yourself!
         </strong>
+        <div className="w-full max-w-md px-2 py-16 mx-auto sm:px-0">
+          <Tab.Group>
+            <Tab.List className="flex p-1 space-x-1 bg-white shadow-md rounded-xl">
+              <Tab
+                className={({ selected }) =>
+                  classNames(
+                    "w-full py-2.5 text-sm leading-5 font-medium text-white rounded-3xl",
+                    "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-primary-400 ring-white ring-opacity-60",
+                    selected
+                      ? "bg-primary-500 shadow"
+                      : "text-black hover:text-primary-200"
+                  )
+                }
+              >
+                {"All"}
+              </Tab>
+              <Tab
+                className={({ selected }) =>
+                  classNames(
+                    "w-full py-2.5 text-sm leading-5 font-medium text-white rounded-3xl",
+                    "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-primary-400 ring-white ring-opacity-60",
+                    selected
+                      ? "bg-primary-500 shadow"
+                      : "text-black hover:text-primary-200"
+                  )
+                }
+              >
+                {"Board of Directors"}
+              </Tab>
+              <Tab
+                className={({ selected }) =>
+                  classNames(
+                    "w-full py-2.5 text-sm leading-5 font-medium text-white rounded-3xl",
+                    "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-primary-400 ring-white ring-opacity-60",
+                    selected
+                      ? "bg-primary-500 shadow"
+                      : "text-black hover:text-primary-200"
+                  )
+                }
+              >
+                {"Board of Supervisors"}
+              </Tab>
+            </Tab.List>
+            <Tab.Panels className="mt-2">
+              <Tab.Panel
+                className={classNames(
+                  "bg-white rounded-xl p-3",
+                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60"
+                )}
+              >
+                <ul>
+                  {supervisors.map((person) => (
+                    <PersonCard
+                      key={person.id}
+                      fullName={person.fullName}
+                      biography={person.biography || ""}
+                      twitter={person.twitter || ""}
+                      facebook={person.facebook || ""}
+                      linkedIn={person.linkedIn || ""}
+                      role={person.role}
+                      id={person.id}
+                      image={person.image?.url || ""}
+                      instagram={person.instagram || ""}
+                    />
+                  ))}
+                  {directors.map((person) => (
+                    <PersonCard
+                      key={person.id}
+                      fullName={person.fullName}
+                      biography={person.biography || ""}
+                      twitter={person.twitter || ""}
+                      facebook={person.facebook || ""}
+                      linkedIn={person.linkedIn || ""}
+                      role={person.role}
+                      id={person.id}
+                      image={person.image?.url || ""}
+                      instagram={person.instagram || ""}
+                    />
+                  ))}
+                </ul>
+              </Tab.Panel>
+              <Tab.Panel
+                className={classNames(
+                  "bg-white rounded-xl p-3",
+                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60"
+                )}
+              >
+                <ul>
+                  {directors.map((person) => (
+                    <PersonCard
+                      key={person.id}
+                      fullName={person.fullName}
+                      biography={person.biography || ""}
+                      twitter={person.twitter || ""}
+                      facebook={person.facebook || ""}
+                      linkedIn={person.linkedIn || ""}
+                      role={person.role}
+                      id={person.id}
+                      image={person.image?.url || ""}
+                      instagram={person.instagram || ""}
+                    />
+                  ))}
+                </ul>
+              </Tab.Panel>
+              <Tab.Panel
+                className={classNames(
+                  "bg-white rounded-xl p-3",
+                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60"
+                )}
+              >
+                <ul>
+                  {supervisors.map((person) => (
+                    <PersonCard
+                      key={person.id}
+                      fullName={person.fullName}
+                      biography={person.biography || ""}
+                      twitter={person.twitter || ""}
+                      facebook={person.facebook || ""}
+                      linkedIn={person.linkedIn || ""}
+                      role={person.role}
+                      id={person.id}
+                      image={person.image?.url || ""}
+                      instagram={person.instagram || ""}
+                    />
+                  ))}
+                </ul>
+              </Tab.Panel>
+            </Tab.Panels>
+          </Tab.Group>
+        </div>
       </div>
     </>
   );
