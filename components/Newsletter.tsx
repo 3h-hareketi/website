@@ -1,8 +1,8 @@
 const Newsletter = () => {
   return (
-    <div className="w-full px-8 pt-8 bg-white rounded-lg shadow-md h-72">
+    <div className="w-full max-w-2xl px-8 pt-8 bg-white rounded-lg shadow-md h-72">
       <div className="flex-col space-y-4">
-        <h3 className="text-2xl">Subscribe to our newsletter!</h3>
+        <h3 className="text-5xl">Subscribe to our newsletter!</h3>
         <div className="text-sm font-light text-gray-400">
           We&apos;ll send you the best of our blog just once a month. We
           promise.
