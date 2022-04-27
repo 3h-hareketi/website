@@ -1,18 +1,20 @@
 import { Tab } from "@headlessui/react";
 import PersonCard from "../components/PersonCard";
-import { getSdk, Person } from "../interfaces";
+import Reports from "../components/Reports";
+import { getSdk, Person, Report } from "../interfaces";
 import { client } from "../lib/graphCmsClient";
 
 type Props = {
   directors: Array<Person>;
   supervisors: Array<Person>;
+  reports: Array<Report>;
 };
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-const About = ({ directors, supervisors }: Props) => {
+const About = ({ directors, supervisors, reports }: Props) => {
   return (
     <>
       <div className="flex flex-col mx-auto bg-primary-500">
@@ -162,6 +164,7 @@ const About = ({ directors, supervisors }: Props) => {
             </Tab.Panels>
           </Tab.Group>
         </div>
+        <Reports reports={reports} />
       </div>
     </>
   );
@@ -171,10 +174,13 @@ export async function getStaticProps() {
   const sdk = getSdk(client);
   const { people: directors } = await sdk.BoardOfDirectorsMembers();
   const { people: supervisors } = await sdk.BoardOfSupervisorsMembers();
+  const { reports } = await sdk.Reports();
+
   return {
     props: {
       directors,
       supervisors,
+      reports,
     },
   };
 }
