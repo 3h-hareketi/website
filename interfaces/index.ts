@@ -6871,6 +6871,18 @@ export type FeaturedBlogsQuery = {
   }>;
 };
 
+export type ReportsQueryVariables = Exact<{ [key: string]: never }>;
+
+export type ReportsQuery = {
+  __typename?: "Query";
+  reports: Array<{
+    __typename?: "Report";
+    title: string;
+    slug: string;
+    report: { __typename?: "Asset"; url: string };
+  }>;
+};
+
 export const BoardOfDirectorsMembersDocument = gql`
   query BoardOfDirectorsMembers {
     people(where: { boardOfDirectorsMember: true }) {
@@ -6914,6 +6926,17 @@ export const FeaturedBlogsDocument = gql`
       title
       tags
       coverImage {
+        url
+      }
+    }
+  }
+`;
+export const ReportsDocument = gql`
+  query Reports {
+    reports {
+      title
+      slug
+      report {
         url
       }
     }
@@ -6978,6 +7001,20 @@ export function getSdk(
             ...wrappedRequestHeaders,
           }),
         "FeaturedBlogs",
+        "query"
+      );
+    },
+    Reports(
+      variables?: ReportsQueryVariables,
+      requestHeaders?: Dom.RequestInit["headers"]
+    ): Promise<ReportsQuery> {
+      return withWrapper(
+        (wrappedRequestHeaders) =>
+          client.request<ReportsQuery>(ReportsDocument, variables, {
+            ...requestHeaders,
+            ...wrappedRequestHeaders,
+          }),
+        "Reports",
         "query"
       );
     },

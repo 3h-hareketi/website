@@ -1,0 +1,9 @@
+query Reports {
+  reports {
+    title
+    slug
+    report {
+      url
+    }
+  }
+}
