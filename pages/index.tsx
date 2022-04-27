@@ -1,10 +1,13 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
+import Newsletter from "../components/Newsletter";
 
 const Home: NextPage = () => {
   return (
-    <div className="flex h-screen bg-gradient-radial from-primary-800 to-primary-400"></div>
+    <div className="flex h-screen bg-gradient-radial from-primary-800 to-primary-400">
+      <div className="m-auto">
+        <Newsletter />
+      </div>
+    </div>
   );
 };
 
