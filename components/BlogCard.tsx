@@ -21,16 +21,22 @@ const BlogCard = (props: BlogProps) => {
         }`}
       >
         <div className="w-2/3 p-6 mt-auto bg-white rounded-tr-xl">
-          <h1 className="text-xl font-semibold text-left">
-            {props.date + ", " + props.title}
-          </h1>
+          <div className="flex flex-row">
+            <h1 className="mr-auto text-xl font-semibold text-left">
+              {props.date + ", " + props.title}{" "}
+            </h1>
+            {props.tags.map((tag, tagIdx) => (
+              <div
+                key={tag}
+                className={`text-white text-xs rounded-xl p-1.5 mx-1 uppercase max-h-8 ${
+                  tagIdx === 0 ? "bg-purple-500" : "bg-red-500"
+                }`}
+              >
+                {tag}
+              </div>
+            ))}
+          </div>
           <div className="mt-2 text-sm text-left">{props.description}</div>
-          {/* <div>
-            {" "}
-            {props.tags.map((tag) => {
-              <div className="text-sm text-gray-600">{tag}</div>;
-            })}
-          </div> */}
         </div>
       </div>
     </>

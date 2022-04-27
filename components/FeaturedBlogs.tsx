@@ -31,7 +31,7 @@ const FeaturedBlogs = () => {
         curabitur cubilia habitasse taciti, id vulputate quis consectetur
         turpis, blandit cursus aenean interdum.
       </div>
-      <div className="mx-48">
+      <div className="md:mx-48">
         {blogs.map((blog, blogIdx) => (
           <BlogCard
             key={blog.id}
