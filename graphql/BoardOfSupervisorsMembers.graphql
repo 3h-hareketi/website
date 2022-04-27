@@ -1,9 +1,7 @@
-query Members {
-  people {
+query BoardOfSupervisorsMembers {
+  people(where: {boardOfSupervisorsMember: true}) {
     fullName
     role
-    boardOfDirectorsMember
-    boardOfSupervisorsMember
     biography
     facebook
     id

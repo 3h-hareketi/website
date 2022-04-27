@@ -6816,6 +6816,46 @@ export enum _SystemDateTimeFieldVariation {
   Localization = "localization",
 }
 
+export type BoardOfDirectorsMembersQueryVariables = Exact<{
+  [key: string]: never;
+}>;
+
+export type BoardOfDirectorsMembersQuery = {
+  __typename?: "Query";
+  people: Array<{
+    __typename?: "Person";
+    fullName: string;
+    role: string;
+    biography?: string | null;
+    facebook?: string | null;
+    id: string;
+    instagram?: string | null;
+    linkedIn?: string | null;
+    twitter?: string | null;
+    image?: { __typename?: "Asset"; url: string } | null;
+  }>;
+};
+
+export type BoardOfSupervisorsMembersQueryVariables = Exact<{
+  [key: string]: never;
+}>;
+
+export type BoardOfSupervisorsMembersQuery = {
+  __typename?: "Query";
+  people: Array<{
+    __typename?: "Person";
+    fullName: string;
+    role: string;
+    biography?: string | null;
+    facebook?: string | null;
+    id: string;
+    instagram?: string | null;
+    linkedIn?: string | null;
+    twitter?: string | null;
+    image?: { __typename?: "Asset"; url: string } | null;
+  }>;
+};
+
 export type FeaturedBlogsQueryVariables = Exact<{ [key: string]: never }>;
 
 export type FeaturedBlogsQuery = {
@@ -6831,26 +6871,40 @@ export type FeaturedBlogsQuery = {
   }>;
 };
 
-export type MembersQueryVariables = Exact<{ [key: string]: never }>;
-
-export type MembersQuery = {
-  __typename?: "Query";
-  people: Array<{
-    __typename?: "Person";
-    fullName: string;
-    role: string;
-    boardOfDirectorsMember: boolean;
-    boardOfSupervisorsMember: boolean;
-    biography?: string | null;
-    facebook?: string | null;
-    id: string;
-    instagram?: string | null;
-    linkedIn?: string | null;
-    twitter?: string | null;
-    image?: { __typename?: "Asset"; url: string } | null;
-  }>;
-};
-
+export const BoardOfDirectorsMembersDocument = gql`
+  query BoardOfDirectorsMembers {
+    people(where: { boardOfDirectorsMember: true }) {
+      fullName
+      role
+      biography
+      facebook
+      id
+      image {
+        url
+      }
+      instagram
+      linkedIn
+      twitter
+    }
+  }
+`;
+export const BoardOfSupervisorsMembersDocument = gql`
+  query BoardOfSupervisorsMembers {
+    people(where: { boardOfSupervisorsMember: true }) {
+      fullName
+      role
+      biography
+      facebook
+      id
+      image {
+        url
+      }
+      instagram
+      linkedIn
+      twitter
+    }
+  }
+`;
 export const FeaturedBlogsDocument = gql`
   query FeaturedBlogs {
     posts(where: { tags_contains_some: "featured" }) {
@@ -6862,25 +6916,6 @@ export const FeaturedBlogsDocument = gql`
       coverImage {
         url
       }
-    }
-  }
-`;
-export const MembersDocument = gql`
-  query Members {
-    people {
-      fullName
-      role
-      boardOfDirectorsMember
-      boardOfSupervisorsMember
-      biography
-      facebook
-      id
-      image {
-        url
-      }
-      instagram
-      linkedIn
-      twitter
     }
   }
 `;
@@ -6902,6 +6937,36 @@ export function getSdk(
   withWrapper: SdkFunctionWrapper = defaultWrapper
 ) {
   return {
+    BoardOfDirectorsMembers(
+      variables?: BoardOfDirectorsMembersQueryVariables,
+      requestHeaders?: Dom.RequestInit["headers"]
+    ): Promise<BoardOfDirectorsMembersQuery> {
+      return withWrapper(
+        (wrappedRequestHeaders) =>
+          client.request<BoardOfDirectorsMembersQuery>(
+            BoardOfDirectorsMembersDocument,
+            variables,
+            { ...requestHeaders, ...wrappedRequestHeaders }
+          ),
+        "BoardOfDirectorsMembers",
+        "query"
+      );
+    },
+    BoardOfSupervisorsMembers(
+      variables?: BoardOfSupervisorsMembersQueryVariables,
+      requestHeaders?: Dom.RequestInit["headers"]
+    ): Promise<BoardOfSupervisorsMembersQuery> {
+      return withWrapper(
+        (wrappedRequestHeaders) =>
+          client.request<BoardOfSupervisorsMembersQuery>(
+            BoardOfSupervisorsMembersDocument,
+            variables,
+            { ...requestHeaders, ...wrappedRequestHeaders }
+          ),
+        "BoardOfSupervisorsMembers",
+        "query"
+      );
+    },
     FeaturedBlogs(
       variables?: FeaturedBlogsQueryVariables,
       requestHeaders?: Dom.RequestInit["headers"]
@@ -6913,20 +6978,6 @@ export function getSdk(
             ...wrappedRequestHeaders,
           }),
         "FeaturedBlogs",
-        "query"
-      );
-    },
-    Members(
-      variables?: MembersQueryVariables,
-      requestHeaders?: Dom.RequestInit["headers"]
-    ): Promise<MembersQuery> {
-      return withWrapper(
-        (wrappedRequestHeaders) =>
-          client.request<MembersQuery>(MembersDocument, variables, {
-            ...requestHeaders,
-            ...wrappedRequestHeaders,
-          }),
-        "Members",
         "query"
       );
     },
