@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import { DefaultSeo, LogoJsonLd, OrganizationJsonLd } from "next-seo";
 import { useRouter } from "next/router";
 import Footer from "./Footer";
+import baseUrl from "../lib/baseUrl";
 
 type Props = {
   children: React.ReactNode;
@@ -19,7 +20,7 @@ const Layout = ({ children }: Props) => {
           ? {
               background:
                 "radial-gradient(50% 50% at 50% 50%, #1BC3D5 2.1%, #1696BE 100%), #12ABBB",
-              backgroundImage: `url("/background.svg")`,
+              backgroundImage: `url("${baseUrl}/background.svg")`,
               backgroundRepeat: "no-repeat",
               backgroundSize: "fit",
               backgroundPosition: "center",
