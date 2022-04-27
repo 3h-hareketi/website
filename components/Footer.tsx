@@ -18,7 +18,7 @@ const Navbar = () => {
           Reach out to us!
         </h1>
 
-        <div className="flex flex-col items-end ml-auto">
+        <div className="flex flex-col ml-auto text-right">
           <ul className="text-white">
             {" "}
             <li>LEARN MORE</li>
