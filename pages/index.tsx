@@ -5,8 +5,8 @@ import Newsletter from "../components/Newsletter";
 
 const Home: NextPage = () => {
   return (
-    <div className="flex h-screen mx-auto">
-      <div className="mx-auto mt-16 text-white">
+    <div className="flex flex-col mx-auto">
+      <div className="h-screen mx-auto mt-16 text-white">
         {" "}
         <h1 className="font-extrabold text-8xl">
           Discover liberalism, <br /> the ideology of freedom!
@@ -20,8 +20,9 @@ const Home: NextPage = () => {
           SEE MORE
         </button>
       </div>
-      {/* <FeaturedBlogs />
-      <Newsletter /> */}
+
+      <FeaturedBlogs />
+      <Newsletter />
     </div>
   );
 };
