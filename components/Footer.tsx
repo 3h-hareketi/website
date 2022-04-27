@@ -2,7 +2,7 @@ import Link from "next/link";
 import BlurImage from "./BlurImage";
 import logo from "/public/3h-vector.png";
 
-const Navbar = () => {
+const Footer = () => {
   return (
     <section className="bg-primary-500">
       <div className="flex flex-col items-center mt-16 md:flex-row md:mx-64">
@@ -64,4 +64,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Footer;

@@ -1,5 +1,3 @@
-import baseUrl from "../lib/baseUrl";
-
 type BlogProps = {
   title: string;
   image: string;

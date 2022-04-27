@@ -50,7 +50,7 @@ const About = ({ directors, supervisors, reports }: Props) => {
               >
                 {"All"}
               </Tab>
-              <Tab
+              {/* <Tab
                 className={({ selected }) =>
                   classNames(
                     "w-full py-2.5 text-sm leading-5 font-medium text-white rounded-3xl",
@@ -75,7 +75,7 @@ const About = ({ directors, supervisors, reports }: Props) => {
                 }
               >
                 {"Board of Supervisors"}
-              </Tab>
+              </Tab> */}
             </Tab.List>
             <Tab.Panels className="mt-2">
               <Tab.Panel
@@ -99,7 +99,7 @@ const About = ({ directors, supervisors, reports }: Props) => {
                       instagram={person.instagram || ""}
                     />
                   ))}
-                  {directors.map((person) => (
+                  {/* {directors.map((person) => (
                     <PersonCard
                       key={person.id}
                       fullName={person.fullName}
@@ -112,10 +112,10 @@ const About = ({ directors, supervisors, reports }: Props) => {
                       image={person.image?.url || ""}
                       instagram={person.instagram || ""}
                     />
-                  ))}
+                  ))} */}
                 </div>
               </Tab.Panel>
-              <Tab.Panel
+              {/* <Tab.Panel
                 className={classNames(
                   "bg-white rounded-xl p-3",
                   "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60"
@@ -160,7 +160,7 @@ const About = ({ directors, supervisors, reports }: Props) => {
                     />
                   ))}
                 </div>
-              </Tab.Panel>
+              </Tab.Panel> */}
             </Tab.Panels>
           </Tab.Group>
         </div>

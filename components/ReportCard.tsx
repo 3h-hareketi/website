@@ -5,7 +5,7 @@ type Props = {
   link: string;
 };
 
-const PersonCard = (props: Props) => {
+const ReportCard = (props: Props) => {
   return (
     <div className="flex flex-col max-w-xl p-6 bg-white shadow-md rounded-xl">
       <div className="flex flex-row">
@@ -63,4 +63,4 @@ const PersonCard = (props: Props) => {
   );
 };
 
-export default PersonCard;
+export default ReportCard;
