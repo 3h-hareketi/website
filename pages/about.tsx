@@ -77,7 +77,7 @@ const About = ({ directors, supervisors, reports }: Props) => {
                 {"Board of Supervisors"}
               </Tab>
             </Tab.List>
-            <Tab.Panels className="w-screen mt-2">
+            <Tab.Panels className="mt-2">
               <Tab.Panel
                 className={classNames(
                   "bg-white rounded-xl p-3",
