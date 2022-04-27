@@ -10,7 +10,6 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
   const router = useRouter();
-  const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
     <div className="flex flex-col justify-between h-screen subpixel-antialiased">
@@ -19,7 +18,7 @@ const Layout = ({ children }: Props) => {
         defaultTitle="3H Akademi"
         openGraph={{
           type: "website",
-          url: router.pathname,
+          // url: router.pathname,
           locale: "tr_TR",
           site_name: "3H Akademi",
           images: [
@@ -70,7 +69,7 @@ const Layout = ({ children }: Props) => {
           { "@type": "NGO", name: "Atlas Network" },
         ]}
       />
-      {/* <Navbar /> */}
+      <Navbar />
       <main className="mb-auto">{children}</main>
       {/* <Footer /> */}
     </div>
