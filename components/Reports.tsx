@@ -26,7 +26,6 @@ const Reports = ({ reports }: Props) => {
           />
         ))}
       </div>
-      )
     </>
   );
 };
