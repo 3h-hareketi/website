@@ -17,7 +17,7 @@ const BlogCard = (props: BlogProps) => {
       <div
         style={{ backgroundImage: `url(${props.image || "/placeholder.jpg"})` }}
         className={`w-full h-36 md:w-[720px] md:h-[450px] rounded-xl flex my-8 mx-1 md:mx-0 md:my-0 ${
-          props.index % 2 === 0 ? "mr-auto" : "ml-auto"
+          props.index % 2 === 0 ? "md:mr-auto" : "md:ml-auto"
         }`}
       >
         <div className="w-5/6 p-2 mt-auto bg-white md:w-2/3 md:p-6 rounded-tr-xl">
