@@ -1,4 +1,4 @@
-import { useRouter } from "next/router";
+import Link from "next/link";
 import BlurImage from "./BlurImage";
 import logo from "/public/3h-vector.png";
 const Navbar = () => {
@@ -22,13 +22,37 @@ const Navbar = () => {
           <ul className="text-white">
             {" "}
             <li>LEARN MORE</li>
-            <li className="font-thin">About Us</li>
-            <li className="font-thin">Contact Us</li>
-            <li className="font-thin">Projects</li>
+            <Link href="/about" passHref>
+              <li className="font-thin">
+                <a href="#">About Us</a>
+              </li>
+            </Link>
+            <Link href="/contact" passHref>
+              <li className="font-thin">
+                <a href="#">Contact Us</a>
+              </li>
+            </Link>
+            <Link href="/projects" passHref>
+              <li className="font-thin">
+                <a href="#">Projects</a>
+              </li>
+            </Link>{" "}
             <li className="mt-16">SUPPORT</li>
-            <li className="font-thin">Terms and Services</li>
-            <li className="font-thin">Privacy</li>
-            <li className="font-thin">Cookies</li>
+            <Link href="/terms" passHref>
+              <li className="font-thin">
+                <a href="#">Terms and Services</a>
+              </li>
+            </Link>{" "}
+            <Link href="/privacy" passHref>
+              <li className="font-thin">
+                <a href="#">Privacy</a>
+              </li>
+            </Link>
+            <Link href="/cookies" passHref>
+              <li className="font-thin">
+                <a href="#"> Cookies </a>
+              </li>
+            </Link>
           </ul>
         </div>
       </div>
