@@ -1,12 +1,21 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { Dispatch, Fragment, SetStateAction } from "react";
 import BlurImage from "./BlurImage";
 // import UserDropdown from "./UserDropdown";
 import HLogo from "/public/3h-logo.svg";
 import logo from "/public/logo-alt.png";
 const Navbar = () => {
+  const router = useRouter();
+
   return (
-    <section className="absolute w-full">
+    <section
+      className={`absolute w-full ${
+        router.pathname !== ""
+          ? "backdrop-filter backdrop-blur-md bg-opacity-0"
+          : null
+      }`}
+    >
       <nav className="relative flex">
         <div className="flex items-center mx-auto space-x-60">
           <BlurImage
