@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "./Navbar";
 import { DefaultSeo, LogoJsonLd, OrganizationJsonLd } from "next-seo";
 import { useRouter } from "next/router";
+import Footer from "./Footer";
 // import Footer from "./Footer";
 
 type Props = {
@@ -71,7 +72,7 @@ const Layout = ({ children }: Props) => {
       />
       <Navbar />
       <main className="mb-auto">{children}</main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
