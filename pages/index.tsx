@@ -5,7 +5,7 @@ import Newsletter from "../components/Newsletter";
 
 const Home: NextPage = () => {
   return (
-    <div className="flex h-screen bg-gradient-radial from-primary-800 to-primary-400">
+    <div className="flex h-screen ">
       {/* <FeaturedBlogs /> */}
       {/* <div className="m-auto">
           <Newsletter />

@@ -3,7 +3,6 @@ import Navbar from "./Navbar";
 import { DefaultSeo, LogoJsonLd, OrganizationJsonLd } from "next-seo";
 import { useRouter } from "next/router";
 import Footer from "./Footer";
-// import Footer from "./Footer";
 
 type Props = {
   children: React.ReactNode;
@@ -13,7 +12,17 @@ const Layout = ({ children }: Props) => {
   const router = useRouter();
 
   return (
-    <div className="flex flex-col justify-between h-screen subpixel-antialiased">
+    <div
+      className="flex flex-col justify-between h-screen subpixel-antialiased "
+      style={{
+        background:
+          "radial-gradient(50% 50% at 50% 50%, #1BC3D5 2.1%, #1696BE 100%), #12ABBB",
+        backgroundImage: `url("/background.svg")`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "fit",
+        backgroundPosition: "center",
+      }}
+    >
       <DefaultSeo
         titleTemplate="%s | 3H Akademi"
         defaultTitle="3H Akademi"

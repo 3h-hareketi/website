@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <section
-      className={`absolute w-full ${
+      className={`relative w-full ${
         router.pathname !== ""
           ? "backdrop-filter backdrop-blur-md bg-opacity-0"
           : null
