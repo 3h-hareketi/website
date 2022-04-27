@@ -1,7 +1,7 @@
 import Image from "next/image";
 const Newsletter = () => {
   return (
-    <div className="w-full mx-auto mt-24 bg-white rounded-lg shadow-md md:max-w-2xl md:p-8">
+    <div className="w-full p-3 mx-auto my-24 bg-white rounded-lg shadow-md md:max-w-2xl md:p-8">
       <div className="flex flex-row md:space-x-10">
         {" "}
         <Image

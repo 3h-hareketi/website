@@ -4,7 +4,7 @@ import logo from "/public/3h-vector.png";
 const Navbar = () => {
   return (
     <section className="bg-primary-500">
-      <div className="flex flex-col items-center mt-10 md:flex-row md:mx-64 md:mt-16">
+      <div className="flex flex-col items-center mt-16 md:flex-row md:mx-64">
         <div className="space-y-3 text-center md:mr-auto">
           <BlurImage src={logo} height={128} width={128} className="" />
           <ul className="text-white">
