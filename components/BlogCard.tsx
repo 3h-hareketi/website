@@ -8,6 +8,7 @@ type BlogProps = {
   tags: string[];
   description: string;
   date: string;
+  index: number;
 };
 
 const BlogCard = (props: BlogProps) => {
@@ -15,7 +16,9 @@ const BlogCard = (props: BlogProps) => {
     <>
       <div
         style={{ backgroundImage: `url(${props.image || "/placeholder.jpg"})` }}
-        className="w-[720px] h-[450px] rounded-xl flex"
+        className={`w-[720px] h-[450px] rounded-xl flex ${
+          props.index % 2 === 0 ? "mr-auto" : "ml-auto"
+        }`}
       >
         <div className="w-2/3 p-6 mt-auto bg-white rounded-tr-xl">
           <h1 className="text-xl font-semibold text-left">
@@ -30,13 +33,6 @@ const BlogCard = (props: BlogProps) => {
           </div> */}
         </div>
       </div>
-      {/* <Image
-        src={props.image || "/placeholder.jpg"}
-        height={450}
-        width={720}
-        alt="blog-post"
-        className="absolute rounded-xl"
-      /> */}
     </>
   );
 };
