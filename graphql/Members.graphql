@@ -1,0 +1,17 @@
+query Members {
+  people {
+    fullName
+    role
+    boardOfDirectorsMember
+    boardOfSupervisorsMember
+    biography
+    facebook
+    id
+    image {
+      url
+    }
+    instagram
+    linkedIn
+    twitter
+  }
+}
