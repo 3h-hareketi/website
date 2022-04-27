@@ -1,9 +1,13 @@
-import type { NextPage } from "next";
-import FeaturedBlogs from "../components/FeaturedBlogs";
-import Layout from "../components/Layout";
+import BlogCard from "../components/BlogCard";
 import Newsletter from "../components/Newsletter";
+import { getSdk, Post } from "../interfaces";
+import { client } from "../lib/graphCmsClient";
 
-const Home: NextPage = () => {
+type Props = {
+  posts: Array<Post>;
+};
+
+const Home = ({ posts }: Props) => {
   return (
     <div className="flex flex-col mx-auto">
       <div className="h-screen mx-auto mt-16 text-white">
@@ -20,11 +24,42 @@ const Home: NextPage = () => {
           SEE MORE
         </button>
       </div>
-
-      <FeaturedBlogs />
+      <div className="flex flex-col w-full space-y-12 text-center bg-white">
+        <h1 className="text-3xl font-semibold">Blog Posts</h1>{" "}
+        <div className="max-w-2xl mx-auto font-light text-gray-600">
+          Ornare aptent aenean tristique tortor egestas habitasse, netus
+          praesent taciti sagittis nulla proin vivamus habitasse, non aptent
+          neque curabitur cubilia habitasse taciti, id vulputate quis
+          consectetur turpis, blandit cursus aenean interdum.
+        </div>
+        <div className="md:mx-48">
+          {posts.map((blog, blogIdx) => (
+            <BlogCard
+              key={blog.id}
+              title={blog.title || ""}
+              image={blog.coverImage.url || ""}
+              tags={blog.tags || []}
+              description={blog.excerpt || ""}
+              date={blog.date || ""}
+              index={blogIdx}
+            />
+          ))}
+        </div>
+      </div>
       <Newsletter />
     </div>
   );
 };
+
+export async function getStaticProps() {
+  const sdk = getSdk(client);
+  const { posts } = await sdk.FeaturedBlogs();
+
+  return {
+    props: {
+      posts,
+    },
+  };
+}
 
 export default Home;

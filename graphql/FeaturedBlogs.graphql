@@ -2,9 +2,7 @@ query FeaturedBlogs {
   posts(where: { tags_contains_some: "featured" }) {
     id
     date
-    content {
-      text
-    }
+    excerpt
     title
     tags
     coverImage {
