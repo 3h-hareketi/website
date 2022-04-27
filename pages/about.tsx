@@ -77,14 +77,14 @@ const Home = ({ directors, supervisors }: Props) => {
                 {"Board of Supervisors"}
               </Tab>
             </Tab.List>
-            <Tab.Panels className="mt-2">
+            <Tab.Panels className="w-screen mt-2">
               <Tab.Panel
                 className={classNames(
                   "bg-white rounded-xl p-3",
                   "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60"
                 )}
               >
-                <ul>
+                <div className="flex flex-wrap mx-auto space-x-5 space-y-5">
                   {supervisors.map((person) => (
                     <PersonCard
                       key={person.id}
@@ -113,7 +113,7 @@ const Home = ({ directors, supervisors }: Props) => {
                       instagram={person.instagram || ""}
                     />
                   ))}
-                </ul>
+                </div>
               </Tab.Panel>
               <Tab.Panel
                 className={classNames(
@@ -121,7 +121,7 @@ const Home = ({ directors, supervisors }: Props) => {
                   "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60"
                 )}
               >
-                <ul>
+                <div className="flex flex-wrap mx-auto space-x-5 space-y-5">
                   {directors.map((person) => (
                     <PersonCard
                       key={person.id}
@@ -136,7 +136,7 @@ const Home = ({ directors, supervisors }: Props) => {
                       instagram={person.instagram || ""}
                     />
                   ))}
-                </ul>
+                </div>
               </Tab.Panel>
               <Tab.Panel
                 className={classNames(
@@ -144,7 +144,7 @@ const Home = ({ directors, supervisors }: Props) => {
                   "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60"
                 )}
               >
-                <ul>
+                <div className="flex flex-wrap mx-auto space-x-5 space-y-5">
                   {supervisors.map((person) => (
                     <PersonCard
                       key={person.id}
@@ -159,7 +159,7 @@ const Home = ({ directors, supervisors }: Props) => {
                       instagram={person.instagram || ""}
                     />
                   ))}
-                </ul>
+                </div>
               </Tab.Panel>
             </Tab.Panels>
           </Tab.Group>
