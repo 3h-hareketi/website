@@ -12,7 +12,7 @@ const Home = ({ posts }: Props) => {
     <div className="flex flex-col mx-auto">
       <div className="h-screen mx-auto mt-16 text-white">
         {" "}
-        <h1 className="font-extrabold text-8xl">
+        <h1 className="text-4xl font-extrabold md:text-8xl">
           Discover liberalism, <br /> the ideology of freedom!
         </h1>
         <div className="max-w-2xl mt-10">

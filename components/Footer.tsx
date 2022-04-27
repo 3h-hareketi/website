@@ -4,21 +4,21 @@ import logo from "/public/3h-vector.png";
 const Navbar = () => {
   return (
     <section className="bg-primary-500">
-      <div className="flex flex-row items-center mx-64 mt-16">
-        <div className="mr-auto space-y-3 text-center">
+      <div className="flex flex-col items-center mt-10 md:flex-row md:mx-64 md:mt-16">
+        <div className="space-y-3 text-center md:mr-auto">
           <BlurImage src={logo} height={128} width={128} className="" />
           <ul className="text-white">
             {" "}
-            <li>Istanbul / Turkey</li>
+            <li className="font-normal">Istanbul / Turkey</li>
             <li className="font-thin">iletisim@3hhareketi.org</li>
             <li className="font-thin">(+90) 212 564 78 90</li>
           </ul>
         </div>
-        <h1 className="text-6xl font-bold text-center text-white">
+        <h1 className="text-4xl font-bold text-center text-white md:text-6xl">
           Reach out to us!
         </h1>
 
-        <div className="flex flex-col ml-auto text-right">
+        <div className="flex flex-col mt-5 ml-10 mr-auto text-left md:mr-0 md:mt-0 md:ml-auto md:text-right">
           <ul className="text-white">
             {" "}
             <li>LEARN MORE</li>

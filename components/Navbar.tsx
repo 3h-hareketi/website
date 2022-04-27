@@ -16,7 +16,7 @@ const Navbar = () => {
           : null
       }`}
     >
-      <nav className="relative flex">
+      <nav className="relative hidden md:flex">
         <div className="flex items-center mx-auto space-x-60">
           <BlurImage
             className="h-12"

@@ -1,8 +1,8 @@
 import Image from "next/image";
 const Newsletter = () => {
   return (
-    <div className="w-full max-w-2xl p-8 mx-auto bg-white rounded-lg shadow-md">
-      <div className="flex flex-row space-x-10">
+    <div className="w-full mx-auto mt-24 bg-white rounded-lg shadow-md md:max-w-2xl md:p-8">
+      <div className="flex flex-row md:space-x-10">
         {" "}
         <Image
           src={"/mailbox.svg"}
@@ -12,8 +12,8 @@ const Newsletter = () => {
           className="mt-auto"
         />
         <div className="flex-col space-y-4">
-          <h3 className="text-5xl">Subscribe to our newsletter!</h3>
-          <div className="text-sm font-light text-gray-400">
+          <h3 className="text-3xl md:text-5xl">Subscribe to our newsletter!</h3>
+          <div className="text-lg font-light text-gray-400 md:text-sm">
             We&apos;ll send you the best of our blog just once a month. We
             promise.
           </div>
