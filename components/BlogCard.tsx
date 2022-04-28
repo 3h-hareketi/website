@@ -1,5 +1,3 @@
-import BASE_URL from "../lib/baseUrl";
-
 type BlogProps = {
   title: string;
   image: string;
@@ -14,10 +12,7 @@ const BlogCard = (props: BlogProps) => {
     <>
       <div
         style={{
-          backgroundImage: `url(${
-            props.image ||
-            `${"https://" + process.env.VERCEL_ENV}}/placeholder.jpg`
-          })`,
+          backgroundImage: `url(${props.image})`,
         }}
         className={`w-full h-36 md:w-[720px] md:h-[450px] rounded-xl flex my-8 md:mx-1 md:my-0 ${
           props.index % 2 === 0 ? "md:mr-auto" : "md:ml-auto"

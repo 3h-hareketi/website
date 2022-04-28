@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Report } from "../interfaces";
 import ReportCard from "./ReportCard";
 type Props = {
