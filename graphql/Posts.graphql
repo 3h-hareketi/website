@@ -1,0 +1,14 @@
+query Posts {
+  posts {
+    content {
+      html
+    }
+    coverImage {
+      url
+    }
+    date
+    locale
+    title
+    tags
+  }
+}
