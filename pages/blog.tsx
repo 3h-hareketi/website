@@ -1,7 +1,10 @@
+import { Tab } from "@headlessui/react";
+import PersonCard from "../components/PersonCard";
+import Reports from "../components/Reports";
 import { getSdk, Post } from "../interfaces";
 import { client } from "../lib/graphCmsClient";
-
-import BlurImage from "../components/BlurImage";
+import Image from "next/image";
+import BASE_URL from "../lib/baseUrl";
 type Props = {
   posts: Array<Post>;
 };
@@ -13,9 +16,12 @@ const Blog = ({ posts }: Props) => {
 
   return (
     <div className="bg-gray-200 mb-96">
-      <BlurImage
+      <Image
         className=""
-        src={highlightedPost.coverImage.url}
+        src={
+          highlightedPost.coverImage.url ||
+          `${"https://" + process.env.VERCEL_ENV}}/placeholder.jpg`
+        }
         alt={highlightedPost.title + "Cover Image"}
         layout="responsive"
         width={720}
