@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import { DefaultSeo, LogoJsonLd, OrganizationJsonLd } from "next-seo";
 import { useRouter } from "next/router";
 import Footer from "./Footer";
-import baseUrl from "../lib/baseUrl";
+import BASE_URL from "../lib/baseUrl";
 
 type Props = {
   children: React.ReactNode;
@@ -14,13 +14,13 @@ const Layout = ({ children }: Props) => {
 
   return (
     <div
-      className="flex flex-col justify-between h-screen subpixel-antialiased "
+      className="flex flex-col justify-between h-screen subpixel-antialiased"
       style={
         router.pathname === "/"
           ? {
               background:
                 "radial-gradient(50% 50% at 50% 50%, #1BC3D5 2.1%, #1696BE 100%), #12ABBB",
-              backgroundImage: `url("${baseUrl}/background.svg")`,
+              backgroundImage: `url("/background.svg")`,
               backgroundRepeat: "no-repeat",
               backgroundSize: "fit",
               backgroundPosition: "center",
@@ -29,20 +29,20 @@ const Layout = ({ children }: Props) => {
       }
     >
       <DefaultSeo
-        titleTemplate="%s | 3H Akademi"
-        defaultTitle="3H Akademi"
+        titleTemplate="%s | 3H Hareketi"
+        defaultTitle="3H Hareketi"
         openGraph={{
           type: "website",
           url: router.pathname,
           locale: "tr_TR",
-          site_name: "3H Akademi",
+          site_name: "3H Hareketi",
           images: [
             {
-              url: `${process.env.NEXTAUTH_URL}/3h-logo.jpg`,
+              url: `${BASE_URL}/logo.png`,
               width: 1200,
               height: 1200,
-              alt: "3H Akademi",
-              type: "image/jpeg",
+              alt: "3H Hareketi",
+              type: "image/png",
             },
           ],
         }}
@@ -52,14 +52,11 @@ const Layout = ({ children }: Props) => {
           cardType: "summary_large_image",
         }}
       />
-      <LogoJsonLd
-        logo={`${process.env.NEXTAUTH_URL}/3h-logo.png`}
-        url={process.env.NEXTAUTH_URL!}
-      />
+      <LogoJsonLd logo={`${BASE_URL}/logo.png`} url={BASE_URL!} />
       <OrganizationJsonLd
         type="NGO"
         id="https://www.3hhareketi.org/"
-        logo={`${process.env.NEXTAUTH_URL}/3h-logo.png`}
+        logo={`${BASE_URL}/logo.png`}
         legalName="Hürriyet Hukuk Hoşgörü Hareketi Derneği"
         name="3H Hareketi"
         address={{
