@@ -22,7 +22,7 @@ const About = ({ directors, supervisors, reports }: Props) => {
           Meet the minds <br /> behind 3H
         </h1>
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col bg-gray-100">
         {" "}
         <h1 className="mx-auto text-3xl font-semibold mt-36">Our Team</h1>
         <div className="max-w-3xl mx-auto mt-8 font-thin text-center">
@@ -34,9 +34,9 @@ const About = ({ directors, supervisors, reports }: Props) => {
         <strong className="mx-auto mt-3 text-center">
           Believe in yourself!
         </strong>
-        <div className="max-w-md px-2 py-16 mx-auto sm:px-0">
+        <div className="px-2 py-16 mx-auto sm:px-0">
           <Tab.Group>
-            <Tab.List className="flex p-1 mb-24 space-x-1 bg-white shadow-md rounded-xl">
+            <Tab.List className="flex max-w-md p-1 mx-auto mb-24 space-x-1 bg-white shadow-md rounded-xl">
               <Tab
                 className={({ selected }) =>
                   classNames(
@@ -77,11 +77,11 @@ const About = ({ directors, supervisors, reports }: Props) => {
                 {"Board of Supervisors"}
               </Tab>
             </Tab.List>
-            <Tab.Panels className="mt-2">
+            <Tab.Panels className="w-11/12 mx-auto mt-2">
               <Tab.Panel
                 className={classNames(
-                  "bg-white rounded-xl p-3",
-                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-wrap mx-auto space-x-1 space-y-24"
+                  "bg-gray-100 rounded-xl p-3",
+                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-wrap justify-between"
                 )}
               >
                 {supervisors.map((person) => (
@@ -115,8 +115,8 @@ const About = ({ directors, supervisors, reports }: Props) => {
               </Tab.Panel>
               <Tab.Panel
                 className={classNames(
-                  "bg-white rounded-xl p-3",
-                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-wrap mx-auto space-x-1 space-y-1"
+                  "bg-gray-100 rounded-xl p-3",
+                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-wrap flex-auto mx-auto justify-between"
                 )}
               >
                 {directors.map((person) => (
@@ -136,8 +136,8 @@ const About = ({ directors, supervisors, reports }: Props) => {
               </Tab.Panel>
               <Tab.Panel
                 className={classNames(
-                  "bg-white rounded-xl p-3",
-                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-wrap mx-auto space-x-1 space-y-1"
+                  "bg-gray-100 rounded-xl p-3",
+                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-wrap flex-auto mx-auto justify-between"
                 )}
               >
                 {supervisors.map((person) => (
