@@ -2,9 +2,9 @@ import { Tab } from "@headlessui/react";
 import PersonCard from "../components/PersonCard";
 import Reports from "../components/Reports";
 import { getSdk, Post } from "../interfaces";
-import baseUrl from "../lib/baseUrl";
 import { client } from "../lib/graphCmsClient";
 import Image from "next/image";
+import BASE_URL from "../lib/baseUrl";
 type Props = {
   posts: Array<Post>;
 };
@@ -18,7 +18,7 @@ const Blog = ({ posts }: Props) => {
     <div className="bg-gray-200 mb-96">
       <Image
         className=""
-        src={highlightedPost.coverImage.url || `${baseUrl}/placeholder.jpg"`}
+        src={highlightedPost.coverImage.url || `${BASE_URL}/placeholder.jpg"`}
         alt={highlightedPost.title + "Cover Image"}
         layout="responsive"
         width={720}
