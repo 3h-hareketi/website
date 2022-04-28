@@ -6881,6 +6881,7 @@ export type PostsQuery = {
     locale: Locale;
     title: string;
     tags: Array<string>;
+    excerpt: string;
     content?: { __typename?: "RichText"; html: string } | null;
     coverImage: { __typename?: "Asset"; url: string };
   }>;
@@ -6959,6 +6960,7 @@ export const PostsDocument = gql`
       locale
       title
       tags
+      excerpt
     }
   }
 `;
