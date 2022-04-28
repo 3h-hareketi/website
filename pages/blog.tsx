@@ -18,7 +18,10 @@ const Blog = ({ posts }: Props) => {
     <div className="bg-gray-200 mb-96">
       <Image
         className=""
-        src={highlightedPost.coverImage.url || `${BASE_URL}/placeholder.jpg"`}
+        src={
+          highlightedPost.coverImage.url ||
+          `${"https://" + process.env.VERCEL_ENV}}/placeholder.jpg`
+        }
         alt={highlightedPost.title + "Cover Image"}
         layout="responsive"
         width={720}
