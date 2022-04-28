@@ -7,7 +7,7 @@ type Props = {
 
 const ReportCard = (props: Props) => {
   return (
-    <div className="flex flex-col max-w-xl p-6 bg-white shadow-md rounded-xl">
+    <div className="flex flex-col max-w-xl p-2 my-5 bg-white shadow-md md:p-6 md:mx-8 rounded-xl">
       <div className="flex flex-row">
         <svg
           width="28"
@@ -41,7 +41,7 @@ const ReportCard = (props: Props) => {
           nisl primis eleifend.
         </div>
         <Link href={props.link} passHref>
-          <a className="w-64 px-4 py-2 mt-4 text-white rounded-xl bg-primary-500 hover:bg-primary-700">
+          <a className="w-64 text-white md:px-4 md:py-2 md:mt-4 rounded-xl bg-primary-500 hover:bg-primary-700 max-h-8 md:max-h-full py-0.5 px-2">
             <div className="flex flex-row">
               Download{" "}
               <svg

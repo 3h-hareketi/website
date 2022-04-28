@@ -14,7 +14,7 @@ type Props = {
 
 const PersonCard = (props: Props) => {
   return (
-    <div className="flex flex-col w-64 max-w-xl p-6 bg-white shadow-md rounded-xl">
+    <div className="flex flex-col w-64 max-w-xl p-6 mt-24 bg-white shadow-md rounded-xl">
       <div className="mx-auto -translate-y-16">
         <Image
           src={props.image || ""}

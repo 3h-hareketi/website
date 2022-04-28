@@ -17,7 +17,7 @@ const Reports = ({ reports }: Props) => {
           neque curabitur cubilia habitasse taciti.{" "}
         </div>
       </div>
-      <div className="flex flex-wrap justify-center w-2/3 mx-auto space-x-6 space-y-6">
+      <div className="flex flex-wrap justify-center w-2/3 mx-auto">
         {reports.map((report) => (
           <ReportCard
             key={report.id}

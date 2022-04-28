@@ -36,7 +36,7 @@ const About = ({ directors, supervisors, reports }: Props) => {
         </strong>
         <div className="px-2 py-16 mx-auto sm:px-0">
           <Tab.Group>
-            <Tab.List className="flex max-w-md p-1 mx-auto mb-24 space-x-1 bg-white shadow-md rounded-xl">
+            <Tab.List className="flex max-w-md p-1 mx-auto mb-6 bg-white shadow-md md:space-x-1 rounded-xl">
               <Tab
                 className={({ selected }) =>
                   classNames(
