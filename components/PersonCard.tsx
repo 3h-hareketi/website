@@ -15,16 +15,16 @@ type Props = {
 const PersonCard = (props: Props) => {
   return (
     <div className="flex flex-col w-64 max-w-xl p-6 bg-white shadow-md rounded-xl">
-      <div className="mx-auto">
+      <div className="mx-auto -translate-y-16">
         <Image
           src={props.image || ""}
           alt={props.fullName + "profile image"}
           width={96}
           height={96}
-          className="mb-4 rounded-full"
+          className="rounded-full ring-8 ring-white"
         />
       </div>
-      <h1 className="mx-auto text-xl font-extrabold text-center">
+      <h1 className="-mt-16 text-xl font-extrabold text-center">
         {props.fullName}
       </h1>
       <div className="mx-auto text-lg text-center"> {props.role}</div>

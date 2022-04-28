@@ -36,7 +36,7 @@ const About = ({ directors, supervisors, reports }: Props) => {
         </strong>
         <div className="max-w-md px-2 py-16 mx-auto sm:px-0">
           <Tab.Group>
-            <Tab.List className="flex p-1 space-x-1 bg-white shadow-md rounded-xl">
+            <Tab.List className="flex p-1 mb-24 space-x-1 bg-white shadow-md rounded-xl">
               <Tab
                 className={({ selected }) =>
                   classNames(
@@ -81,7 +81,7 @@ const About = ({ directors, supervisors, reports }: Props) => {
               <Tab.Panel
                 className={classNames(
                   "bg-white rounded-xl p-3",
-                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-wrap mx-auto space-x-1 space-y-1"
+                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-wrap mx-auto space-x-1 space-y-24"
                 )}
               >
                 {supervisors.map((person) => (
