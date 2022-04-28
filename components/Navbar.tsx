@@ -42,25 +42,25 @@ const Navbar = () => {
             </li>
             <li>
               {" "}
-              <Link href="/about" passHref>
+              <Link href="/projects" passHref>
                 <a href="#">PROJECTS</a>
               </Link>
             </li>{" "}
             <li>
               {" "}
-              <Link href="/about" passHref>
+              <Link href="/blog" passHref>
                 <a href="#">BLOG</a>
               </Link>
             </li>
             <li>
               {" "}
-              <Link href="/about" passHref>
+              <Link href="/join" passHref>
                 <a href="#">JOIN US</a>
               </Link>
             </li>{" "}
             <li>
               {" "}
-              <Link href="/about" passHref>
+              <Link href="/contact" passHref>
                 <a href="#">CONTACT US</a>
               </Link>
             </li>
