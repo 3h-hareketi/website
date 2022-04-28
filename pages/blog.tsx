@@ -20,7 +20,7 @@ const Blog = ({ posts }: Props) => {
         className=""
         src={
           highlightedPost.coverImage.url ||
-          `${"https://" + process.env.VERCEL_ENV}}/placeholder.jpg`
+          `${"https://" + process.env.VERCEL_URL}}/placeholder.jpg`
         }
         alt={highlightedPost.title + "Cover Image"}
         layout="responsive"
