@@ -81,85 +81,79 @@ const About = ({ directors, supervisors, reports }: Props) => {
               <Tab.Panel
                 className={classNames(
                   "bg-white rounded-xl p-3",
-                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60"
+                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-wrap mx-auto space-x-1 space-y-1"
                 )}
               >
-                <div className="flex flex-wrap mx-auto space-x-5 space-y-5">
-                  {supervisors.map((person) => (
-                    <PersonCard
-                      key={person.id}
-                      fullName={person.fullName}
-                      biography={person.biography || ""}
-                      twitter={person.twitter || ""}
-                      facebook={person.facebook || ""}
-                      linkedIn={person.linkedIn || ""}
-                      role={person.role}
-                      id={person.id}
-                      image={person.image?.url || ""}
-                      instagram={person.instagram || ""}
-                    />
-                  ))}
-                  {directors.map((person) => (
-                    <PersonCard
-                      key={person.id}
-                      fullName={person.fullName}
-                      biography={person.biography || ""}
-                      twitter={person.twitter || ""}
-                      facebook={person.facebook || ""}
-                      linkedIn={person.linkedIn || ""}
-                      role={person.role}
-                      id={person.id}
-                      image={person.image?.url || ""}
-                      instagram={person.instagram || ""}
-                    />
-                  ))}
-                </div>
+                {supervisors.map((person) => (
+                  <PersonCard
+                    key={person.id}
+                    fullName={person.fullName}
+                    biography={person.biography || ""}
+                    twitter={person.twitter || ""}
+                    facebook={person.facebook || ""}
+                    linkedIn={person.linkedIn || ""}
+                    role={person.role}
+                    id={person.id}
+                    image={person.image?.url || ""}
+                    instagram={person.instagram || ""}
+                  />
+                ))}
+                {directors.map((person) => (
+                  <PersonCard
+                    key={person.id}
+                    fullName={person.fullName}
+                    biography={person.biography || ""}
+                    twitter={person.twitter || ""}
+                    facebook={person.facebook || ""}
+                    linkedIn={person.linkedIn || ""}
+                    role={person.role}
+                    id={person.id}
+                    image={person.image?.url || ""}
+                    instagram={person.instagram || ""}
+                  />
+                ))}
               </Tab.Panel>
               <Tab.Panel
                 className={classNames(
                   "bg-white rounded-xl p-3",
-                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60"
+                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-wrap mx-auto space-x-1 space-y-1"
                 )}
               >
-                <div className="flex flex-wrap mx-auto space-x-5 space-y-5">
-                  {directors.map((person) => (
-                    <PersonCard
-                      key={person.id}
-                      fullName={person.fullName}
-                      biography={person.biography || ""}
-                      twitter={person.twitter || ""}
-                      facebook={person.facebook || ""}
-                      linkedIn={person.linkedIn || ""}
-                      role={person.role}
-                      id={person.id}
-                      image={person.image?.url || ""}
-                      instagram={person.instagram || ""}
-                    />
-                  ))}
-                </div>
+                {directors.map((person) => (
+                  <PersonCard
+                    key={person.id}
+                    fullName={person.fullName}
+                    biography={person.biography || ""}
+                    twitter={person.twitter || ""}
+                    facebook={person.facebook || ""}
+                    linkedIn={person.linkedIn || ""}
+                    role={person.role}
+                    id={person.id}
+                    image={person.image?.url || ""}
+                    instagram={person.instagram || ""}
+                  />
+                ))}
               </Tab.Panel>
               <Tab.Panel
                 className={classNames(
                   "bg-white rounded-xl p-3",
-                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60"
+                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-wrap mx-auto space-x-1 space-y-1"
                 )}
               >
-                <div className="flex flex-wrap mx-auto space-x-5 space-y-5">
-                  {supervisors.map((person) => (
-                    <PersonCard
-                      key={person.id}
-                      fullName={person.fullName}
-                      biography={person.biography || ""}
-                      twitter={person.twitter || ""}
-                      facebook={person.facebook || ""}
-                      linkedIn={person.linkedIn || ""}
-                      role={person.role}
-                      id={person.id}
-                      image={person.image?.url || ""}
-                      instagram={person.instagram || ""}
-                    />
-                  ))}
-                </div>
+                {supervisors.map((person) => (
+                  <PersonCard
+                    key={person.id}
+                    fullName={person.fullName}
+                    biography={person.biography || ""}
+                    twitter={person.twitter || ""}
+                    facebook={person.facebook || ""}
+                    linkedIn={person.linkedIn || ""}
+                    role={person.role}
+                    id={person.id}
+                    image={person.image?.url || ""}
+                    instagram={person.instagram || ""}
+                  />
+                ))}
               </Tab.Panel>
             </Tab.Panels>
           </Tab.Group>
