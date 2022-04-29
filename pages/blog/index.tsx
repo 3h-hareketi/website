@@ -76,9 +76,9 @@ const Blog = ({ posts }: Props) => {
           </div>
         ))}
       </div>
-      <div className="w-1/3 mx-auto">
+      <div className="mx-auto">
         <Tab.Group>
-          <Tab.List className="flex flex-row justify-between p-1 mx-auto mb-6 bg-white shadow-md md:space-x-1 rounded-3xl">
+          <Tab.List className="flex flex-row justify-between w-1/3 p-1 mx-auto mb-6 bg-white shadow-md md:space-x-1 rounded-3xl">
             {uniqueTags.map((tag) => (
               <Tab
                 key={tag}
@@ -102,11 +102,35 @@ const Blog = ({ posts }: Props) => {
                 key={tag}
                 className={classNames(
                   "bg-gray-100 rounded-xl p-3",
-                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-wrap justify-between"
+                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-col justify-center space-y-5"
                 )}
               >
                 {filterPostsByTag(tag).map((post) => (
-                  <div key={post.id}>{post.title}</div>
+                  <div
+                    key={post.id}
+                    className="flex flex-row justify-start space-x-4"
+                  >
+                    <Image
+                      className="rounded-xl"
+                      src={post.coverImage.url}
+                      alt={`${post.title} Cover Image`}
+                      //   layout="responsive"
+                      height={240}
+                      width={480}
+                    />
+                    <div className="flex flex-col w-1/2 mr-auto space-y-5">
+                      <div className="text-sm font-light text-gray-400">
+                        {post.createdBy?.name || " - "}, {post.createdAt}
+                      </div>
+                      <h1 className="text-xl font-bold">{post.title}</h1>
+                      <div className="text-base font-light text-gray-600">
+                        {post.excerpt}
+                      </div>
+                      <div className="w-1/6 p-2 text-center text-white rounded-3xl bg-primary-500">
+                        Read more
+                      </div>
+                    </div>
+                  </div>
                 ))}{" "}
               </Tab.Panel>
             ))}
