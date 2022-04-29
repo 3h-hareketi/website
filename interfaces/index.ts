@@ -6882,6 +6882,7 @@ export type PostQuery = {
     title: string;
     createdAt: any;
     tags: Array<string>;
+    excerpt: string;
     coverImage: { __typename?: "Asset"; url: string };
     createdBy?: { __typename?: "User"; id: string } | null;
     content?: { __typename?: "RichText"; html: string } | null;
@@ -6982,6 +6983,7 @@ export const PostDocument = gql`
         html
       }
       tags
+      excerpt
     }
   }
 `;

@@ -1,5 +1,5 @@
 query Post($id: ID!) {
-  post(where: {id: $id}) {
+  post(where: { id: $id }) {
     title
     coverImage {
       url
@@ -12,5 +12,6 @@ query Post($id: ID!) {
       html
     }
     tags
+    excerpt
   }
 }
