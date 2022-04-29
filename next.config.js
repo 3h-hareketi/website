@@ -18,7 +18,11 @@ const nextConfig = {
 };
 
 module.exports = withSentryConfig(
-  { images: { domains: ["media.graphassets.com"] } },
+  {
+    images: {
+      domains: ["media.graphassets.com", "avatars.githubusercontent.com"],
+    },
+  },
   nextConfig,
   sentryWebpackPluginOptions
 );

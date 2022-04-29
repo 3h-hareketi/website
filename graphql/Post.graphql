@@ -6,7 +6,8 @@ query Post($id: ID!) {
     }
     createdAt
     createdBy {
-      id
+      name
+      picture
     }
     content {
       html

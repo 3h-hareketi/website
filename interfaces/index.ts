@@ -6884,7 +6884,11 @@ export type PostQuery = {
     tags: Array<string>;
     excerpt: string;
     coverImage: { __typename?: "Asset"; url: string };
-    createdBy?: { __typename?: "User"; id: string } | null;
+    createdBy?: {
+      __typename?: "User";
+      name: string;
+      picture?: string | null;
+    } | null;
     content?: { __typename?: "RichText"; html: string } | null;
   } | null;
 };
@@ -6977,7 +6981,8 @@ export const PostDocument = gql`
       }
       createdAt
       createdBy {
-        id
+        name
+        picture
       }
       content {
         html
