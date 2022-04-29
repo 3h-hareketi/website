@@ -34,9 +34,9 @@ const About = ({ directors, supervisors, reports }: Props) => {
         <strong className="mx-auto mt-3 text-center">
           Believe in yourself!
         </strong>
-        <div className="px-2 py-16 mx-auto sm:px-0">
+        <div className="py-16 mx-auto md:px-2 md:w-7/12 sm:px-0">
           <Tab.Group>
-            <Tab.List className="flex max-w-md p-1 mx-auto mb-6 bg-white shadow-md md:space-x-1 rounded-xl">
+            <Tab.List className="flex justify-between w-screen max-w-md mx-auto mb-6 overflow-scroll bg-white shadow-md md:w-auto md:p-1 md:space-x-1 md:rounded-3xl md:overflow-auto">
               <Tab
                 className={({ selected }) =>
                   classNames(
@@ -81,7 +81,7 @@ const About = ({ directors, supervisors, reports }: Props) => {
               <Tab.Panel
                 className={classNames(
                   "bg-gray-100 rounded-xl p-3",
-                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-wrap justify-between"
+                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-wrap md:justify-between justify-center"
                 )}
               >
                 {supervisors.map((person) => (
@@ -94,7 +94,7 @@ const About = ({ directors, supervisors, reports }: Props) => {
               <Tab.Panel
                 className={classNames(
                   "bg-gray-100 rounded-xl p-3",
-                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-wrap flex-auto mx-auto justify-between"
+                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-wrap flex-auto mx-auto justify-center md:justify-between"
                 )}
               >
                 {directors.map((person) => (
@@ -104,7 +104,7 @@ const About = ({ directors, supervisors, reports }: Props) => {
               <Tab.Panel
                 className={classNames(
                   "bg-gray-100 rounded-xl p-3",
-                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-wrap flex-auto mx-auto justify-between"
+                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-wrap flex-auto mx-auto justify-center md:justify-between"
                 )}
               >
                 {supervisors.map((person) => (
