@@ -1,11 +1,10 @@
 import Link from "next/link";
+import { Report } from "../interfaces";
 
 type Props = {
-  title: string;
-  link: string;
+  report: Report;
 };
-
-const ReportCard = (props: Props) => {
+const ReportCard = ({ report }: Props) => {
   return (
     <div className="flex flex-col max-w-xl p-2 my-5 bg-white shadow-md md:p-6 md:mx-8 rounded-xl">
       <div className="flex flex-row">
@@ -32,7 +31,7 @@ const ReportCard = (props: Props) => {
             </clipPath>
           </defs>
         </svg>
-        <h1 className="ml-2 text-xl font-semibold">{props.title}</h1>
+        <h1 className="ml-2 text-xl font-semibold">{report.title}</h1>
       </div>
       <div className="flex flex-row">
         {" "}
@@ -40,7 +39,7 @@ const ReportCard = (props: Props) => {
           Eget venenatis donec venenatis faucibus tempus, ac dictum potenti,
           nisl primis eleifend.
         </div>
-        <Link href={props.link} passHref>
+        <Link href={report.report.url} passHref>
           <a className="w-64 text-white md:px-4 md:py-2 md:mt-4 rounded-xl bg-primary-500 hover:bg-primary-700 max-h-8 md:max-h-full py-0.5 px-2">
             <div className="flex flex-row">
               Download{" "}

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Report } from "../interfaces";
 import ReportCard from "./ReportCard";
 type Props = {
@@ -19,11 +18,7 @@ const Reports = ({ reports }: Props) => {
       </div>
       <div className="flex flex-wrap justify-center w-2/3 mx-auto">
         {reports.map((report) => (
-          <ReportCard
-            key={report.id}
-            title={report.title}
-            link={report.report.url}
-          />
+          <ReportCard key={report.id} report={report} />
         ))}
       </div>
     </>

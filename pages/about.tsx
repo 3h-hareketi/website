@@ -85,32 +85,10 @@ const About = ({ directors, supervisors, reports }: Props) => {
                 )}
               >
                 {supervisors.map((person) => (
-                  <PersonCard
-                    key={person.id}
-                    fullName={person.fullName}
-                    biography={person.biography || ""}
-                    twitter={person.twitter || ""}
-                    facebook={person.facebook || ""}
-                    linkedIn={person.linkedIn || ""}
-                    role={person.role}
-                    id={person.id}
-                    image={person.image?.url || ""}
-                    instagram={person.instagram || ""}
-                  />
+                  <PersonCard key={person.id} person={person} />
                 ))}
                 {directors.map((person) => (
-                  <PersonCard
-                    key={person.id}
-                    fullName={person.fullName}
-                    biography={person.biography || ""}
-                    twitter={person.twitter || ""}
-                    facebook={person.facebook || ""}
-                    linkedIn={person.linkedIn || ""}
-                    role={person.role}
-                    id={person.id}
-                    image={person.image?.url || ""}
-                    instagram={person.instagram || ""}
-                  />
+                  <PersonCard key={person.id} person={person} />
                 ))}
               </Tab.Panel>
               <Tab.Panel
@@ -120,18 +98,7 @@ const About = ({ directors, supervisors, reports }: Props) => {
                 )}
               >
                 {directors.map((person) => (
-                  <PersonCard
-                    key={person.id}
-                    fullName={person.fullName}
-                    biography={person.biography || ""}
-                    twitter={person.twitter || ""}
-                    facebook={person.facebook || ""}
-                    linkedIn={person.linkedIn || ""}
-                    role={person.role}
-                    id={person.id}
-                    image={person.image?.url || ""}
-                    instagram={person.instagram || ""}
-                  />
+                  <PersonCard key={person.id} person={person} />
                 ))}
               </Tab.Panel>
               <Tab.Panel
@@ -141,18 +108,7 @@ const About = ({ directors, supervisors, reports }: Props) => {
                 )}
               >
                 {supervisors.map((person) => (
-                  <PersonCard
-                    key={person.id}
-                    fullName={person.fullName}
-                    biography={person.biography || ""}
-                    twitter={person.twitter || ""}
-                    facebook={person.facebook || ""}
-                    linkedIn={person.linkedIn || ""}
-                    role={person.role}
-                    id={person.id}
-                    image={person.image?.url || ""}
-                    instagram={person.instagram || ""}
-                  />
+                  <PersonCard key={person.id} person={person} />
                 ))}
               </Tab.Panel>
             </Tab.Panels>

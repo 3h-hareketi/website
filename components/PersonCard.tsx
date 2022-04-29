@@ -1,41 +1,33 @@
 import Image from "next/image";
+import { Person } from "../interfaces";
 
 type Props = {
-  fullName: string;
-  role: string;
-  biography: string;
-  facebook: string;
-  id: string;
-  image: string;
-  instagram: string;
-  linkedIn: string;
-  twitter: string;
+  person: Person;
 };
-
-const PersonCard = (props: Props) => {
+const PersonCard = ({ person }: Props) => {
   return (
     <div className="flex flex-col w-64 max-w-xl p-6 mt-24 bg-white shadow-md rounded-xl">
       <div className="mx-auto -translate-y-16">
         <Image
-          src={props.image || ""}
-          alt={props.fullName + "profile image"}
+          src={person.image?.url || ""}
+          alt={person.fullName + "profile image"}
           width={96}
           height={96}
           className="rounded-full ring-8 ring-white"
         />
       </div>
       <h1 className="-mt-16 text-xl font-extrabold text-center">
-        {props.fullName}
+        {person.fullName}
       </h1>
-      <div className="mx-auto text-lg text-center"> {props.role}</div>
+      <div className="mx-auto text-lg text-center"> {person.role}</div>
       <div className="mx-auto mt-4 text-center text-gray-400">
-        {props.biography}
+        {person.biography}
       </div>
       <div className="flex justify-center mt-4 space-x-1 md:mt-8 lg:space-x-2">
-        {props.facebook && (
+        {person.facebook && (
           <a
             className="inline-block px-1"
-            href={props.facebook}
+            href={person.facebook}
             rel="noreferrer"
             target="_blank"
           >
@@ -53,10 +45,10 @@ const PersonCard = (props: Props) => {
             </svg>
           </a>
         )}
-        {props.instagram && (
+        {person.instagram && (
           <a
             className="inline-block px-1"
-            href={props.instagram}
+            href={person.instagram}
             rel="noreferrer"
             target="_blank"
           >
@@ -74,10 +66,10 @@ const PersonCard = (props: Props) => {
             </svg>
           </a>
         )}
-        {props.twitter && (
+        {person.twitter && (
           <a
             className="inline-block px-1"
-            href={props.twitter}
+            href={person.twitter}
             rel="noreferrer"
             target="_blank"
           >
@@ -95,10 +87,10 @@ const PersonCard = (props: Props) => {
             </svg>
           </a>
         )}
-        {props.linkedIn && (
+        {person.linkedIn && (
           <a
             className="inline-block px-1 fill-primary-500"
-            href={props.linkedIn}
+            href={person.linkedIn}
             rel="noreferrer"
             target="_blank"
           >
