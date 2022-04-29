@@ -16,14 +16,18 @@ const BlogPost = ({ post }: Props) => (
         width={1600}
         className="mx-auto rounded-xl -z-10"
       />
-      <div className="z-10 w-2/3 p-24 mx-auto -mt-48 bg-white shadow-xl bg-opacity-90 rounded-xl backdrop-filter backdrop-blur-[80px] ">
-        <h1 className="text-4xl font-bold text-black">{post.title}</h1>
-        <h2 className="text-xl font-bold text-gray-600">{post.excerpt}</h2>
+      <div className="z-10 w-2/3 p-8 md:p-24 mx-auto -mt-16 md:-mt-48 bg-white shadow-xl bg-opacity-90 rounded-xl backdrop-filter backdrop-blur-[80px] ">
+        <h1 className="mb-10 text-2xl font-bold text-black md:text-4xl">
+          {post.title}
+        </h1>
+        <h2 className="mb-6 text-base font-bold text-gray-600 md:text-xl">
+          {post.excerpt}
+        </h2>
         {/*TODO*/}
         {/*HTML or Markdown blog post renderer*/}
         <div
           dangerouslySetInnerHTML={{ __html: post.content?.html || "" }}
-          className="text-black"
+          className="text-sm text-black"
         ></div>{" "}
         {/*TODO */}
       </div>
