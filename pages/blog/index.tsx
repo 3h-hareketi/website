@@ -97,19 +97,19 @@ const Blog = ({ posts }: Props) => {
             ))}
           </Tab.List>
           <Tab.Panels className="w-11/12 mx-auto mt-2">
-            {uniqueTags.map((tag) =>
-              filterPostsByTag(tag).map((post) => (
-                <Tab.Panel
-                  key={post.id}
-                  className={classNames(
-                    "bg-gray-100 rounded-xl p-3",
-                    "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-wrap justify-between"
-                  )}
-                >
-                  <div>{post.title}</div>
-                </Tab.Panel>
-              ))
-            )}
+            {uniqueTags.map((tag) => (
+              <Tab.Panel
+                key={tag}
+                className={classNames(
+                  "bg-gray-100 rounded-xl p-3",
+                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-wrap justify-between"
+                )}
+              >
+                {filterPostsByTag(tag).map((post) => (
+                  <div key={post.id}>{post.title}</div>
+                ))}{" "}
+              </Tab.Panel>
+            ))}
           </Tab.Panels>
         </Tab.Group>
       </div>
