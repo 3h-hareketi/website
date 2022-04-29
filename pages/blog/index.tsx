@@ -1,3 +1,4 @@
+import { Tab } from "@headlessui/react";
 import Image from "next/image";
 import { Post, getSdk } from "../../interfaces";
 import { client } from "../../lib/graphCmsClient";
@@ -10,6 +11,19 @@ const Blog = ({ posts }: Props) => {
   const highlightedPost = posts.filter((post) =>
     post.tags.includes("highlighted")
   )[0];
+
+  function classNames(...classes: string[]) {
+    return classes.filter(Boolean).join(" ");
+  }
+
+  const TAGS = [
+    "Art",
+    "Food",
+    "Health",
+    "Technology",
+    "Environment",
+    "Economics",
+  ];
 
   return (
     <div className="bg-gray-200 mb-96">
@@ -58,6 +72,41 @@ const Blog = ({ posts }: Props) => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="w-1/3 mx-auto">
+        <Tab.Group>
+          <Tab.List className="flex flex-row justify-between p-1 mx-auto mb-6 bg-white shadow-md md:space-x-1 rounded-3xl">
+            {TAGS.map((tag) => (
+              <Tab
+                key={tag}
+                className={({ selected }) =>
+                  classNames(
+                    "w-full py-2.5 text-sm leading-5 font-medium text-white rounded-3xl",
+                    "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-primary-400 ring-white ring-opacity-60",
+                    selected
+                      ? "bg-primary-500 shadow"
+                      : "text-black hover:text-primary-200"
+                  )
+                }
+              >
+                {tag}{" "}
+              </Tab>
+            ))}
+          </Tab.List>
+          <Tab.Panels className="w-11/12 mx-auto mt-2">
+            {posts.map((post) => (
+              <Tab.Panel
+                key={post.id}
+                className={classNames(
+                  "bg-gray-100 rounded-xl p-3",
+                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-wrap justify-between"
+                )}
+              >
+                <div>{post.title}</div>
+              </Tab.Panel>
+            ))}
+          </Tab.Panels>
+        </Tab.Group>
       </div>
     </div>
   );
