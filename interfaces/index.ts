@@ -6882,8 +6882,10 @@ export type PostsQuery = {
     title: string;
     tags: Array<string>;
     excerpt: string;
+    createdAt: any;
     content?: { __typename?: "RichText"; html: string } | null;
     coverImage: { __typename?: "Asset"; url: string };
+    createdBy?: { __typename?: "User"; name: string } | null;
   }>;
 };
 
@@ -6961,6 +6963,10 @@ export const PostsDocument = gql`
       title
       tags
       excerpt
+      createdAt
+      createdBy {
+        name
+      }
     }
   }
 `;

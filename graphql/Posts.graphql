@@ -11,5 +11,9 @@ query Posts {
     title
     tags
     excerpt
+    createdAt
+    createdBy {
+      name
+    }
   }
 }
