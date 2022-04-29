@@ -19,7 +19,12 @@ const BlogPost = ({ post }: Props) => (
       <div className="z-10 w-2/3 p-24 mx-auto -mt-24 bg-gray-200 shadow-xl rounded-xl">
         <h1 className="text-4xl font-bold text-black">{post.title}</h1>
         <h2 className="text-xl font-bold text-gray-600">{post.excerpt}</h2>
-        {/* <div className="text-black">{post.content?.html}</div> */}
+        {/*TODO HTML or Markdown blog post renderer TODO*/}
+        <div
+          dangerouslySetInnerHTML={{ __html: post.content?.html || "" }}
+          className="text-black"
+        ></div>{" "}
+        {/*TODO */}
       </div>
     </div>
   </div>
