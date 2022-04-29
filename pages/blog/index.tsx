@@ -101,14 +101,14 @@ const Blog = ({ posts }: Props) => {
               <Tab.Panel
                 key={tag}
                 className={classNames(
-                  "bg-gray-100 rounded-xl p-3",
+                  "rounded-xl p-3",
                   "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-col justify-center space-y-5"
                 )}
               >
                 {filterPostsByTag(tag).map((post) => (
                   <div
                     key={post.id}
-                    className="flex flex-row flex-wrap justify-start space-x-4"
+                    className="flex flex-row flex-wrap justify-center space-x-4"
                   >
                     <Image
                       className="rounded-xl"
@@ -118,7 +118,7 @@ const Blog = ({ posts }: Props) => {
                       height={240}
                       width={480}
                     />
-                    <div className="flex flex-col mr-auto space-y-5 md:w-1/2">
+                    <div className="flex flex-col mr-auto space-y-5 md:w-1/3">
                       <div className="text-xs font-light text-gray-400 md:text-sm">
                         {post.createdBy?.name || " - "}, {post.createdAt}
                       </div>
