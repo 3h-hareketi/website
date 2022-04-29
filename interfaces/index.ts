@@ -6871,12 +6871,30 @@ export type FeaturedBlogsQuery = {
   }>;
 };
 
+export type PostQueryVariables = Exact<{
+  id: Scalars["ID"];
+}>;
+
+export type PostQuery = {
+  __typename?: "Query";
+  post?: {
+    __typename?: "Post";
+    title: string;
+    createdAt: any;
+    tags: Array<string>;
+    coverImage: { __typename?: "Asset"; url: string };
+    createdBy?: { __typename?: "User"; id: string } | null;
+    content?: { __typename?: "RichText"; html: string } | null;
+  } | null;
+};
+
 export type PostsQueryVariables = Exact<{ [key: string]: never }>;
 
 export type PostsQuery = {
   __typename?: "Query";
   posts: Array<{
     __typename?: "Post";
+    id: string;
     date: any;
     locale: Locale;
     title: string;
@@ -6949,9 +6967,28 @@ export const FeaturedBlogsDocument = gql`
     }
   }
 `;
+export const PostDocument = gql`
+  query Post($id: ID!) {
+    post(where: { id: $id }) {
+      title
+      coverImage {
+        url
+      }
+      createdAt
+      createdBy {
+        id
+      }
+      content {
+        html
+      }
+      tags
+    }
+  }
+`;
 export const PostsDocument = gql`
   query Posts {
     posts {
+      id
       content {
         html
       }
@@ -7040,6 +7077,20 @@ export function getSdk(
             ...wrappedRequestHeaders,
           }),
         "FeaturedBlogs",
+        "query"
+      );
+    },
+    Post(
+      variables: PostQueryVariables,
+      requestHeaders?: Dom.RequestInit["headers"]
+    ): Promise<PostQuery> {
+      return withWrapper(
+        (wrappedRequestHeaders) =>
+          client.request<PostQuery>(PostDocument, variables, {
+            ...requestHeaders,
+            ...wrappedRequestHeaders,
+          }),
+        "Post",
         "query"
       );
     },

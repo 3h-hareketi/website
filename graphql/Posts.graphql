@@ -1,5 +1,6 @@
 query Posts {
   posts {
+    id
     content {
       html
     }
