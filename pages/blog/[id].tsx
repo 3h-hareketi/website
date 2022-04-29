@@ -6,7 +6,7 @@ type Props = {
   post: Post;
 };
 const BlogPost = ({ post }: Props) => (
-  <div className="flex justify-center w-screen">
+  <div className="flex justify-center w-screen mb-24">
     <div className="flex flex-col">
       {" "}
       <Image
@@ -123,6 +123,46 @@ const BlogPost = ({ post }: Props) => (
           className="text-sm text-black"
         ></div>{" "}
         {/*TODO */}
+      </div>
+      <h1 className="mx-auto mt-24 text-xl font-semibold text-gray-700 md:text-4xl">
+        Similar Posts
+      </h1>
+      <div className="mx-auto text-base text-gray-400">
+        We think you might like these articles too.
+      </div>
+      <div className="flex flex-row flex-wrap w-[80vw]">
+        <div className="flex flex-col shadow-xl rounded-xl">
+          <Image
+            src={post.coverImage.url}
+            alt={`Cover image of suggested article: ${post.title}`}
+            width={500}
+            height={300}
+            className="rounded-t-xl"
+          />
+          <div className="flex flex-col justify-between p-6">
+            <div className="flex flex-row">
+              <div className="text-sm text-gray-400">
+                {post.createdBy?.name}, {post.createdAt}
+              </div>
+              <div className="ml-auto">
+                {" "}
+                {post.tags.slice(0, 1).map((tag) => (
+                  <div
+                    key={tag}
+                    className={`text-white text-xs rounded-xl md:p-1.5 md:mx-1 uppercase md:max-h-8 max-h-6 p-0.5 ${"bg-purple-500"}`}
+                  >
+                    {tag}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <h1 className="text-base font-semibold">{post.title}</h1>
+            <div className="mt-4 text-xs text-gray-800">{post.excerpt}</div>
+            <div className="w-24 p-3 mt-6 text-xs text-center text-white rounded-full bg-primary-500">
+              Read more
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
