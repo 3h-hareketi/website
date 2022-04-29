@@ -1,5 +1,6 @@
 import { Tab } from "@headlessui/react";
 import Image from "next/image";
+import Link from "next/link";
 import { Post, getSdk } from "../../interfaces";
 import { client } from "../../lib/graphCmsClient";
 
@@ -30,17 +31,6 @@ const Blog = ({ posts }: Props) => {
 
   return (
     <div className="bg-gray-200 mb-96">
-      {/* <Image
-        className=""
-        src={
-          highlightedPost.coverImage.url ||
-          `${"https://" + process.env.VERCEL_URL}}/placeholder.jpg`
-        }
-        alt={highlightedPost.title + "Cover Image"}
-        layout="responsive"
-        width={720}
-        height={180}
-      /> */}
       <div
         className="w-full h-[60vh]"
         style={{
@@ -62,10 +52,14 @@ const Blog = ({ posts }: Props) => {
               <p className="mt-6 text-sm text-gray-300">
                 {highlightedPost.excerpt}
               </p>
-
-              <div className="p-3 mt-8 font-bold text-center text-black bg-white md:mt-16 w-36 rounded-3xl">
-                Read More
-              </div>
+              <Link href={`/blog/${highlightedPost.id}`}>
+                <a
+                  href="#"
+                  className="p-3 mt-8 font-bold text-center text-black bg-white md:mt-16 w-36 rounded-3xl"
+                >
+                  Read More
+                </a>
+              </Link>
             </div>
           </div>
           {posts.slice(0, 2).map((post) => (
@@ -76,10 +70,14 @@ const Blog = ({ posts }: Props) => {
               <div className="flex flex-col space-y-5 text-left">
                 <h1 className="text-xl font-bold text-white">{post.title}</h1>
                 <p className="text-sm text-gray-300">{post.excerpt}</p>
-
-                <div className="p-3 font-bold text-center text-black bg-white w-36 rounded-3xl">
-                  Read More
-                </div>
+                <Link href={`${post.id}`}>
+                  <a
+                    href="#"
+                    className="p-3 font-bold text-center text-black bg-white w-36 rounded-3xl"
+                  >
+                    Read More
+                  </a>
+                </Link>
               </div>
             </div>
           ))}
@@ -135,9 +133,14 @@ const Blog = ({ posts }: Props) => {
                       <div className="text-base font-light text-gray-600">
                         {post.excerpt}
                       </div>
-                      <div className="w-4/5 p-2 text-sm text-center text-white md:w-1/6 rounded-3xl bg-primary-500">
-                        Read more
-                      </div>
+                      <Link href={`/blog/${post.id}`} passHref>
+                        <a
+                          href="#"
+                          className="w-4/5 p-2 text-sm text-center text-white md:w-1/6 rounded-3xl bg-primary-500"
+                        >
+                          Read more
+                        </a>
+                      </Link>
                     </div>
                   </div>
                 ))}{" "}
