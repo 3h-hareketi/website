@@ -1,10 +1,7 @@
-import { Tab } from "@headlessui/react";
-import PersonCard from "../components/PersonCard";
-import Reports from "../components/Reports";
-import { getSdk, Post } from "../interfaces";
-import { client } from "../lib/graphCmsClient";
 import Image from "next/image";
-import BASE_URL from "../lib/baseUrl";
+import { Post, getSdk } from "../../interfaces";
+import { client } from "../../lib/graphCmsClient";
+
 type Props = {
   posts: Array<Post>;
 };
