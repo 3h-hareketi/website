@@ -17,7 +17,7 @@ const BlogPost = ({ post }: Props) => (
         className="mx-auto rounded-xl -z-10"
       />
       <div className="z-10 w-2/3 p-8 md:p-24 mx-auto -mt-16 md:-mt-48 bg-white shadow-xl bg-opacity-90 rounded-xl backdrop-filter backdrop-blur-[80px] ">
-        <div className="flex flex-row md:-mt-12 md:-ml-12">
+        <div className="flex flex-row flex-wrap md:-mt-12 md:-ml-12 md:flex-nowrap">
           <Image
             className="rounded-full"
             src={post.createdBy?.picture || "/placeholder.jpg"}
@@ -26,11 +26,10 @@ const BlogPost = ({ post }: Props) => (
             height={60}
           />
           <div className="flex flex-col text-xs text-left text-black md:text-sm">
-            {" "}
             <div className="">{post.createdBy?.name}</div>
             <div className="mb-10 text-xs text-gray-600"> {post.createdAt}</div>
           </div>
-          <div className="ml-auto">
+          <div className="md:ml-auto">
             <div className="flex justify-center mt-4 space-x-1 md:mt-8 lg:space-x-2">
               <a
                 className="inline-block px-1"
