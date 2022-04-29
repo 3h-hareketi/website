@@ -6,7 +6,7 @@ type Props = {
   post: Post;
 };
 const BlogPost = ({ post }: Props) => (
-  <div className="flex justify-center w-screen mb-24">
+  <div className="flex justify-center w-full mb-24">
     <div className="flex flex-col">
       {" "}
       <Image
@@ -130,7 +130,7 @@ const BlogPost = ({ post }: Props) => (
       <div className="mx-auto text-base text-gray-400">
         We think you might like these articles too.
       </div>
-      <div className="flex flex-row flex-wrap w-[80vw]">
+      <div className="flex flex-row flex-wrap w-[80vw] mt-16">
         <div className="flex flex-col shadow-xl rounded-xl">
           <Image
             src={post.coverImage.url}
