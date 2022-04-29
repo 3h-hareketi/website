@@ -78,7 +78,7 @@ const Blog = ({ posts }: Props) => {
       </div>
       <div className="mx-auto">
         <Tab.Group>
-          <Tab.List className="flex flex-row justify-between w-1/3 p-1 mx-auto mb-6 bg-white shadow-md md:space-x-1 rounded-3xl">
+          <Tab.List className="flex flex-row justify-between p-1 mx-auto mb-6 bg-white shadow-md md:w-1/3 md:space-x-1 rounded-3xl">
             {uniqueTags.map((tag) => (
               <Tab
                 key={tag}
@@ -108,7 +108,7 @@ const Blog = ({ posts }: Props) => {
                 {filterPostsByTag(tag).map((post) => (
                   <div
                     key={post.id}
-                    className="flex flex-row justify-start space-x-4"
+                    className="flex flex-row flex-wrap justify-start space-x-4"
                   >
                     <Image
                       className="rounded-xl"
@@ -118,15 +118,15 @@ const Blog = ({ posts }: Props) => {
                       height={240}
                       width={480}
                     />
-                    <div className="flex flex-col w-1/2 mr-auto space-y-5">
-                      <div className="text-sm font-light text-gray-400">
+                    <div className="flex flex-col mr-auto space-y-5 md:w-1/2">
+                      <div className="text-xs font-light text-gray-400 md:text-sm">
                         {post.createdBy?.name || " - "}, {post.createdAt}
                       </div>
                       <h1 className="text-xl font-bold">{post.title}</h1>
                       <div className="text-base font-light text-gray-600">
                         {post.excerpt}
                       </div>
-                      <div className="w-1/6 p-2 text-center text-white rounded-3xl bg-primary-500">
+                      <div className="w-4/5 p-2 text-center text-white md:w-1/6 rounded-3xl bg-primary-500">
                         Read more
                       </div>
                     </div>
