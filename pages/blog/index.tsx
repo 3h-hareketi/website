@@ -15,15 +15,14 @@ const Blog = ({ posts }: Props) => {
   function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(" ");
   }
-
-  const TAGS = [
-    "Art",
-    "Food",
-    "Health",
-    "Technology",
-    "Environment",
-    "Economics",
-  ];
+  const uniqueTags: string[] = [];
+  posts.forEach((post) => {
+    post.tags.forEach((tag) => {
+      if (!uniqueTags.includes(tag)) {
+        uniqueTags.push(tag);
+      }
+    });
+  });
 
   return (
     <div className="bg-gray-200 mb-96">
@@ -76,7 +75,7 @@ const Blog = ({ posts }: Props) => {
       <div className="w-1/3 mx-auto">
         <Tab.Group>
           <Tab.List className="flex flex-row justify-between p-1 mx-auto mb-6 bg-white shadow-md md:space-x-1 rounded-3xl">
-            {TAGS.map((tag) => (
+            {uniqueTags.map((tag) => (
               <Tab
                 key={tag}
                 className={({ selected }) =>
