@@ -108,10 +108,10 @@ const Blog = ({ posts }: Props) => {
                 {filterPostsByTag(tag).map((post) => (
                   <div
                     key={post.id}
-                    className="flex flex-row flex-wrap justify-center space-x-4"
+                    className="flex flex-row flex-wrap justify-center pb-4 space-x-4 bg-white md:bg-inherit rounded-xl"
                   >
                     <Image
-                      className="rounded-xl"
+                      className="rounded-t-xl md:rounded-xl"
                       src={post.coverImage.url}
                       alt={`${post.title} Cover Image`}
                       //   layout="responsive"
@@ -119,14 +119,14 @@ const Blog = ({ posts }: Props) => {
                       width={480}
                     />
                     <div className="flex flex-col mr-auto space-y-5 md:w-1/3">
-                      <div className="text-xs font-light text-gray-400 md:text-sm">
+                      <div className="mt-2 text-sm font-light text-gray-400 md:mt-0">
                         {post.createdBy?.name || " - "}, {post.createdAt}
                       </div>
                       <h1 className="text-xl font-bold">{post.title}</h1>
                       <div className="text-base font-light text-gray-600">
                         {post.excerpt}
                       </div>
-                      <div className="w-4/5 p-2 text-center text-white md:w-1/6 rounded-3xl bg-primary-500">
+                      <div className="w-4/5 p-2 text-sm text-center text-white md:w-1/6 rounded-3xl bg-primary-500">
                         Read more
                       </div>
                     </div>
