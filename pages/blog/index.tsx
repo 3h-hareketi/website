@@ -78,13 +78,13 @@ const Blog = ({ posts }: Props) => {
       </div>
       <div className="mx-auto">
         <Tab.Group>
-          <Tab.List className="flex flex-row justify-between p-1 mx-auto mb-6 bg-white shadow-md md:w-1/3 md:space-x-1 rounded-3xl">
+          <Tab.List className="flex flex-row p-1 mx-auto mb-6 overflow-scroll bg-white shadow-md md:justify-between md:w-1/3 md:space-x-1 md:rounded-3xl">
             {uniqueTags.map((tag) => (
               <Tab
                 key={tag}
                 className={({ selected }) =>
                   classNames(
-                    "w-full py-2.5 text-sm leading-5 font-medium text-white rounded-3xl",
+                    "w-full mx-3 md:mx-0 py-2.5 text-sm leading-5 font-medium text-white rounded-3xl",
                     "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-primary-400 ring-white ring-opacity-60",
                     selected
                       ? "bg-primary-500 shadow"
