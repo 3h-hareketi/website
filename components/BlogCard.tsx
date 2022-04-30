@@ -15,8 +15,7 @@ const BlogCard = (props: BlogProps) => {
       <div
         style={{
           backgroundImage: `url(${
-            props.image ||
-            `${"https://" + process.env.VERCEL_URL}}/placeholder.jpg`
+            props.image || `${BASE_URL}}/placeholder.jpg`
           })`,
         }}
         className={`w-full h-36 md:w-3/4 md:mt-16 md:h-[50vh] rounded-xl flex my-8 md:mx-1 md:my-0 ${

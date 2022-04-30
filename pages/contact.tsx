@@ -1,9 +1,11 @@
+import BASE_URL from "../lib/baseUrl";
+
 const Contact = () => {
   return (
     <div
       style={{
         background: "#12ABBB",
-        backgroundImage: `url("/contact.svg")`,
+        backgroundImage: `url("${BASE_URL}/contact.svg")`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "fit",
         backgroundPosition: "center",

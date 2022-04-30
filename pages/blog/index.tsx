@@ -2,6 +2,7 @@ import { Tab } from "@headlessui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { Post, getSdk } from "../../interfaces";
+import BASE_URL from "../../lib/baseUrl";
 import { client } from "../../lib/graphCmsClient";
 
 type Props = {
@@ -34,7 +35,7 @@ const Blog = ({ posts }: Props) => {
       <div
         className="w-full h-[60vh]"
         style={{
-          backgroundImage: `url("/placeholder.jpg")`,
+          backgroundImage: `url("${BASE_URL}/placeholder.jpg")`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "fit",
           backgroundPosition: "center",

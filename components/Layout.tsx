@@ -20,7 +20,7 @@ const Layout = ({ children }: Props) => {
           ? {
               background:
                 "radial-gradient(50% 50% at 50% 50%, #1BC3D5 2.1%, #1696BE 100%), #12ABBB",
-              backgroundImage: `url("/background.svg")`,
+              backgroundImage: `url("${BASE_URL}/background.svg")`,
               backgroundRepeat: "no-repeat",
               backgroundSize: "fit",
               backgroundPosition: "center",
