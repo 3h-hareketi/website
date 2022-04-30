@@ -6932,7 +6932,18 @@ export type SimilarPostsQueryVariables = Exact<{
 
 export type SimilarPostsQuery = {
   __typename?: "Query";
-  posts: Array<{ __typename?: "Post"; id: string }>;
+  posts: Array<{
+    __typename?: "Post";
+    id: string;
+    date: any;
+    locale: Locale;
+    title: string;
+    tags: Array<string>;
+    excerpt: string;
+    createdAt: any;
+    coverImage: { __typename?: "Asset"; url: string };
+    createdBy?: { __typename?: "User"; name: string } | null;
+  }>;
 };
 
 export const BoardOfDirectorsMembersDocument = gql`
@@ -7041,6 +7052,18 @@ export const SimilarPostsDocument = gql`
   query SimilarPosts($currentPost: ID!, $tag: [String!]) {
     posts(where: { tags_contains_all: $tag, id_not: $currentPost }) {
       id
+      coverImage {
+        url
+      }
+      date
+      locale
+      title
+      tags
+      excerpt
+      createdAt
+      createdBy {
+        name
+      }
     }
   }
 `;
