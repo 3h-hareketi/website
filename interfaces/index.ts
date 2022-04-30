@@ -6924,6 +6924,16 @@ export type ReportsQuery = {
   }>;
 };
 
+export type SimilarPostsQueryVariables = Exact<{
+  currentPost: Scalars["ID"];
+  tag?: InputMaybe<Array<Scalars["String"]> | Scalars["String"]>;
+}>;
+
+export type SimilarPostsQuery = {
+  __typename?: "Query";
+  posts: Array<{ __typename?: "Post"; id: string }>;
+};
+
 export const BoardOfDirectorsMembersDocument = gql`
   query BoardOfDirectorsMembers {
     people(where: { boardOfDirectorsMember: true }) {
@@ -7022,6 +7032,13 @@ export const ReportsDocument = gql`
       report {
         url
       }
+    }
+  }
+`;
+export const SimilarPostsDocument = gql`
+  query SimilarPosts($currentPost: ID!, $tag: [String!]) {
+    posts(where: { tags_contains_all: $tag, id_not: $currentPost }) {
+      id
     }
   }
 `;
@@ -7126,6 +7143,20 @@ export function getSdk(
             ...wrappedRequestHeaders,
           }),
         "Reports",
+        "query"
+      );
+    },
+    SimilarPosts(
+      variables: SimilarPostsQueryVariables,
+      requestHeaders?: Dom.RequestInit["headers"]
+    ): Promise<SimilarPostsQuery> {
+      return withWrapper(
+        (wrappedRequestHeaders) =>
+          client.request<SimilarPostsQuery>(SimilarPostsDocument, variables, {
+            ...requestHeaders,
+            ...wrappedRequestHeaders,
+          }),
+        "SimilarPosts",
         "query"
       );
     },

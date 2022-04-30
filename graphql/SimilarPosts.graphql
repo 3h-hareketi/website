@@ -1,0 +1,5 @@
+query SimilarPosts($currentPost: ID!, $tag: [String!]) {
+  posts(where: {tags_contains_all: $tag, id_not: $currentPost}) {
+    id
+  }
+}
