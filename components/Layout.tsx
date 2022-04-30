@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import Navbar from "./Navbar";
 import { DefaultSeo, LogoJsonLd, OrganizationJsonLd } from "next-seo";
 import { useRouter } from "next/router";
 import Footer from "./Footer";
-import BASE_URL from "../lib/baseUrl";
 
 type Props = {
   children: React.ReactNode;
@@ -33,12 +32,12 @@ const Layout = ({ children }: Props) => {
         defaultTitle="3H Hareketi"
         openGraph={{
           type: "website",
-          url: router.pathname,
+          // url: router.pathname,
           locale: "tr_TR",
           site_name: "3H Hareketi",
           images: [
             {
-              url: `${BASE_URL}/logo.png`,
+              url: `${"https://" + process.env.VERCEL_URL}/logo.png`,
               width: 1200,
               height: 1200,
               alt: "3H Hareketi",
@@ -52,11 +51,14 @@ const Layout = ({ children }: Props) => {
           cardType: "summary_large_image",
         }}
       />
-      <LogoJsonLd logo={`${BASE_URL}/logo.png`} url={BASE_URL!} />
+      <LogoJsonLd
+        logo={`$${"https://" + process.env.VERCEL_URL}/logo.png`}
+        url={"https://" + process.env.VERCEL_URL!}
+      />
       <OrganizationJsonLd
         type="NGO"
         id="https://www.3hhareketi.org/"
-        logo={`${BASE_URL}/logo.png`}
+        logo={`${"https://" + process.env.VERCEL_URL}}/logo.png`}
         legalName="Hürriyet Hukuk Hoşgörü Hareketi Derneği"
         name="3H Hareketi"
         address={{

@@ -34,7 +34,9 @@ const Blog = ({ posts }: Props) => {
       <div
         className="w-full h-[60vh]"
         style={{
-          backgroundImage: `url("/placeholder.jpg")`,
+          backgroundImage: `url("${
+            "https://" + process.env.VERCEL_URL
+          }/placeholder.jpg")`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "fit",
           backgroundPosition: "center",

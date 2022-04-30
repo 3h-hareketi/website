@@ -3,7 +3,9 @@ const Contact = () => {
     <div
       style={{
         background: "#12ABBB",
-        backgroundImage: `url("/contact.svg")`,
+        backgroundImage: `url("${
+          "https://" + process.env.VERCEL_URL
+        }/contact.svg")`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "fit",
         backgroundPosition: "center",
