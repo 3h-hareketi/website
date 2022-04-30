@@ -121,22 +121,11 @@ const BlogPost = ({ post, similarPosts }: Props) => (
           {post.excerpt}
         </h2>
         {post.content?.raw && (
-          <RichText
-            content={post.content?.raw}
-            renderers={{
-              blockquote: ({ children }) => (
-                <div className="">
-                  {/* TODO add custom serif font to tailwind config and import it here*/}
-                  {/* for  custom blockquote styling */}
-                  <div className="italic font-extrabold text-black">
-                    {children}
-                  </div>
-                  {/* TODO add simple quotation mark svg */}
-                </div>
-              ),
-            }}
-          />
+          <div className="prose">
+            <RichText content={post.content?.raw} />
+          </div>
         )}
+        {/* {post.content?.raw && <RichText content={post.content?.raw} />} */}
       </div>
       {similarPosts && (
         <>

@@ -28,5 +28,5 @@ module.exports = {
       sans: ["Inter"],
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
