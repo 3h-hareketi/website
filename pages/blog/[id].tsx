@@ -2,6 +2,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { getSdk, Post } from "../../interfaces";
 import { client } from "../../lib/graphCmsClient";
 import Image from "next/image";
+import Link from "next/link";
 type Props = {
   post: Post;
   similarPosts: Post[];
@@ -134,12 +135,12 @@ const BlogPost = ({ post, similarPosts }: Props) => (
           <div className="mx-auto text-base text-gray-400">
             We think you might like these articles too.
           </div>
-          <div className="flex flex-row flex-wrap justify-between w-[80vw] mt-16">
+          <div className="flex flex-row flex-wrap justify-between w-[80vw] mt-16 self-center">
             {similarPosts &&
               similarPosts.map((post) => (
                 <div
                   key={post.id}
-                  className="flex flex-col mt-8 shadow-xl rounded-xl"
+                  className="flex flex-col max-w-lg mt-8 shadow-xl rounded-xl"
                 >
                   <Image
                     src={post.coverImage.url}
@@ -169,9 +170,11 @@ const BlogPost = ({ post, similarPosts }: Props) => (
                     <div className="mt-4 text-xs text-gray-800">
                       {post.excerpt}
                     </div>
-                    <div className="w-24 p-3 mt-6 text-xs text-center text-white rounded-full bg-primary-500">
-                      Read more
-                    </div>
+                    <Link passHref href={`/blog/${post.id}`}>
+                      <a className="w-24 p-3 mt-6 text-xs text-center text-white rounded-full bg-primary-500">
+                        Read more
+                      </a>
+                    </Link>
                   </div>
                 </div>
               ))}
