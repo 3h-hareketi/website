@@ -4,6 +4,7 @@ import { client } from "../../lib/graphCmsClient";
 import Image from "next/image";
 import Link from "next/link";
 import { RichText } from "@graphcms/rich-text-react-renderer";
+import BASE_URL from "../../lib/baseUrl";
 type Props = {
   post: Post;
   similarPosts: Post[];
@@ -14,7 +15,7 @@ const BlogPost = ({ post, similarPosts }: Props) => (
       {" "}
       <Image
         alt={`${post.title} Cover Image`}
-        src={post.coverImage.url}
+        src={post.coverImage.url || `${BASE_URL}/placeholder.jpg`}
         height={720}
         width={1600}
         className="mx-auto rounded-xl -z-10"
@@ -23,7 +24,7 @@ const BlogPost = ({ post, similarPosts }: Props) => (
         <div className="flex flex-row flex-wrap md:-mt-12 md:-ml-12 md:flex-nowrap">
           <Image
             className="rounded-full"
-            src={post.createdBy?.picture || "/placeholder.jpg"}
+            src={post.createdBy?.picture || `${BASE_URL}/placeholder.jpg`}
             alt={"Post author" + post.createdBy?.name + "'s profile image"}
             width={80}
             height={60}
@@ -121,18 +122,18 @@ const BlogPost = ({ post, similarPosts }: Props) => (
         </h2>
         <RichText
           content={post.content?.raw}
-          // renderers={{
-          //   blockquote: ({ children }) => (
-          //     <div className="">
-          //       {/* TODO add custom serif font to tailwind config and import it here*/}
-          //       {/* for  custom blockquote styling */}
-          //       <div className="italic font-extrabold text-black">
-          //         {children}
-          //       </div>
-          //       {/* TODO add simple quotation mark svg */}
-          //     </div>
-          //   ),
-          // }}
+          renderers={{
+            blockquote: ({ children }) => (
+              <div className="">
+                {/* TODO add custom serif font to tailwind config and import it here*/}
+                {/* for  custom blockquote styling */}
+                <div className="italic font-extrabold text-black">
+                  {children}
+                </div>
+                {/* TODO add simple quotation mark svg */}
+              </div>
+            ),
+          }}
         />
       </div>
       {similarPosts && (

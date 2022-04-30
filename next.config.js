@@ -20,7 +20,11 @@ const nextConfig = {
 module.exports = withSentryConfig(
   {
     images: {
-      domains: ["media.graphassets.com", "avatars.githubusercontent.com"],
+      domains: [
+        "media.graphassets.com",
+        "avatars.githubusercontent.com",
+        "localhost",
+      ],
     },
   },
   nextConfig,
