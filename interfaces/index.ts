@@ -6890,7 +6890,7 @@ export type PostQuery = {
       name: string;
       picture?: string | null;
     } | null;
-    content?: { __typename?: "RichText"; html: string } | null;
+    content?: { __typename?: "RichText"; raw: any } | null;
   } | null;
 };
 
@@ -7008,7 +7008,7 @@ export const PostDocument = gql`
         picture
       }
       content {
-        html
+        raw
       }
       tags
       excerpt
