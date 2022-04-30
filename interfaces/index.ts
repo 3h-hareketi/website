@@ -6879,6 +6879,7 @@ export type PostQuery = {
   __typename?: "Query";
   post?: {
     __typename?: "Post";
+    id: string;
     title: string;
     createdAt: any;
     tags: Array<string>;
@@ -6985,6 +6986,7 @@ export const FeaturedBlogsDocument = gql`
 export const PostDocument = gql`
   query Post($id: ID!) {
     post(where: { id: $id }) {
+      id
       title
       coverImage {
         url
