@@ -19,11 +19,11 @@ const BlogCard = (props: BlogProps) => {
             `${"https://" + process.env.VERCEL_URL}}/placeholder.jpg`
           })`,
         }}
-        className={`w-full h-36 md:w-[720px] md:h-[450px] rounded-xl flex my-8 md:mx-1 md:my-0 ${
+        className={`w-full h-36 md:w-3/4 md:mt-16 md:h-[50vh] rounded-xl flex my-8 md:mx-1 md:my-0 ${
           props.index % 2 === 0 ? "md:mr-auto" : "md:ml-auto"
         }`}
       >
-        <div className="w-5/6 p-2 mt-auto bg-white md:w-2/3 md:p-6 rounded-tr-xl">
+        <div className="w-5/6 p-2 mt-auto overflow-x-hidden bg-white md:w-2/3 md:p-6 rounded-tr-xl">
           <div className="flex flex-row">
             <h1 className="mr-auto text-sm font-semibold text-left md:text-xl">
               {props.date + " - " + props.title}{" "}
