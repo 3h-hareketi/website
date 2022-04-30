@@ -35,9 +35,9 @@ const Blog = ({ posts }: Props) => {
       <div
         className="w-full h-[60vh]"
         style={{
-          backgroundImage: `url("${BASE_URL}/placeholder.jpg")`,
+          backgroundImage: `url("${highlightedPost.coverImage.url}")`,
           backgroundRepeat: "no-repeat",
-          backgroundSize: "fit",
+          backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
