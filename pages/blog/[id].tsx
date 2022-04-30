@@ -3,6 +3,7 @@ import { getSdk, Post } from "../../interfaces";
 import { client } from "../../lib/graphCmsClient";
 import Image from "next/image";
 import Link from "next/link";
+import { RichText } from "@graphcms/rich-text-react-renderer";
 type Props = {
   post: Post;
   similarPosts: Post[];
@@ -118,13 +119,19 @@ const BlogPost = ({ post, similarPosts }: Props) => (
         <h2 className="mb-6 text-base font-bold text-gray-600 md:text-xl">
           {post.excerpt}
         </h2>
-        {/*TODO*/}
-        {/*HTML or Markdown blog post renderer*/}
-        <div
-          dangerouslySetInnerHTML={{ __html: post.content?.html || "" }}
-          className="text-sm text-black"
-        ></div>{" "}
-        {/*TODO */}
+        <RichText
+          content={post.content?.raw}
+          renderers={{
+            blockquote: ({ children }) => (
+              <div className="">
+                {/* custom TODO blockquote styling */}
+                <div className="italic font-extrabold text-black">
+                  {children}
+                </div>
+              </div>
+            ),
+          }}
+        />
       </div>
       {similarPosts && (
         <>
