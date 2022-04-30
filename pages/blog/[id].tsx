@@ -124,10 +124,12 @@ const BlogPost = ({ post, similarPosts }: Props) => (
           renderers={{
             blockquote: ({ children }) => (
               <div className="">
-                {/* custom TODO blockquote styling */}
+                {/* TODO add custom serif font to tailwind config and import it here*/}
+                {/* for  custom blockquote styling */}
                 <div className="italic font-extrabold text-black">
                   {children}
                 </div>
+                {/* TODO add simple quotation mark svg */}
               </div>
             ),
           }}
