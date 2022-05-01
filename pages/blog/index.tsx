@@ -42,7 +42,7 @@ const Blog = ({ posts }: Props) => {
         }}
       >
         <div className="flex flex-row w-[90vw] pb-48 mx-auto space-x-6 overflow-x-scroll md:w-5/6 md:overflow-x-auto">
-          <div className="p-4 shadow-xl md:translate-y-0 translate-y-1/3 md:overflow-y-hidden md:p-10 md:w-2/3 rounded-xl bg-primary-500 md:mt-[32vh] md:h-[50vh]">
+          <div className="p-4 shadow-xl md:translate-y-0 translate-y-1/3 md:overflow-y-hidden md:p-10 md:w-2/3 rounded-xl bg-primary-500 md:mt-[35vh] md:h-[50vh]">
             <div className="flex flex-col text-left">
               <div className="text-sm font-light text-gray-300 uppercase md:text-base">
                 {highlightedPost.tags.join(", ")}

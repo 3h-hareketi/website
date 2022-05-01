@@ -34,15 +34,7 @@ const Home = ({ posts }: Props) => {
         </div>
         <div className="md:mx-96">
           {posts.map((blog, blogIdx) => (
-            <BlogCard
-              key={blog.id}
-              title={blog.title || ""}
-              image={blog.coverImage.url || ""}
-              tags={blog.tags || []}
-              description={blog.excerpt || ""}
-              date={blog.date || ""}
-              index={blogIdx}
-            />
+            <BlogCard key={blog.id} blog={blog} index={blogIdx} />
           ))}
         </div>
       </div>
