@@ -28,9 +28,9 @@ const Blog = ({ projects }: Props) => {
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-            className="w-1/4 rounded-md shadow-lg h-[60vh] m-8 flex flex-col"
+            className="w-1/4 rounded-md shadow-lg h-[60vh] m-8 flex flex-col group"
           >
-            <div className="flex flex-col items-center h-[40vh] bg-white mt-auto rounded-t-md px-1 md:px-8 justify-between bg-opacity-90 backdrop-filter backdrop-blur-[50px]">
+            <div className="hidden group-hover:flex flex-col items-center h-[40vh] bg-white mt-auto rounded-t-md px-1 md:px-8 justify-between bg-opacity-90 backdrop-filter backdrop-blur-[50px]">
               <h1 className="mt-8 text-lg font-bold md:text-2xl">
                 {project.name}
               </h1>
