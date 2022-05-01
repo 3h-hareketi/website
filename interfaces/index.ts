@@ -6913,6 +6913,20 @@ export type PostsQuery = {
   }>;
 };
 
+export type ProjectsQueryVariables = Exact<{ [key: string]: never }>;
+
+export type ProjectsQuery = {
+  __typename?: "Query";
+  projects: Array<{
+    __typename?: "Project";
+    description: string;
+    id: string;
+    link?: string | null;
+    name: string;
+    image: Array<{ __typename?: "Asset"; url: string }>;
+  }>;
+};
+
 export type ReportsQueryVariables = Exact<{ [key: string]: never }>;
 
 export type ReportsQuery = {
@@ -7037,6 +7051,19 @@ export const PostsDocument = gql`
     }
   }
 `;
+export const ProjectsDocument = gql`
+  query Projects {
+    projects {
+      description
+      id
+      image {
+        url
+      }
+      link
+      name
+    }
+  }
+`;
 export const ReportsDocument = gql`
   query Reports {
     reports {
@@ -7154,6 +7181,20 @@ export function getSdk(
             ...wrappedRequestHeaders,
           }),
         "Posts",
+        "query"
+      );
+    },
+    Projects(
+      variables?: ProjectsQueryVariables,
+      requestHeaders?: Dom.RequestInit["headers"]
+    ): Promise<ProjectsQuery> {
+      return withWrapper(
+        (wrappedRequestHeaders) =>
+          client.request<ProjectsQuery>(ProjectsDocument, variables, {
+            ...requestHeaders,
+            ...wrappedRequestHeaders,
+          }),
+        "Projects",
         "query"
       );
     },
