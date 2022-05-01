@@ -30,15 +30,15 @@ const Blog = ({ projects }: Props) => {
             }}
             className="w-1/3 md:w-1/4 rounded-md h-[60vh] m-4 md:m-8 flex flex-col group"
           >
-            <div className="md:hidden group-hover:flex flex-col items-center h-[20vh] md:h-[40vh] bg-white mt-auto rounded-t-md px-2 md:px-8 justify-between bg-opacity-90 backdrop-filter backdrop-blur-[50px]">
-              <h1 className="mb-8 text-sm font-bold md:mb-0 md:mt-8 md:text-2xl">
+            <div className="md:hidden flex group-hover:flex flex-col items-center h-[15vh] md:h-[40vh] bg-white mt-auto justify-between rounded-t-md px-2 md:px-8 bg-opacity-90 backdrop-filter backdrop-blur-[50px]">
+              <h1 className="mt-4 text-sm font-bold md:mb-0 md:mt-8 md:text-2xl">
                 {project.name}
               </h1>
               <div className="hidden text-xs md:block md:text-base text-ellipsis">
                 {project.description}
               </div>
               <Link href={project.link as string}>
-                <a className="p-1 text-xs text-center text-white rounded-full md:mr-auto md:p-3 md:mb-4 md:w-1/3 bg-primary-500 md:text-base">
+                <a className="p-1 mb-4 text-xs text-center text-white rounded-full md:mr-auto md:p-3 md:mb-4 md:w-1/3 bg-primary-500 md:text-base">
                   Read more{" "}
                 </a>
               </Link>
