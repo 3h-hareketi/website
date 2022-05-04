@@ -1,3 +1,4 @@
+import { ArticleJsonLd } from "next-seo";
 import Link from "next/link";
 import { Post } from "../interfaces";
 import BASE_URL from "../lib/baseUrl";
@@ -10,6 +11,16 @@ type Props = {
 const BlogCard = ({ blog, index }: Props) => {
   return (
     <>
+      <ArticleJsonLd
+        type="Blog"
+        url={`${BASE_URL}/blog/${blog.id}`}
+        title={`${blog.title}`}
+        images={[blog.coverImage.url]}
+        datePublished={blog.createdAt}
+        dateModified={blog.updatedAt}
+        authorName={blog.createdBy?.name || ""}
+        description={blog.excerpt}
+      />
       <div
         style={{
           backgroundImage: `url(${
