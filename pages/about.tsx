@@ -1,4 +1,5 @@
 import { Tab } from "@headlessui/react";
+import { NextSeo } from "next-seo";
 import PersonCard from "../components/PersonCard";
 import Reports from "../components/Reports";
 import { getSdk, Person, Report } from "../interfaces";
@@ -15,6 +16,8 @@ function classNames(...classes: string[]) {
 }
 
 const About = ({ directors, supervisors, reports }: Props) => {
+  <NextSeo title="About us" description="Meet the minds behind 3H" />;
+
   return (
     <>
       <div className="flex flex-col mx-auto bg-primary-500">
