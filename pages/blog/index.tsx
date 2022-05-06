@@ -33,7 +33,7 @@ const Blog = ({ posts }: Props) => {
   return (
     <>
       {" "}
-      <NextSeo title="3H Movement Blog" />
+      <NextSeo title="Blog" />
       <div className="bg-gray-200">
         <div
           className="w-full h-[60vh]"
