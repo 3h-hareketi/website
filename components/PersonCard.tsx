@@ -21,13 +21,13 @@ const PersonCard = ({ person }: Props) => {
         ]}
       />
       <div className="flex flex-col w-64 max-w-xl p-6 mt-24 bg-white shadow-md rounded-xl">
-        <div className="mx-auto -translate-y-16">
+        <div className="mx-auto -translate-y-16 rounded-full ring-8 ring-white">
           <Image
             src={person.image?.url || ""}
             alt={person.fullName + "profile image"}
             width={96}
             height={96}
-            className="rounded-full ring-8 ring-white"
+            className="rounded-full"
           />
         </div>
         <h1 className="-mt-16 text-xl font-extrabold text-center">
