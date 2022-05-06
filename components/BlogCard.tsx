@@ -12,6 +12,7 @@ const BlogCard = ({ blog, index }: Props) => {
   return (
     <>
       <ArticleJsonLd
+        keyOverride={blog.id} //https://github.com/garmeeh/next-seo#handling-multiple-instances
         type="Blog"
         url={`${BASE_URL}/blog/${blog.id}`}
         title={`${blog.title}`}
