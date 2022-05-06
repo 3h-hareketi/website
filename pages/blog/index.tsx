@@ -34,7 +34,7 @@ const Blog = ({ posts }: Props) => {
     <>
       {" "}
       <NextSeo title="3H Movement Blog" />
-      <div className="bg-gray-200 mb-96">
+      <div className="bg-gray-200">
         <div
           className="w-full h-[60vh]"
           style={{
