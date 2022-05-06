@@ -5,13 +5,34 @@ import Image from "next/image";
 import Link from "next/link";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import BASE_URL from "../../lib/baseUrl";
-import { ArticleJsonLd } from "next-seo";
+import { ArticleJsonLd, NextSeo } from "next-seo";
 type Props = {
   post: Post;
   similarPosts: Post[];
 };
 const BlogPost = ({ post, similarPosts }: Props) => (
   <>
+    <NextSeo
+      openGraph={{
+        title: post.title,
+        description: post.excerpt,
+        type: "article",
+        article: {
+          publishedTime: post.createdAt,
+          modifiedTime: post.updatedAt,
+          authors: [post.createdBy?.name || ""],
+          tags: post.tags,
+        },
+        images: [
+          {
+            url: post.coverImage.url,
+            width: 600,
+            height: 400,
+            alt: `${post.title} Cover Image`,
+          },
+        ],
+      }}
+    />
     <ArticleJsonLd
       type="Blog"
       url={`${BASE_URL}/blog/${post.id}`}
