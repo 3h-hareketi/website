@@ -35,6 +35,7 @@ const Blog = ({ posts }: Props) => {
     <Layout
       bgColor="bg-white backdrop-filter backdrop-blur-md bg-opacity-60"
       textColor="text-black"
+      hamburgerColor="black"
     >
       {" "}
       <NextSeo title="Blog" />

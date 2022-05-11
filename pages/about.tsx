@@ -18,7 +18,7 @@ function classNames(...classes: string[]) {
 
 const About = ({ directors, supervisors, reports }: Props) => {
   return (
-    <Layout bgColor="bg-white" textColor="text-black">
+    <Layout bgColor="bg-white" textColor="text-black" hamburgerColor="black">
       <NextSeo title="About us" description="Meet the minds behind 3H" />
       <div className="flex flex-col mx-auto bg-primary-500">
         <h1 className="mx-auto text-2xl font-extrabold text-center text-white md:text-8xl">

@@ -10,9 +10,16 @@ type Props = {
   bgColor?: string;
   textColor?: string;
   logo?: string;
+  hamburgerColor: string;
 };
 
-const Layout = ({ children, bgColor, textColor, logo }: Props) => {
+const Layout = ({
+  children,
+  bgColor,
+  textColor,
+  logo,
+  hamburgerColor,
+}: Props) => {
   const router = useRouter();
 
   return (
@@ -88,6 +95,7 @@ const Layout = ({ children, bgColor, textColor, logo }: Props) => {
         bgColor={bgColor || ""}
         textColor={textColor || ""}
         logo={logo || "base"}
+        hamburgerColor={hamburgerColor || ""}
       />
       <main className="mb-auto">{children}</main>
       <Footer />

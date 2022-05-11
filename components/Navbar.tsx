@@ -6,9 +6,10 @@ type Props = {
   bgColor: string;
   textColor: string;
   logo: string;
+  hamburgerColor: string;
 };
 
-const Navbar = ({ bgColor, textColor, logo }: Props) => {
+const Navbar = ({ bgColor, textColor, logo, hamburgerColor }: Props) => {
   const router = useRouter();
   return (
     <section className={`relative w-full flex justify-center z-50 ${bgColor}`}>
@@ -17,7 +18,7 @@ const Navbar = ({ bgColor, textColor, logo }: Props) => {
           viewBox="0 0 100 80"
           width="20"
           height="20"
-          className="block mr-auto md:ml-0 md:hidden md:mr-0"
+          className={`block mr-auto md:ml-0 md:hidden md:mr-0 fill-${hamburgerColor}`}
         >
           <rect width="100" height="10"></rect>
           <rect y="30" width="100" height="10"></rect>

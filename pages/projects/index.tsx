@@ -11,7 +11,7 @@ type Props = {
 
 const Blog = ({ projects }: Props) => {
   return (
-    <Layout bgColor="bg-white" textColor="text-black">
+    <Layout bgColor="bg-white" textColor="text-black" hamburgerColor="black">
       <NextSeo title="Projects" />
       <div className="mb-96 w-[90vw] mx-auto">
         <div className="flex flex-col w-full space-y-12 text-center bg-white">

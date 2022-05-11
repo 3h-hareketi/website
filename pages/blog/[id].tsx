@@ -14,7 +14,7 @@ type Props = {
 };
 
 const BlogPost = ({ post, similarPosts }: Props) => (
-  <Layout bgColor="bg-white" textColor="text-black">
+  <Layout bgColor="bg-white" textColor="text-black" hamburgerColor="black">
     <NextSeo
       openGraph={{
         title: post.title,

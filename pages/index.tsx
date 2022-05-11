@@ -11,7 +11,12 @@ type Props = {
 
 const Home = ({ posts }: Props) => {
   return (
-    <Layout bgColor="" textColor="text-primary-50" logo="alt">
+    <Layout
+      bgColor=""
+      textColor="text-primary-50"
+      logo="alt"
+      hamburgerColor="white"
+    >
       <NextSeo description="3H Movement: Discover liberalism, the ideology of freedom!" />
       <div className="flex flex-col mx-auto">
         <div className="h-screen mx-auto mt-16 text-white">
