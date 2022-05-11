@@ -23,7 +23,7 @@ const Layout = ({ children }: Props) => {
               backgroundImage: `url("${BASE_URL}/background.svg")`,
               backgroundRepeat: "no-repeat",
               backgroundSize: "fit",
-              backgroundPosition: "center",
+              backgroundPosition: "right",
             }
           : {}
       }

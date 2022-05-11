@@ -8,10 +8,8 @@ const Navbar = () => {
 
   return (
     <section
-      className={`relative w-full ${
-        router.pathname !== "/"
-          ? "backdrop-filter backdrop-blur-md bg-primary-500"
-          : ""
+      className={`relative w-full flex justify-center ${
+        router.pathname !== "/" ? "backdrop-filter backdrop-blur-md" : ""
       }`}
       // className={`relative w-full flex justify-center`}
     >
