@@ -3,21 +3,17 @@ import { useRouter } from "next/router";
 import BlurImage from "./BlurImage";
 import logo from "/public/logo-alt.png";
 
-const Navbar = () => {
+type Props = {
+  bgColor: string;
+  textColor: string;
+};
+
+const Navbar = ({ bgColor, textColor }: Props) => {
   const router = useRouter();
   const isHome = router.pathname === "/";
 
   return (
-    <section
-      className={`relative w-full flex justify-center z-50 ${
-        router.pathname === "/blog"
-          ? "backdrop-filter backdrop-blur-md bg-white bg-opacity-60"
-          : router.pathname !== "/"
-          ? "bg-primary-500"
-          : ""
-      }`}
-      // className={`relative w-full flex justify-center`}
-    >
+    <section className={`relative w-full flex justify-center z-50 ${bgColor}`}>
       <nav className="w-3/4 flex items-center md:mx-auto flex-row">
         <svg
           viewBox="0 0 100 80"
@@ -42,7 +38,7 @@ const Navbar = () => {
           <li>
             {" "}
             <Link href="/about" passHref>
-              <a className={`${isHome ? "" : "text-black"}`} href="#">
+              <a className={`${textColor}`} href="#">
                 ABOUT US
               </a>
             </Link>
@@ -50,7 +46,7 @@ const Navbar = () => {
           <li>
             {" "}
             <Link href="/projects" passHref>
-              <a className={`${isHome ? "" : "text-black"}`} href="#">
+              <a className={`${textColor}`} href="#">
                 PROJECTS
               </a>
             </Link>
@@ -58,7 +54,7 @@ const Navbar = () => {
           <li>
             {" "}
             <Link href="/blog" passHref>
-              <a className={`${isHome ? "" : "text-black"}`} href="#">
+              <a className={`${textColor}`} href="#">
                 BLOG
               </a>
             </Link>
@@ -66,7 +62,7 @@ const Navbar = () => {
           <li>
             {" "}
             <Link href="/join" passHref>
-              <a className={`${isHome ? "" : "text-black"}`} href="#">
+              <a className={`${textColor}`} href="#">
                 JOIN US
               </a>
             </Link>
@@ -74,16 +70,14 @@ const Navbar = () => {
           <li>
             {" "}
             <Link href="/contact" passHref>
-              <a className={`${isHome ? "" : "text-black"}`} href="#">
+              <a className={`${textColor}`} href="#">
                 CONTACT US
               </a>
             </Link>
           </li>
         </ul>
         <a
-          className={`font-bold md:ml-0 ml-auto ${
-            isHome ? "text-primary-50" : "text-black"
-          }`}
+          className={`font-bold md:ml-0 ml-auto ${textColor}`}
           href="#"
           onClick={() => {
             console.log("Language changed");

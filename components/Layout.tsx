@@ -7,9 +7,11 @@ import BASE_URL from "../lib/baseUrl";
 
 type Props = {
   children: React.ReactNode;
+  bgColor?: string;
+  textColor?: string;
 };
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ children, bgColor, textColor }: Props) => {
   const router = useRouter();
 
   return (
@@ -81,7 +83,7 @@ const Layout = ({ children }: Props) => {
           { "@type": "NGO", name: "Atlas Network" },
         ]}
       />
-      <Navbar />
+      <Navbar bgColor={bgColor || ""} textColor={textColor || ""} />
       <main className="mb-auto">{children}</main>
       <Footer />
     </div>

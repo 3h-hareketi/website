@@ -1,9 +1,10 @@
 import BASE_URL from "../lib/baseUrl";
 import { NextSeo } from "next-seo";
+import Layout from "../components/Layout";
 
 const Contact = () => {
   return (
-    <>
+    <Layout bgColor="" textColor="text-black">
       <NextSeo title="Contact Us" description="Let's get in touch" />
       <div
         style={{
@@ -49,7 +50,7 @@ const Contact = () => {
           </button>
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 export default Contact;

@@ -1,5 +1,6 @@
 import { ArticleJsonLd, NextSeo } from "next-seo";
 import Link from "next/link";
+import Layout from "../../components/Layout";
 import { getSdk, Project } from "../../interfaces";
 import BASE_URL from "../../lib/baseUrl";
 import { client } from "../../lib/graphCmsClient";
@@ -10,7 +11,7 @@ type Props = {
 
 const Blog = ({ projects }: Props) => {
   return (
-    <>
+    <Layout bgColor="bg-white" textColor="text-black">
       <NextSeo title="Projects" />
       <div className="mb-96 w-[90vw] mx-auto">
         <div className="flex flex-col w-full space-y-12 text-center bg-white">
@@ -51,7 +52,7 @@ const Blog = ({ projects }: Props) => {
           ))}
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 

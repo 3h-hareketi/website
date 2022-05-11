@@ -2,6 +2,7 @@ import { Tab } from "@headlessui/react";
 import { NextSeo } from "next-seo";
 import Image from "next/image";
 import Link from "next/link";
+import Layout from "../../components/Layout";
 import { Post, getSdk } from "../../interfaces";
 import { client } from "../../lib/graphCmsClient";
 
@@ -31,7 +32,10 @@ const Blog = ({ posts }: Props) => {
   }
 
   return (
-    <>
+    <Layout
+      bgColor="bg-white backdrop-filter backdrop-blur-md bg-opacity-60"
+      textColor="text-black"
+    >
       {" "}
       <NextSeo title="Blog" />
       <div className="bg-gray-200">
@@ -154,7 +158,7 @@ const Blog = ({ posts }: Props) => {
           </Tab.Group>
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 
