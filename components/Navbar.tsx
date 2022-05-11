@@ -6,11 +6,14 @@ import logo from "/public/logo-alt.png";
 const Navbar = () => {
   const router = useRouter();
   const isHome = router.pathname === "/";
+
   return (
     <section
       className={`relative w-full flex justify-center z-50 ${
-        router.pathname !== "/"
+        router.pathname === "/blog"
           ? "backdrop-filter backdrop-blur-md bg-white bg-opacity-60"
+          : router.pathname !== "/"
+          ? "bg-primary-500"
           : ""
       }`}
       // className={`relative w-full flex justify-center`}

@@ -50,7 +50,7 @@ const Blog = ({ posts }: Props) => {
                 <div className="text-sm font-light text-gray-300 uppercase md:text-base">
                   {highlightedPost.tags.join(", ")}
                 </div>
-                <h1 className="w-[60vw] md:w-full mt-2 text-xl font-bold text-white md:mt-10 md:text-4xl">
+                <h1 className="w-[60vw] md:w-full mt-2 text-xl font-bold text-white md:mt-10 md:text-2xl lg:text-4xl">
                   {highlightedPost.title}
                 </h1>
                 <p className="mt-6 text-sm text-gray-300">
