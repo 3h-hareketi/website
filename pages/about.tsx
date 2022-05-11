@@ -26,7 +26,6 @@ const About = ({ directors, supervisors, reports }: Props) => {
         </h1>
       </div>
       <div className="flex flex-col bg-gray-100">
-        {" "}
         <h1 className="mx-auto text-3xl font-semibold mt-36">Our Team</h1>
         <div className="max-w-3xl mx-auto mt-8 font-thin text-center">
           Ornare aptent aenean tristique tortor egestas habitasse, netus

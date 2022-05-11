@@ -6933,6 +6933,7 @@ export type ReportsQuery = {
   __typename?: "Query";
   reports: Array<{
     __typename?: "Report";
+    id: string;
     title: string;
     slug: string;
     report: { __typename?: "Asset"; url: string };
@@ -7067,6 +7068,7 @@ export const ProjectsDocument = gql`
 export const ReportsDocument = gql`
   query Reports {
     reports {
+      id
       title
       slug
       report {
