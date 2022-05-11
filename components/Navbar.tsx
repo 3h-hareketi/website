@@ -5,11 +5,13 @@ import logo from "/public/logo-alt.png";
 
 const Navbar = () => {
   const router = useRouter();
-
+  const isHome = router.pathname === "/";
   return (
     <section
-      className={`relative w-full flex justify-center ${
-        router.pathname !== "/" ? "backdrop-filter backdrop-blur-md" : ""
+      className={`relative w-full flex justify-center z-50 ${
+        router.pathname !== "/"
+          ? "backdrop-filter backdrop-blur-md bg-white bg-opacity-60"
+          : ""
       }`}
       // className={`relative w-full flex justify-center`}
     >
@@ -18,7 +20,7 @@ const Navbar = () => {
           viewBox="0 0 100 80"
           width="20"
           height="20"
-          className="block mr-auto md:ml-0 fill-white md:hidden md:mr-0"
+          className="block mr-auto md:ml-0 md:hidden md:mr-0"
         >
           <rect width="100" height="10"></rect>
           <rect y="30" width="100" height="10"></rect>
@@ -37,36 +39,48 @@ const Navbar = () => {
           <li>
             {" "}
             <Link href="/about" passHref>
-              <a href="#">ABOUT US</a>
+              <a className={`${isHome ? "" : "text-black"}`} href="#">
+                ABOUT US
+              </a>
             </Link>
           </li>
           <li>
             {" "}
             <Link href="/projects" passHref>
-              <a href="#">PROJECTS</a>
+              <a className={`${isHome ? "" : "text-black"}`} href="#">
+                PROJECTS
+              </a>
             </Link>
           </li>{" "}
           <li>
             {" "}
             <Link href="/blog" passHref>
-              <a href="#">BLOG</a>
+              <a className={`${isHome ? "" : "text-black"}`} href="#">
+                BLOG
+              </a>
             </Link>
           </li>
           <li>
             {" "}
             <Link href="/join" passHref>
-              <a href="#">JOIN US</a>
+              <a className={`${isHome ? "" : "text-black"}`} href="#">
+                JOIN US
+              </a>
             </Link>
           </li>{" "}
           <li>
             {" "}
             <Link href="/contact" passHref>
-              <a href="#">CONTACT US</a>
+              <a className={`${isHome ? "" : "text-black"}`} href="#">
+                CONTACT US
+              </a>
             </Link>
           </li>
         </ul>
         <a
-          className="font-bold md:ml-0 text-primary-50 ml-auto"
+          className={`font-bold md:ml-0 ml-auto ${
+            isHome ? "text-primary-50" : "text-black"
+          }`}
           href="#"
           onClick={() => {
             console.log("Language changed");
