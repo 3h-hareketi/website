@@ -35,7 +35,7 @@ const Home = ({ posts }: Props) => {
             neque curabitur cubilia habitasse taciti, id vulputate quis
             consectetur turpis, blandit cursus aenean interdum.
           </div>
-          <div className="md:mx-96">
+          <div className="md:mx-24 lg:mx-48 xl:mx-96 mx-4">
             {posts.map((blog, blogIdx) => (
               <BlogCard key={blog.id} blog={blog} index={blogIdx} />
             ))}
