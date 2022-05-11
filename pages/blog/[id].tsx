@@ -186,7 +186,7 @@ const BlogPost = ({ post, similarPosts }: Props) => (
             <div className="mx-auto text-base text-gray-400">
               We think you might like these articles too.
             </div>
-            <div className="flex flex-row flex-wrap justify-between w-[80vw] mt-16 self-center">
+            <div className="flex flex-row flex-wrap justify-around w-[90vw] mt-16 self-center">
               {similarPosts &&
                 similarPosts.map((post) => (
                   <div
@@ -210,7 +210,7 @@ const BlogPost = ({ post, similarPosts }: Props) => (
                           {post.tags.slice(0, 1).map((tag) => (
                             <div
                               key={tag}
-                              className={`text-white text-xs rounded-xl md:p-1.5 md:mx-1 uppercase md:max-h-8 max-h-6 p-0.5 ${"bg-purple-500"}`}
+                              className={`hidden md:block text-white text-xs rounded-xl md:p-1.5 md:mx-1 uppercase md:max-h-8 max-h-6 p-0.5 ${"bg-purple-500"}`}
                             >
                               {tag}
                             </div>
