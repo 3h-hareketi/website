@@ -1,17 +1,16 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import BASE_URL from "../lib/baseUrl";
 import BlurImage from "./BlurImage";
-import logo from "/public/logo-alt.png";
 
 type Props = {
   bgColor: string;
   textColor: string;
+  logo: string;
 };
 
-const Navbar = ({ bgColor, textColor }: Props) => {
+const Navbar = ({ bgColor, textColor, logo }: Props) => {
   const router = useRouter();
-  const isHome = router.pathname === "/";
-
   return (
     <section className={`relative w-full flex justify-center z-50 ${bgColor}`}>
       <nav className="w-3/4 flex items-center md:mx-auto flex-row">
@@ -27,8 +26,12 @@ const Navbar = ({ bgColor, textColor }: Props) => {
         </svg>
         <Link href="/" passHref>
           <BlurImage
-            className="h-12"
-            src={logo}
+            className=""
+            src={
+              logo === "alt"
+                ? `${BASE_URL}/logo-alt.svg`
+                : `${BASE_URL}/logo.svg`
+            }
             alt="3H Logo"
             width={150}
             height={150}

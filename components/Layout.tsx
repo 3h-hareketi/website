@@ -9,9 +9,10 @@ type Props = {
   children: React.ReactNode;
   bgColor?: string;
   textColor?: string;
+  logo?: string;
 };
 
-const Layout = ({ children, bgColor, textColor }: Props) => {
+const Layout = ({ children, bgColor, textColor, logo }: Props) => {
   const router = useRouter();
 
   return (
@@ -83,7 +84,11 @@ const Layout = ({ children, bgColor, textColor }: Props) => {
           { "@type": "NGO", name: "Atlas Network" },
         ]}
       />
-      <Navbar bgColor={bgColor || ""} textColor={textColor || ""} />
+      <Navbar
+        bgColor={bgColor || ""}
+        textColor={textColor || ""}
+        logo={logo || "base"}
+      />
       <main className="mb-auto">{children}</main>
       <Footer />
     </div>
