@@ -42,10 +42,10 @@ const About = ({ directors, supervisors, reports }: Props) => {
               <Tab
                 className={({ selected }) =>
                   classNames(
-                    "w-full py-2.5 text-sm leading-5 font-medium text-white rounded-3xl",
+                    "w-full py-2.5 text-sm leading-5 font-medium rounded-3xl",
                     "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-primary-400 ring-white ring-opacity-60",
                     selected
-                      ? "bg-primary-500 shadow"
+                      ? "bg-primary-500 shadow text-white"
                       : "text-black hover:text-primary-200"
                   )
                 }
@@ -55,10 +55,10 @@ const About = ({ directors, supervisors, reports }: Props) => {
               <Tab
                 className={({ selected }) =>
                   classNames(
-                    "w-full py-2.5 text-sm leading-5 font-medium text-white rounded-3xl",
+                    "w-full py-2.5 text-sm leading-5 font-medium rounded-3xl",
                     "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-primary-400 ring-white ring-opacity-60",
                     selected
-                      ? "bg-primary-500 shadow"
+                      ? "bg-primary-500 shadow text-white"
                       : "text-black hover:text-primary-200"
                   )
                 }
@@ -68,10 +68,10 @@ const About = ({ directors, supervisors, reports }: Props) => {
               <Tab
                 className={({ selected }) =>
                   classNames(
-                    "w-full py-2.5 text-sm leading-5 font-medium text-white rounded-3xl",
+                    "w-full py-2.5 text-sm leading-5 font-medium rounded-3xl",
                     "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-primary-400 ring-white ring-opacity-60",
                     selected
-                      ? "bg-primary-500 shadow"
+                      ? "bg-primary-500 shadow text-white"
                       : "text-black hover:text-primary-200"
                   )
                 }
