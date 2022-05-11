@@ -13,7 +13,7 @@ const Navbar = () => {
       className={`relative w-full bg-primary-500`}
     >
       <nav className="relative flex">
-        <div className="flex items-center flex-grow md:grow-0 md:space-x-60 md:mx-auto">
+        <div className="flex items-center flex-grow md:mx-auto md:justify-between">
           <svg
             viewBox="0 0 100 80"
             width="20"
@@ -66,7 +66,7 @@ const Navbar = () => {
             </li>
           </ul>
           <a
-            className="ml-auto mr-6 font-bold md:ml-0 text-primary-50 md:mr-0 "
+            className="ml-auto mr-6 font-bold md:ml-0 text-primary-50"
             href="#"
             onClick={() => {
               console.log("Language changed");
