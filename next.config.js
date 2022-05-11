@@ -15,18 +15,13 @@ const sentryWebpackPluginOptions = {
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    domains: [
+      "media.graphassets.com",
+      "avatars.githubusercontent.com",
+      "localhost",
+    ],
+  },
 };
 
-module.exports = withSentryConfig(
-  {
-    images: {
-      domains: [
-        "media.graphassets.com",
-        "avatars.githubusercontent.com",
-        "localhost",
-      ],
-    },
-  },
-  nextConfig,
-  sentryWebpackPluginOptions
-);
+module.exports = withSentryConfig(nextConfig, sentryWebpackPluginOptions);
