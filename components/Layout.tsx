@@ -23,7 +23,7 @@ const Layout = ({ children, bgColor, textColor, logo }: Props) => {
           ? {
               background:
                 "radial-gradient(50% 50% at 50% 50%, #1BC3D5 2.1%, #1696BE 100%), #12ABBB",
-              backgroundImage: `url("${BASE_URL}/background.svg")`,
+              backgroundImage: `url("/background.svg")`,
               backgroundRepeat: "no-repeat",
               backgroundSize: "fit",
               backgroundPosition: "right",

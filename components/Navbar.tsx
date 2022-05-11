@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import BASE_URL from "../lib/baseUrl";
 import BlurImage from "./BlurImage";
 
 type Props = {
@@ -29,11 +28,7 @@ const Navbar = ({ bgColor, textColor, logo }: Props) => {
             {" "}
             <BlurImage
               className=""
-              src={
-                logo === "alt"
-                  ? `${BASE_URL}/logo-alt.svg`
-                  : `${BASE_URL}/logo.svg`
-              }
+              src={logo === "alt" ? `/logo-alt.svg` : `/logo.svg`}
               alt="3H Logo"
               width={150}
               height={150}
