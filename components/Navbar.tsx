@@ -1,16 +1,19 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import BlurImage from "./BlurImage";
 import logo from "/public/logo-alt.png";
 
 const Navbar = () => {
+  const router = useRouter();
+
   return (
     <section
-      // className={`relative w-full ${
-      //   router.pathname !== ""
-      //     ? "backdrop-filter backdrop-blur-md bg-opacity-0"
-      //     : null
-      // }`}
-      className={`relative w-full flex justify-center`}
+      className={`relative w-full ${
+        router.pathname !== "/"
+          ? "backdrop-filter backdrop-blur-md bg-primary-500"
+          : ""
+      }`}
+      // className={`relative w-full flex justify-center`}
     >
       <nav className="w-3/4 flex items-center md:mx-auto flex-row">
         <svg
