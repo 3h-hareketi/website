@@ -1,5 +1,6 @@
 import { Tab } from "@headlessui/react";
 import { NextSeo } from "next-seo";
+import Layout from "../components/Layout";
 import PersonCard from "../components/PersonCard";
 import Reports from "../components/Reports";
 import { getSdk, Person, Report } from "../interfaces";
@@ -17,7 +18,7 @@ function classNames(...classes: string[]) {
 
 const About = ({ directors, supervisors, reports }: Props) => {
   return (
-    <>
+    <Layout bgColor="bg-white" textColor="text-black" hamburgerColor="black">
       <NextSeo title="About us" description="Meet the minds behind 3H" />
       <div className="flex flex-col mx-auto bg-primary-500">
         <h1 className="mx-auto text-2xl font-extrabold text-center text-white md:text-8xl">
@@ -25,7 +26,6 @@ const About = ({ directors, supervisors, reports }: Props) => {
         </h1>
       </div>
       <div className="flex flex-col bg-gray-100">
-        {" "}
         <h1 className="mx-auto text-3xl font-semibold mt-36">Our Team</h1>
         <div className="max-w-3xl mx-auto mt-8 font-thin text-center">
           Ornare aptent aenean tristique tortor egestas habitasse, netus
@@ -42,10 +42,10 @@ const About = ({ directors, supervisors, reports }: Props) => {
               <Tab
                 className={({ selected }) =>
                   classNames(
-                    "w-full py-2.5 text-sm leading-5 font-medium text-white rounded-3xl",
+                    "w-full py-2.5 text-sm leading-5 font-medium rounded-3xl",
                     "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-primary-400 ring-white ring-opacity-60",
                     selected
-                      ? "bg-primary-500 shadow"
+                      ? "bg-primary-500 shadow text-white"
                       : "text-black hover:text-primary-200"
                   )
                 }
@@ -55,10 +55,10 @@ const About = ({ directors, supervisors, reports }: Props) => {
               <Tab
                 className={({ selected }) =>
                   classNames(
-                    "w-full py-2.5 text-sm leading-5 font-medium text-white rounded-3xl",
+                    "w-full py-2.5 text-sm leading-5 font-medium rounded-3xl",
                     "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-primary-400 ring-white ring-opacity-60",
                     selected
-                      ? "bg-primary-500 shadow"
+                      ? "bg-primary-500 shadow text-white"
                       : "text-black hover:text-primary-200"
                   )
                 }
@@ -68,10 +68,10 @@ const About = ({ directors, supervisors, reports }: Props) => {
               <Tab
                 className={({ selected }) =>
                   classNames(
-                    "w-full py-2.5 text-sm leading-5 font-medium text-white rounded-3xl",
+                    "w-full py-2.5 text-sm leading-5 font-medium rounded-3xl",
                     "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-primary-400 ring-white ring-opacity-60",
                     selected
-                      ? "bg-primary-500 shadow"
+                      ? "bg-primary-500 shadow text-white"
                       : "text-black hover:text-primary-200"
                   )
                 }
@@ -118,7 +118,7 @@ const About = ({ directors, supervisors, reports }: Props) => {
         </div>
         <Reports reports={reports} />
       </div>
-    </>
+    </Layout>
   );
 };
 

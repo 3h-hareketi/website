@@ -1,5 +1,6 @@
 import { NextSeo } from "next-seo";
 import BlogCard from "../components/BlogCard";
+import Layout from "../components/Layout";
 import Newsletter from "../components/Newsletter";
 import { getSdk, Post } from "../interfaces";
 import { client } from "../lib/graphCmsClient";
@@ -10,7 +11,12 @@ type Props = {
 
 const Home = ({ posts }: Props) => {
   return (
-    <>
+    <Layout
+      bgColor=""
+      textColor="text-primary-50"
+      logo="alt"
+      hamburgerColor="white"
+    >
       <NextSeo description="3H Movement: Discover liberalism, the ideology of freedom!" />
       <div className="flex flex-col mx-auto">
         <div className="h-screen mx-auto mt-16 text-white">
@@ -43,7 +49,7 @@ const Home = ({ posts }: Props) => {
         </div>
         <Newsletter />
       </div>
-    </>
+    </Layout>
   );
 };
 

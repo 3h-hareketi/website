@@ -1,14 +1,15 @@
 import BASE_URL from "../lib/baseUrl";
 import { NextSeo } from "next-seo";
+import Layout from "../components/Layout";
 
 const Contact = () => {
   return (
-    <>
+    <Layout bgColor="" textColor="text-black" hamburgerColor="black">
       <NextSeo title="Contact Us" description="Let's get in touch" />
       <div
         style={{
           background: "#12ABBB",
-          backgroundImage: `url("${BASE_URL}/contact.svg")`,
+          backgroundImage: `url("/contact.svg")`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "fit",
           backgroundPosition: "center",
@@ -49,7 +50,7 @@ const Contact = () => {
           </button>
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 export default Contact;

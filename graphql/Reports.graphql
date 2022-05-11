@@ -1,5 +1,6 @@
 query Reports {
   reports {
+    id
     title
     slug
     report {

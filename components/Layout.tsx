@@ -7,9 +7,19 @@ import BASE_URL from "../lib/baseUrl";
 
 type Props = {
   children: React.ReactNode;
+  bgColor?: string;
+  textColor?: string;
+  logo?: string;
+  hamburgerColor: string;
 };
 
-const Layout = ({ children }: Props) => {
+const Layout = ({
+  children,
+  bgColor,
+  textColor,
+  logo,
+  hamburgerColor,
+}: Props) => {
   const router = useRouter();
 
   return (
@@ -20,7 +30,7 @@ const Layout = ({ children }: Props) => {
           ? {
               background:
                 "radial-gradient(50% 50% at 50% 50%, #1BC3D5 2.1%, #1696BE 100%), #12ABBB",
-              backgroundImage: `url("${BASE_URL}/background.svg")`,
+              backgroundImage: `url("/background.svg")`,
               backgroundRepeat: "no-repeat",
               backgroundSize: "fit",
               backgroundPosition: "right",
@@ -81,7 +91,12 @@ const Layout = ({ children }: Props) => {
           { "@type": "NGO", name: "Atlas Network" },
         ]}
       />
-      <Navbar />
+      <Navbar
+        bgColor={bgColor || ""}
+        textColor={textColor || ""}
+        logo={logo || "base"}
+        hamburgerColor={hamburgerColor || ""}
+      />
       <main className="mb-auto">{children}</main>
       <Footer />
     </div>

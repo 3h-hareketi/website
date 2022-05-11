@@ -6,6 +6,7 @@ import Link from "next/link";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import BASE_URL from "../../lib/baseUrl";
 import { ArticleJsonLd, NextSeo } from "next-seo";
+import Layout from "../../components/Layout";
 
 type Props = {
   post: Post;
@@ -13,7 +14,7 @@ type Props = {
 };
 
 const BlogPost = ({ post, similarPosts }: Props) => (
-  <>
+  <Layout bgColor="bg-white" textColor="text-black" hamburgerColor="black">
     <NextSeo
       openGraph={{
         title: post.title,
@@ -233,7 +234,7 @@ const BlogPost = ({ post, similarPosts }: Props) => (
         )}
       </div>
     </div>
-  </>
+  </Layout>
 );
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
