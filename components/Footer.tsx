@@ -58,7 +58,9 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex text-sm text-gray-300 font-extralight">
-        <div className="mx-auto">© 2022 All rights reserved.</div>{" "}
+        <div className="mx-auto">
+          {"© " + new Date().getFullYear() + " All rights reserved."}
+        </div>{" "}
       </div>
     </section>
   );
