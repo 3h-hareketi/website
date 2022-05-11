@@ -6,10 +6,12 @@ import Link from "next/link";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import BASE_URL from "../../lib/baseUrl";
 import { ArticleJsonLd, NextSeo } from "next-seo";
+
 type Props = {
   post: Post;
   similarPosts: Post[];
 };
+
 const BlogPost = ({ post, similarPosts }: Props) => (
   <>
     <NextSeo

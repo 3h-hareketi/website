@@ -4,6 +4,7 @@ import { Report } from "../interfaces";
 type Props = {
   report: Report;
 };
+
 const ReportCard = ({ report }: Props) => {
   return (
     <div className="flex flex-col max-w-xl p-2 my-5 bg-white shadow-md md:p-6 md:mx-8 rounded-xl">

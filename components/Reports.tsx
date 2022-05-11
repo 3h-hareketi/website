@@ -1,8 +1,10 @@
 import { Report } from "../interfaces";
 import ReportCard from "./ReportCard";
+
 type Props = {
   reports: Array<Report>;
 };
+
 const Reports = ({ reports }: Props) => {
   return (
     <>
