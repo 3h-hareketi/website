@@ -83,7 +83,7 @@ const About = ({ directors, supervisors, reports }: Props) => {
               <Tab.Panel
                 className={classNames(
                   "bg-gray-100 rounded-xl p-3",
-                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-wrap md:justify-between justify-center"
+                  "flex flex-wrap md:justify-between justify-center"
                 )}
               >
                 {supervisors.map((person) => (
@@ -96,7 +96,7 @@ const About = ({ directors, supervisors, reports }: Props) => {
               <Tab.Panel
                 className={classNames(
                   "bg-gray-100 rounded-xl p-3",
-                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-wrap flex-auto mx-auto justify-center md:justify-between"
+                  "flex flex-wrap md:justify-between justify-center"
                 )}
               >
                 {directors.map((person) => (
@@ -106,7 +106,7 @@ const About = ({ directors, supervisors, reports }: Props) => {
               <Tab.Panel
                 className={classNames(
                   "bg-gray-100 rounded-xl p-3",
-                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-wrap flex-auto mx-auto justify-center md:justify-between"
+                  "flex flex-wrap md:justify-between justify-center"
                 )}
               >
                 {supervisors.map((person) => (
