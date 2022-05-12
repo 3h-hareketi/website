@@ -21,7 +21,7 @@ const Layout = ({
   hamburgerColor,
 }: Props) => {
   const router = useRouter();
-
+  const [navbarOpen, setNavbarOpen] = useState(true);
   return (
     <div
       className="flex flex-col justify-between h-screen subpixel-antialiased"
@@ -96,6 +96,8 @@ const Layout = ({
         textColor={textColor || ""}
         logo={logo || "base"}
         hamburgerColor={hamburgerColor || ""}
+        navbarOpen={navbarOpen}
+        setNavbarOpen={setNavbarOpen}
       />
       <main className="mb-auto">{children}</main>
       <Footer />
