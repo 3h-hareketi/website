@@ -141,7 +141,7 @@ const Navbar = ({
                 className="navbar-close"
                 onClick={() => setNavbarOpen(false)}
               >
-                <svg
+                {/* <svg
                   className="w-6 h-6 text-gray-400 cursor-pointer hover:text-gray-500"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -154,7 +154,8 @@ const Navbar = ({
                     strokeWidth="2"
                     d="M6 18L18 6M6 6l12 12"
                   ></path>
-                </svg>
+                </svg> */}
+                <BlurImage src={`/back.svg`} width={30} height={30} />
               </button>
             </div>
             <div>
