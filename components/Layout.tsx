@@ -21,7 +21,7 @@ const Layout = ({
   hamburgerColor,
 }: Props) => {
   const router = useRouter();
-  const [navbarOpen, setNavbarOpen] = useState(true);
+  const [navbarOpen, setNavbarOpen] = useState(false);
   return (
     <div
       className="flex flex-col justify-between h-screen subpixel-antialiased"
