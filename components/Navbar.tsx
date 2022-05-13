@@ -20,7 +20,7 @@ const Navbar = ({
 }: Props) => {
   return (
     <section className={`relative w-full flex justify-center z-50 ${bgColor}`}>
-      <nav className="w-3/4 flex items-center md:mx-auto flex-row">
+      <nav className="w-full lg:w-3/4 flex items-center md:mx-auto flex-row">
         <a
           className="mr-auto md:ml-0 md:hidden md:mr-0"
           onClick={() => setNavbarOpen(true)}
@@ -51,7 +51,7 @@ const Navbar = ({
             />
           </a>
         </Link>
-        <ul className="items-center hidden h-12 mx-auto space-x-10 font-bold text-primary-50 md:flex">
+        <ul className="whitespace-nowrap items-center hidden h-12 mx-auto space-x-10 font-bold text-primary-50 md:flex">
           <li>
             {" "}
             <Link href="/about" passHref>
