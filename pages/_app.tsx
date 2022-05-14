@@ -4,7 +4,7 @@ import { NextIntlProvider } from "next-intl";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <NextIntlProvider messages={pageProps.messages}>
+    <NextIntlProvider messages={pageProps.messages} timeZone="Europe/Istanbul">
       <Component {...pageProps} />
     </NextIntlProvider>
   );
