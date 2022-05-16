@@ -15,5 +15,19 @@
     "email": "E-mail",
     "yourMessage": "Your Message...",
     "sendMessage": "Send Message"
+  },
+  "About": {
+    "title": "About",
+    "description": "Meet the minds behind 3H",
+    "heroTitle1": "Meet the minds",
+    "heroTitle2": "behind 3H",
+    "ourTeam": "Our Team",
+    "teamDescription": "Ornare aptent aenean tristique tortor egestas habitasse, netus praesent taciti sagittis nulla proin vivamus habitasse, non aptent neque curabitur cubilia habitasse taciti, id vulputate quis consectetur turpis, blandit cursus aenean interdum.",
+    "teamSubtitle": "Believe in yourself!",
+    "all": "All",
+    "boardOfDirectors": "Board of Directors",
+    "boardOfSupervisors": "Board of Supervisors",
+    "reports": "Reports",
+    "reportDescription": "Ornare aptent aenean tristique tortor egestas habitasse, netus praesent taciti sagittis nulla proin vivamus habitasse, non aptent neque curabitur cubilia habitasse taciti."
   }
 }
