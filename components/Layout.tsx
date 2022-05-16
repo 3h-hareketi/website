@@ -22,6 +22,8 @@ const Layout = ({
 }: Props) => {
   const router = useRouter();
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const defaultTitle = `3H ${router.locale === "tr" ? "Hareketi" : "Movement"}`;
+
   return (
     <div
       className="flex flex-col justify-between h-screen subpixel-antialiased"
@@ -39,19 +41,19 @@ const Layout = ({
       }
     >
       <DefaultSeo
-        titleTemplate="%s | 3H Hareketi"
-        defaultTitle="3H Hareketi"
+        titleTemplate={`%s | ${defaultTitle}`}
+        defaultTitle={defaultTitle}
         openGraph={{
           type: "website",
           url: router.pathname,
-          locale: "tr_TR",
-          site_name: "3H Hareketi",
+          locale: router.locale == "tr" ? "tr_TR" : "en_US",
+          site_name: defaultTitle,
           images: [
             {
               url: `${BASE_URL}/logo.png`,
               width: 1200,
               height: 1200,
-              alt: "3H Hareketi",
+              alt: `${defaultTitle} logo`,
               type: "image/png",
             },
           ],
