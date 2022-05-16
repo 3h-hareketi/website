@@ -6,5 +6,14 @@
     "heroButton": "See More",
     "blogPosts": "Blog Posts",
     "blogPostsDescription": "Ornare aptent aenean tristique tortor egestas habitasse, netus praesent taciti sagittis nulla proin vivamus habitasse, non aptent neque curabitur cubilia habitasse taciti, id vulputate quis consectetur turpis, blandit cursus aenean interdum."
+  },
+  "Contact": {
+    "title": "Contact",
+    "description": "Let's get in touch",
+    "name": "Name",
+    "surname": "Surname",
+    "email": "E-mail",
+    "yourMessage": "Your Message...",
+    "sendMessage": "Send Message"
   }
 }
