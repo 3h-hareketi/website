@@ -1,3 +1,5 @@
+import { GetStaticProps } from "next";
+import { useTranslations } from "next-intl";
 import { NextSeo } from "next-seo";
 import BlogCard from "../components/BlogCard";
 import Layout from "../components/Layout";
@@ -10,6 +12,8 @@ type Props = {
 };
 
 const Home = ({ posts }: Props) => {
+  const t = useTranslations("Home");
+
   return (
     <Layout
       bgColor=""
@@ -22,26 +26,19 @@ const Home = ({ posts }: Props) => {
         <div className="h-screen mx-auto mt-16 text-white">
           {" "}
           <h1 className="text-4xl font-extrabold md:text-8xl">
-            Discover liberalism, <br /> the ideology of freedom!
+            {t("heroTitle1")} <br /> {t("heroTitle2")}
           </h1>
-          <div className="max-w-2xl mt-10">
-            Vulputate erat cubilia praesent, dolor mattis condimentum eget
-            tellus phasellus auctor elementum morbi, justo torquent egestas,
-            nulla cursus tellus, per.
-          </div>
-          <button className="p-2 mt-4 font-medium text-black bg-white shadow-md w-36 rounded-2xl hover:text-primary-500 hover:shadow-lg">
-            SEE MORE
+          <div className="max-w-2xl mt-10">{t("heroSubtitle")}</div>
+          <button className="p-2 mt-4 font-medium text-black uppercase bg-white shadow-md w-36 rounded-2xl hover:text-primary-500 hover:shadow-lg">
+            {t("heroButton")}
           </button>
         </div>
         <div className="flex flex-col w-full space-y-12 text-center bg-white">
-          <h1 className="text-3xl font-semibold">Blog Posts</h1>{" "}
+          <h1 className="text-3xl font-semibold">{t("blogPosts")}</h1>{" "}
           <div className="max-w-2xl mx-auto font-light text-gray-600">
-            Ornare aptent aenean tristique tortor egestas habitasse, netus
-            praesent taciti sagittis nulla proin vivamus habitasse, non aptent
-            neque curabitur cubilia habitasse taciti, id vulputate quis
-            consectetur turpis, blandit cursus aenean interdum.
+            {t("blogPostsDescription")}
           </div>
-          <div className="md:mx-24 lg:mx-48 xl:mx-96 mx-4">
+          <div className="mx-4 md:mx-24 lg:mx-48 xl:mx-96">
             {posts.map((blog, blogIdx) => (
               <BlogCard key={blog.id} blog={blog} index={blogIdx} />
             ))}
@@ -53,15 +50,16 @@ const Home = ({ posts }: Props) => {
   );
 };
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const sdk = getSdk(client);
   const { posts } = await sdk.FeaturedBlogs();
 
   return {
     props: {
       posts,
+      messages: (await import(`../messages/${locale}.json`)).default,
     },
   };
-}
+};
 
 export default Home;
