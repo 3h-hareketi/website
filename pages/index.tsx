@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import { useTranslations } from "next-intl";
 import { NextSeo } from "next-seo";
-import BlogCard from "../components/BlogCard";
+import PostCard from "../components/PostCard";
 import Layout from "../components/Layout";
 import Newsletter from "../components/Newsletter";
 import { getSdk, Post } from "../interfaces";
@@ -40,7 +40,7 @@ const Home = ({ posts }: Props) => {
           </div>
           <div className="mx-4 md:mx-24 lg:mx-48 xl:mx-96">
             {posts.map((blog, blogIdx) => (
-              <BlogCard key={blog.id} blog={blog} index={blogIdx} />
+              <PostCard key={blog.id} blog={blog} index={blogIdx} />
             ))}
           </div>
         </div>
