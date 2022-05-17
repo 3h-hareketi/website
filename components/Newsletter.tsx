@@ -1,10 +1,12 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 const Newsletter = () => {
+  const t = useTranslations("Newsletter");
+
   return (
     <div className="w-full p-3 mx-auto my-24 bg-white rounded-lg shadow-md md:max-w-2xl md:p-8">
       <div className="flex flex-row md:space-x-10">
-        {" "}
         <Image
           src={"/mailbox.svg"}
           alt="Mailbox"
@@ -13,21 +15,20 @@ const Newsletter = () => {
           className="mt-auto"
         />
         <div className="flex-col space-y-4">
-          <h3 className="text-3xl md:text-5xl">Subscribe to our newsletter!</h3>
+          <h3 className="text-3xl md:text-5xl">{t("title")}</h3>
           <div className="text-lg font-light text-gray-400 md:text-sm">
-            We&apos;ll send you the best of our blog just once a month. We
-            promise.
+            {t("subtitle")}
           </div>
           <div>
             <input
               type="text"
               id="first_name"
               className="block w-full p-3 text-sm text-gray-600 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 "
-              placeholder="Enter e-mail"
+              placeholder={t("emailPlaceholder")}
             />
-          </div>{" "}
+          </div>
           <button className="p-3 text-white rounded-3xl bg-primary-500">
-            Subscribe
+            {t("submit")}
           </button>
         </div>
       </div>

@@ -54,5 +54,11 @@
   "Footer": {
     "motto": "React out to us!",
     "copyright": "All rights reserved."
+  },
+  "Newsletter": {
+    "title": "Subscribe to our newsletter!",
+    "subtitle": "We'll send you the best of our blog just once a month. We promise.",
+    "emailPlaceholder": "Enter e-mail",
+    "submit": "Subscribe"
   }
 }
