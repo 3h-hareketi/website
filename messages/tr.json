@@ -50,5 +50,9 @@
   },
   "PostCard": {
     "readMore": "Read more"
-  } 
+  },
+  "Footer": {
+    "motto": "React out to us!",
+    "copyright": "All rights reserved."
+  }
 }
