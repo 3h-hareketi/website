@@ -1,5 +1,5 @@
-query Projects {
-  projects {
+query Projects($locales: [Locale!] = [tr]) {
+  projects(locales: $locales) {
     description
     id
     image {
