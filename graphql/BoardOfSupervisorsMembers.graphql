@@ -1,12 +1,12 @@
-query BoardOfSupervisorsMembers {
-  people(where: {boardOfSupervisorsMember: true}) {
+query BoardOfSupervisorsMembers($locales: [Locale!] = [en]) {
+  people(where: { boardOfSupervisorsMember: true }, locales: $locales) {
     fullName
     role
     biography
     facebook
     id
     image {
-      url
+      url(transformation: { image: { resize: { height: 96, width: 96 } } })
     }
     instagram
     linkedIn

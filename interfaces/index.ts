@@ -6817,7 +6817,7 @@ export enum _SystemDateTimeFieldVariation {
 }
 
 export type BoardOfDirectorsMembersQueryVariables = Exact<{
-  [key: string]: never;
+  locales?: InputMaybe<Array<Locale> | Locale>;
 }>;
 
 export type BoardOfDirectorsMembersQuery = {
@@ -6837,7 +6837,7 @@ export type BoardOfDirectorsMembersQuery = {
 };
 
 export type BoardOfSupervisorsMembersQueryVariables = Exact<{
-  [key: string]: never;
+  locales?: InputMaybe<Array<Locale> | Locale>;
 }>;
 
 export type BoardOfSupervisorsMembersQuery = {
@@ -6962,15 +6962,19 @@ export type SimilarPostsQuery = {
 };
 
 export const BoardOfDirectorsMembersDocument = gql`
-  query BoardOfDirectorsMembers {
-    people(where: { boardOfDirectorsMember: true }) {
+  query BoardOfDirectorsMembers($locales: [Locale!] = [en]) {
+    people(where: { boardOfDirectorsMember: true }, locales: $locales) {
       fullName
       role
       biography
       facebook
       id
       image {
-        url
+        url(
+          transformation: {
+            image: { resize: { height: 96, width: 96, fit: clip } }
+          }
+        )
       }
       instagram
       linkedIn
@@ -6979,15 +6983,15 @@ export const BoardOfDirectorsMembersDocument = gql`
   }
 `;
 export const BoardOfSupervisorsMembersDocument = gql`
-  query BoardOfSupervisorsMembers {
-    people(where: { boardOfSupervisorsMember: true }) {
+  query BoardOfSupervisorsMembers($locales: [Locale!] = [en]) {
+    people(where: { boardOfSupervisorsMember: true }, locales: $locales) {
       fullName
       role
       biography
       facebook
       id
       image {
-        url
+        url(transformation: { image: { resize: { height: 96, width: 96 } } })
       }
       instagram
       linkedIn
