@@ -1,5 +1,5 @@
-query Posts {
-  posts {
+query Posts($locales: [Locale!] = [tr]) {
+  posts(locales: $locales) {
     id
     content {
       html

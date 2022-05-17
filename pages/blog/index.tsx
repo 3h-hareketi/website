@@ -1,23 +1,28 @@
 import { Tab } from "@headlessui/react";
+import { GetStaticProps } from "next";
+import { useTranslations } from "next-intl";
 import { NextSeo } from "next-seo";
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "../../components/Layout";
-import { Post, getSdk } from "../../interfaces";
+import { Post, getSdk, Locale } from "../../interfaces";
 import { client } from "../../lib/graphCmsClient";
 
 type Props = {
   posts: Array<Post>;
 };
 
+function classNames(...classes: string[]) {
+  return classes.filter(Boolean).join(" ");
+}
+
 const Blog = ({ posts }: Props) => {
+  const t = useTranslations("Blog");
+
   const highlightedPost = posts.filter((post) =>
     post.tags.includes("highlighted")
   )[0];
 
-  function classNames(...classes: string[]) {
-    return classes.filter(Boolean).join(" ");
-  }
   const uniqueTags: string[] = [];
   posts.forEach((post) => {
     post.tags.forEach((tag) => {
@@ -38,7 +43,7 @@ const Blog = ({ posts }: Props) => {
       hamburgerColor="black"
     >
       {" "}
-      <NextSeo title="Blog" />
+      <NextSeo title={t("title")} description={t("description")} />
       <div className="bg-gray-200">
         <div
           className="w-full h-[60vh] -translate-y-1/3"
@@ -66,7 +71,7 @@ const Blog = ({ posts }: Props) => {
                     href="#"
                     className="p-3 mt-8 font-bold text-center text-black bg-white md:mt-16 w-36 rounded-3xl"
                   >
-                    Read More
+                    {t("readMore")}
                   </a>
                 </Link>
               </div>
@@ -84,7 +89,7 @@ const Blog = ({ posts }: Props) => {
                       href="#"
                       className="p-3 font-bold text-center text-black bg-white w-36 rounded-3xl"
                     >
-                      Read More
+                      {t("readMore")}
                     </a>
                   </Link>
                 </div>
@@ -147,7 +152,7 @@ const Blog = ({ posts }: Props) => {
                             href="#"
                             className="w-4/5 p-2 text-sm text-center text-white md:w-1/6 rounded-3xl bg-primary-500"
                           >
-                            Read more
+                            {t("readMore")}
                           </a>
                         </Link>
                       </div>
@@ -163,15 +168,16 @@ const Blog = ({ posts }: Props) => {
   );
 };
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const sdk = getSdk(client);
-  const { posts } = await sdk.Posts();
+  const { posts } = await sdk.Posts({ locales: [locale as Locale] });
 
   return {
     props: {
       posts,
+      messages: (await import(`../../messages/${locale}.json`)).default,
     },
   };
-}
+};
 
 export default Blog;

@@ -36,5 +36,10 @@
     "projects": "Projects",
     "projectsDescription": "Ornare aptent aenean tristique tortor egestas habitasse, netus praesent taciti sagittis nulla proin vivamus habitasse, non aptent neque curabitur cubilia habitasse taciti, id vulputate quis consectetur turpis, blandit cursus aenean interdum.",
     "readMore": "Read more"
+  },
+  "Blog": {
+    "title": "Blog",
+    "description": "Our blog",
+    "readMore": "Read more"
   }
 }

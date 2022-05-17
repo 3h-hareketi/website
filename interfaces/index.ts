@@ -6089,7 +6089,9 @@ export type PostQuery = {
   } | null;
 };
 
-export type PostsQueryVariables = Exact<{ [key: string]: never }>;
+export type PostsQueryVariables = Exact<{
+  locales?: InputMaybe<Array<Locale> | Locale>;
+}>;
 
 export type PostsQuery = {
   __typename?: "Query";
@@ -6232,8 +6234,8 @@ export const PostDocument = gql`
   }
 `;
 export const PostsDocument = gql`
-  query Posts {
-    posts {
+  query Posts($locales: [Locale!] = [tr]) {
+    posts(locales: $locales) {
       id
       content {
         html
