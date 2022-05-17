@@ -5,14 +5,14 @@ import logo from "/public/3h-vector.png";
 
 const Footer = () => {
   const t = useTranslations("Footer");
+  const tMenu = useTranslations("Navbar");
 
   return (
     <footer className="bg-primary-500">
       <div className="flex flex-col items-center mt-16 md:flex-row md:mx-64">
         <div className="space-y-3 text-center md:mr-auto">
-          <BlurImage src={logo} height={128} width={128} className="" />
+          <BlurImage src={logo} height={128} width={128} />
           <ul className="text-white">
-            {" "}
             <li className="font-normal">Istanbul / Turkey</li>
             <li className="font-thin">iletisim@3hhareketi.org</li>
             <li className="font-thin">(+90) 212 564 78 90</li>
@@ -21,40 +21,38 @@ const Footer = () => {
         <h1 className="text-4xl font-bold text-center text-white md:text-6xl">
           {t("motto")}
         </h1>
-
         <div className="flex flex-col mt-5 ml-10 mr-auto text-left md:mr-0 md:mt-0 md:ml-auto md:text-right">
           <ul className="text-white">
-            {" "}
-            <li>LEARN MORE</li>
+            <li className="uppercase">{t("learnMore")}</li>
             <Link href="/about" passHref>
               <li className="font-thin">
-                <a>About Us</a>
+                <a>{tMenu("aboutUs")}</a>
               </li>
             </Link>
             <Link href="/contact" passHref>
               <li className="font-thin">
-                <a>Contact Us</a>
+                <a>{tMenu("contactUs")}</a>
               </li>
             </Link>
             <Link href="/projects" passHref>
               <li className="font-thin">
-                <a>Projects</a>
+                <a>{tMenu("projects")}</a>
               </li>
-            </Link>{" "}
-            <li className="mt-16">SUPPORT</li>
+            </Link>
+            <li className="mt-16 uppercase">{t("support")}</li>
             <Link href="/terms" passHref>
               <li className="font-thin">
-                <a>Terms and Services</a>
+                <a>{t("tos")}</a>
               </li>
-            </Link>{" "}
+            </Link>
             <Link href="/privacy" passHref>
               <li className="font-thin">
-                <a>Privacy</a>
+                <a>{t("privacy")}</a>
               </li>
             </Link>
             <Link href="/cookies" passHref>
               <li className="font-thin">
-                <a> Cookies </a>
+                <a>{t("cookies")}</a>
               </li>
             </Link>
           </ul>

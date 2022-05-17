@@ -7,6 +7,15 @@
     "joinUs": "Join Us",
     "contactUs": "Contact Us"
   },
+  "Footer": {
+    "motto": "React out to us!",
+    "copyright": "All rights reserved.",
+    "learnMore": "Learn More",
+    "support": "Support",
+    "tos": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "cookie": "Cookie Policy"
+  },
   "Home": {
     "description": "3H Movement: Discover liberalism, the ideology of freedom!",
     "heroTitle1": "Discover liberalism,",
@@ -58,10 +67,6 @@
   },
   "PostCard": {
     "readMore": "Read more"
-  },
-  "Footer": {
-    "motto": "React out to us!",
-    "copyright": "All rights reserved."
   },
   "Newsletter": {
     "title": "Subscribe to our newsletter!",
