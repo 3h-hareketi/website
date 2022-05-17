@@ -1,4 +1,6 @@
+import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import BlurImage from "./BlurImage";
 
 type Props = {
@@ -18,15 +20,16 @@ const Navbar = ({
   navbarOpen,
   setNavbarOpen,
 }: Props) => {
+  const t = useTranslations("Navbar");
+  const router = useRouter();
+
   return (
     <section className={`relative w-full flex justify-center z-50 ${bgColor}`}>
-      <nav className="w-full lg:w-3/4 flex items-center md:mx-auto flex-row">
+      <nav className="flex flex-row items-center w-full lg:w-3/4 md:mx-auto">
         <a
           className="mr-auto md:ml-0 md:hidden md:mr-0"
           onClick={() => setNavbarOpen(true)}
-          href="#"
         >
-          {" "}
           <svg
             viewBox="0 0 100 80"
             width="20"
@@ -40,8 +43,7 @@ const Navbar = ({
         </a>
 
         <Link href="/" passHref>
-          <a href="#">
-            {" "}
+          <a>
             <BlurImage
               className=""
               src={logo === "alt" ? `/logo-alt.svg` : `/logo.svg`}
@@ -51,57 +53,42 @@ const Navbar = ({
             />
           </a>
         </Link>
-        <ul className="whitespace-nowrap items-center hidden h-12 mx-auto space-x-10 font-bold text-primary-50 md:flex">
+        <ul className="items-center hidden h-12 mx-auto space-x-10 font-bold whitespace-nowrap text-primary-50 md:flex">
           <li>
-            {" "}
             <Link href="/about" passHref>
-              <a className={`${textColor}`} href="#">
-                ABOUT US
-              </a>
+              <a className={`${textColor} uppercase`}>{t("aboutUs")}</a>
             </Link>
           </li>
           <li>
-            {" "}
             <Link href="/projects" passHref>
-              <a className={`${textColor}`} href="#">
-                PROJECTS
-              </a>
+              <a className={`${textColor} uppercase`}>{t("projects")}</a>
             </Link>
           </li>{" "}
           <li>
-            {" "}
             <Link href="/blog" passHref>
-              <a className={`${textColor}`} href="#">
-                BLOG
-              </a>
+              <a className={`${textColor} uppercase`}>{t("blog")}</a>
             </Link>
           </li>
           <li>
-            {" "}
             <Link href="/join" passHref>
-              <a className={`${textColor}`} href="#">
-                JOIN US
-              </a>
+              <a className={`${textColor} uppercase`}>{t("joinUs")}</a>
             </Link>
           </li>{" "}
           <li>
-            {" "}
             <Link href="/contact" passHref>
-              <a className={`${textColor}`} href="#">
-                CONTACT US
-              </a>
+              <a className={`${textColor} uppercase`}>{t("contactUs")}</a>
             </Link>
           </li>
         </ul>
-        <a
-          className={`font-bold md:ml-0 ml-auto ${textColor}`}
-          href="#"
-          onClick={() => {
-            console.log("Language changed");
-          }}
+        <Link
+          href={router.pathname}
+          locale={router.locale === "tr" ? "en" : "tr"}
+          passHref
         >
-          TR/ENG
-        </a>
+          <a className={`font-bold md:ml-0 ml-auto ${textColor}`}>
+            {router.locale === "tr" ? "EN" : "TR"}
+          </a>
+        </Link>
       </nav>
       {/* mobile navbar */}
       <div
@@ -117,7 +104,6 @@ const Navbar = ({
           <div className="flex items-center mb-8">
             <a
               className="mr-auto text-3xl font-bold leading-none"
-              href="#"
               onClick={() => setNavbarOpen(false)}
             >
               <BlurImage
@@ -143,7 +129,7 @@ const Navbar = ({
                     className="block p-4 text-sm rounded hover:bg-gray-50 hover:text-primary-500"
                     onClick={() => setNavbarOpen(false)}
                   >
-                    Home
+                    {t("home")}
                   </a>
                 </Link>
               </li>
@@ -153,7 +139,7 @@ const Navbar = ({
                     className="block p-4 text-sm rounded hover:bg-gray-50 hover:text-primary-500"
                     onClick={() => setNavbarOpen(false)}
                   >
-                    About Us
+                    {t("aboutUs")}
                   </a>
                 </Link>
               </li>
@@ -163,7 +149,7 @@ const Navbar = ({
                     className="block p-4 text-sm rounded hover:bg-gray-50 hover:text-primary-500"
                     onClick={() => setNavbarOpen(false)}
                   >
-                    Projects
+                    {t("projects")}
                   </a>
                 </Link>
               </li>{" "}
@@ -173,7 +159,7 @@ const Navbar = ({
                     className="block p-4 text-sm rounded hover:bg-gray-50 hover:text-primary-500"
                     onClick={() => setNavbarOpen(false)}
                   >
-                    Blog
+                    {t("blog")}
                   </a>
                 </Link>
               </li>{" "}
@@ -183,7 +169,7 @@ const Navbar = ({
                     className="block p-4 text-sm rounded hover:bg-gray-50 hover:text-primary-500"
                     onClick={() => setNavbarOpen(false)}
                   >
-                    Join Us
+                    {t("joinUs")}
                   </a>
                 </Link>
               </li>
@@ -193,7 +179,7 @@ const Navbar = ({
                     className="block p-4 text-sm rounded hover:bg-gray-50 hover:text-primary-500"
                     onClick={() => setNavbarOpen(false)}
                   >
-                    Contact Us
+                    {t("contactUs")}
                   </a>
                 </Link>
               </li>

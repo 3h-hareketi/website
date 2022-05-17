@@ -1,4 +1,12 @@
 {
+  "Navbar": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "projects": "Projects",
+    "blog": "Blog",
+    "joinUs": "Join Us",
+    "contactUs": "Contact Us"
+  },
   "Home": {
     "description": "3H Movement: Discover liberalism, the ideology of freedom!",
     "heroTitle1": "Discover liberalism,",
