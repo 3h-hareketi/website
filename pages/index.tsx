@@ -21,7 +21,7 @@ const Home = ({ posts }: Props) => {
       logo="alt"
       hamburgerColor="white"
     >
-      <NextSeo description="3H Movement: Discover liberalism, the ideology of freedom!" />
+      <NextSeo description={t("description")} />
       <div className="flex flex-col mx-auto">
         <div className="h-screen mx-auto mt-16 text-white">
           {" "}
