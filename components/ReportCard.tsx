@@ -35,15 +35,11 @@ const ReportCard = ({ report }: Props) => {
         <h1 className="ml-2 text-xl font-semibold">{report.title}</h1>
       </div>
       <div className="flex flex-row">
-        {" "}
-        <div className="text-sm text-gray-400">
-          Eget venenatis donec venenatis faucibus tempus, ac dictum potenti,
-          nisl primis eleifend.
-        </div>
+        <div className="text-sm text-gray-400">{report.description}</div>
         <Link href={report.report.url} passHref>
           <a className="w-64 text-white md:px-4 md:py-2 md:mt-4 rounded-xl bg-primary-500 hover:bg-primary-700 max-h-8 md:max-h-full py-0.5 px-2">
             <div className="flex flex-row">
-              Download{" "}
+              Download
               <svg
                 width="27"
                 height="18"

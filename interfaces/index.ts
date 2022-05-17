@@ -4046,6 +4046,7 @@ export type Report = Node & {
   createdAt: Scalars["DateTime"];
   /** User that created this document */
   createdBy?: Maybe<User>;
+  description?: Maybe<Scalars["String"]>;
   /** Get the document in other stages */
   documentInStages: Array<Report>;
   /** List of Report versions */
@@ -4146,6 +4147,8 @@ export type ReportConnection = {
 
 export type ReportCreateInput = {
   createdAt?: InputMaybe<Scalars["DateTime"]>;
+  /** description input for default locale (tr) */
+  description?: InputMaybe<Scalars["String"]>;
   /** Inline mutations for managing document localizations excluding the default locale */
   localizations?: InputMaybe<ReportCreateLocalizationsInput>;
   report: AssetCreateOneInlineInput;
@@ -4158,6 +4161,7 @@ export type ReportCreateInput = {
 
 export type ReportCreateLocalizationDataInput = {
   createdAt?: InputMaybe<Scalars["DateTime"]>;
+  description?: InputMaybe<Scalars["String"]>;
   slug: Scalars["String"];
   title: Scalars["String"];
   updatedAt?: InputMaybe<Scalars["DateTime"]>;
@@ -4283,6 +4287,8 @@ export type ReportManyWhereInput = {
 export enum ReportOrderByInput {
   CreatedAtAsc = "createdAt_ASC",
   CreatedAtDesc = "createdAt_DESC",
+  DescriptionAsc = "description_ASC",
+  DescriptionDesc = "description_DESC",
   IdAsc = "id_ASC",
   IdDesc = "id_DESC",
   PublishedAtAsc = "publishedAt_ASC",
@@ -4296,6 +4302,8 @@ export enum ReportOrderByInput {
 }
 
 export type ReportUpdateInput = {
+  /** description input for default locale (tr) */
+  description?: InputMaybe<Scalars["String"]>;
   /** Manage document localizations */
   localizations?: InputMaybe<ReportUpdateLocalizationsInput>;
   report?: InputMaybe<AssetUpdateOneInlineInput>;
@@ -4306,6 +4314,7 @@ export type ReportUpdateInput = {
 };
 
 export type ReportUpdateLocalizationDataInput = {
+  description?: InputMaybe<Scalars["String"]>;
   slug?: InputMaybe<Scalars["String"]>;
   title?: InputMaybe<Scalars["String"]>;
 };
@@ -4343,6 +4352,8 @@ export type ReportUpdateManyInlineInput = {
 };
 
 export type ReportUpdateManyInput = {
+  /** description input for default locale (tr) */
+  description?: InputMaybe<Scalars["String"]>;
   /** Optional updates to localizations */
   localizations?: InputMaybe<ReportUpdateManyLocalizationsInput>;
   /** title input for default locale (tr) */
@@ -4350,6 +4361,7 @@ export type ReportUpdateManyInput = {
 };
 
 export type ReportUpdateManyLocalizationDataInput = {
+  description?: InputMaybe<Scalars["String"]>;
   title?: InputMaybe<Scalars["String"]>;
 };
 
@@ -4438,6 +4450,25 @@ export type ReportWhereInput = {
   /** All values that are not contained in given list. */
   createdAt_not_in?: InputMaybe<Array<Scalars["DateTime"]>>;
   createdBy?: InputMaybe<UserWhereInput>;
+  description?: InputMaybe<Scalars["String"]>;
+  /** All values containing the given string. */
+  description_contains?: InputMaybe<Scalars["String"]>;
+  /** All values ending with the given string. */
+  description_ends_with?: InputMaybe<Scalars["String"]>;
+  /** All values that are contained in given list. */
+  description_in?: InputMaybe<Array<Scalars["String"]>>;
+  /** All values that are not equal to given value. */
+  description_not?: InputMaybe<Scalars["String"]>;
+  /** All values not containing the given string. */
+  description_not_contains?: InputMaybe<Scalars["String"]>;
+  /** All values not ending with the given string */
+  description_not_ends_with?: InputMaybe<Scalars["String"]>;
+  /** All values that are not contained in given list. */
+  description_not_in?: InputMaybe<Array<Scalars["String"]>>;
+  /** All values not starting with the given string. */
+  description_not_starts_with?: InputMaybe<Scalars["String"]>;
+  /** All values starting with the given string. */
+  description_starts_with?: InputMaybe<Scalars["String"]>;
   id?: InputMaybe<Scalars["ID"]>;
   /** All values containing the given string. */
   id_contains?: InputMaybe<Scalars["ID"]>;
