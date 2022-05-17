@@ -1,8 +1,8 @@
-import { ArticleJsonLd, NextSeo } from "next-seo";
+import { GetStaticProps } from "next";
+import { NextSeo } from "next-seo";
 import Link from "next/link";
 import Layout from "../../components/Layout";
-import { getSdk, Project } from "../../interfaces";
-import BASE_URL from "../../lib/baseUrl";
+import { getSdk, Locale, Project } from "../../interfaces";
 import { client } from "../../lib/graphCmsClient";
 
 type Props = {
@@ -56,15 +56,15 @@ const Blog = ({ projects }: Props) => {
   );
 };
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const sdk = getSdk(client);
-  const { projects } = await sdk.Projects();
+  const { projects } = await sdk.Projects({ locales: [locale as Locale] });
 
   return {
     props: {
       projects,
     },
   };
-}
+};
 
 export default Blog;
