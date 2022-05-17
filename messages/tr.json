@@ -41,5 +41,10 @@
     "title": "Blog",
     "description": "Our blog",
     "readMore": "Read more"
+  },
+  "Post": {
+    "readMore": "Read more",
+    "similarPosts": "Similar Posts",
+    "similarPostsSubtitle": "We think you might like these articles too."
   }
 }
