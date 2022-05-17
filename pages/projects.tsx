@@ -2,9 +2,9 @@ import { GetStaticProps } from "next";
 import { useTranslations } from "next-intl";
 import { NextSeo } from "next-seo";
 import Link from "next/link";
-import Layout from "../../components/Layout";
-import { getSdk, Locale, Project } from "../../interfaces";
-import { client } from "../../lib/graphCmsClient";
+import Layout from "../components/Layout";
+import { getSdk, Locale, Project } from "../interfaces";
+import { client } from "../lib/graphCmsClient";
 
 type Props = {
   projects: Array<Project>;
