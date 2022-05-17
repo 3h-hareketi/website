@@ -1,4 +1,4 @@
-query BoardOfDirectorsMembers($locales: [Locale!] = [en]) {
+query BoardOfDirectorsMembers($locales: [Locale!] = [tr]) {
   people(where: {boardOfDirectorsMember: true}, locales: $locales) {
     fullName
     role

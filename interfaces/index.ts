@@ -862,8 +862,8 @@ export type ImageTransformationInput = {
 
 /** Locale system enumeration */
 export enum Locale {
-  /** System locale */
   En = "en",
+  /** System locale */
   Tr = "tr",
 }
 
@@ -1883,7 +1883,7 @@ export type PersonConnection = {
 };
 
 export type PersonCreateInput = {
-  /** biography input for default locale (en) */
+  /** biography input for default locale (tr) */
   biography?: InputMaybe<Scalars["String"]>;
   boardOfDirectorsMember: Scalars["Boolean"];
   boardOfSupervisorsMember: Scalars["Boolean"];
@@ -1895,7 +1895,7 @@ export type PersonCreateInput = {
   linkedIn?: InputMaybe<Scalars["String"]>;
   /** Inline mutations for managing document localizations excluding the default locale */
   localizations?: InputMaybe<PersonCreateLocalizationsInput>;
-  /** role input for default locale (en) */
+  /** role input for default locale (tr) */
   role: Scalars["String"];
   twitter?: InputMaybe<Scalars["String"]>;
   updatedAt?: InputMaybe<Scalars["DateTime"]>;
@@ -2156,7 +2156,7 @@ export enum PersonOrderByInput {
 }
 
 export type PersonUpdateInput = {
-  /** biography input for default locale (en) */
+  /** biography input for default locale (tr) */
   biography?: InputMaybe<Scalars["String"]>;
   boardOfDirectorsMember?: InputMaybe<Scalars["Boolean"]>;
   boardOfSupervisorsMember?: InputMaybe<Scalars["Boolean"]>;
@@ -2167,7 +2167,7 @@ export type PersonUpdateInput = {
   linkedIn?: InputMaybe<Scalars["String"]>;
   /** Manage document localizations */
   localizations?: InputMaybe<PersonUpdateLocalizationsInput>;
-  /** role input for default locale (en) */
+  /** role input for default locale (tr) */
   role?: InputMaybe<Scalars["String"]>;
   twitter?: InputMaybe<Scalars["String"]>;
 };
@@ -2210,7 +2210,7 @@ export type PersonUpdateManyInlineInput = {
 };
 
 export type PersonUpdateManyInput = {
-  /** biography input for default locale (en) */
+  /** biography input for default locale (tr) */
   biography?: InputMaybe<Scalars["String"]>;
   boardOfDirectorsMember?: InputMaybe<Scalars["Boolean"]>;
   boardOfSupervisorsMember?: InputMaybe<Scalars["Boolean"]>;
@@ -2220,7 +2220,7 @@ export type PersonUpdateManyInput = {
   linkedIn?: InputMaybe<Scalars["String"]>;
   /** Optional updates to localizations */
   localizations?: InputMaybe<PersonUpdateManyLocalizationsInput>;
-  /** role input for default locale (en) */
+  /** role input for default locale (tr) */
   role?: InputMaybe<Scalars["String"]>;
   twitter?: InputMaybe<Scalars["String"]>;
 };
@@ -2625,20 +2625,20 @@ export type PostConnection = {
 };
 
 export type PostCreateInput = {
-  /** content input for default locale (en) */
+  /** content input for default locale (tr) */
   content?: InputMaybe<Scalars["RichTextAST"]>;
   coverImage: AssetCreateOneInlineInput;
   createdAt?: InputMaybe<Scalars["DateTime"]>;
   date: Scalars["Date"];
-  /** excerpt input for default locale (en) */
+  /** excerpt input for default locale (tr) */
   excerpt: Scalars["String"];
   /** Inline mutations for managing document localizations excluding the default locale */
   localizations?: InputMaybe<PostCreateLocalizationsInput>;
-  /** slug input for default locale (en) */
+  /** slug input for default locale (tr) */
   slug: Scalars["String"];
-  /** tags input for default locale (en) */
+  /** tags input for default locale (tr) */
   tags: Array<Scalars["String"]>;
-  /** title input for default locale (en) */
+  /** title input for default locale (tr) */
   title: Scalars["String"];
   updatedAt?: InputMaybe<Scalars["DateTime"]>;
 };
@@ -2807,19 +2807,19 @@ export enum PostOrderByInput {
 }
 
 export type PostUpdateInput = {
-  /** content input for default locale (en) */
+  /** content input for default locale (tr) */
   content?: InputMaybe<Scalars["RichTextAST"]>;
   coverImage?: InputMaybe<AssetUpdateOneInlineInput>;
   date?: InputMaybe<Scalars["Date"]>;
-  /** excerpt input for default locale (en) */
+  /** excerpt input for default locale (tr) */
   excerpt?: InputMaybe<Scalars["String"]>;
   /** Manage document localizations */
   localizations?: InputMaybe<PostUpdateLocalizationsInput>;
-  /** slug input for default locale (en) */
+  /** slug input for default locale (tr) */
   slug?: InputMaybe<Scalars["String"]>;
-  /** tags input for default locale (en) */
+  /** tags input for default locale (tr) */
   tags?: InputMaybe<Array<Scalars["String"]>>;
-  /** title input for default locale (en) */
+  /** title input for default locale (tr) */
   title?: InputMaybe<Scalars["String"]>;
 };
 
@@ -2864,14 +2864,14 @@ export type PostUpdateManyInlineInput = {
 };
 
 export type PostUpdateManyInput = {
-  /** content input for default locale (en) */
+  /** content input for default locale (tr) */
   content?: InputMaybe<Scalars["RichTextAST"]>;
   date?: InputMaybe<Scalars["Date"]>;
-  /** excerpt input for default locale (en) */
+  /** excerpt input for default locale (tr) */
   excerpt?: InputMaybe<Scalars["String"]>;
   /** Optional updates to localizations */
   localizations?: InputMaybe<PostUpdateManyLocalizationsInput>;
-  /** tags input for default locale (en) */
+  /** tags input for default locale (tr) */
   tags?: InputMaybe<Array<Scalars["String"]>>;
 };
 
@@ -3226,15 +3226,15 @@ export type ProjectConnection = {
 
 export type ProjectCreateInput = {
   createdAt?: InputMaybe<Scalars["DateTime"]>;
-  /** description input for default locale (en) */
+  /** description input for default locale (tr) */
   description: Scalars["String"];
   image: AssetCreateManyInlineInput;
   link?: InputMaybe<Scalars["String"]>;
   /** Inline mutations for managing document localizations excluding the default locale */
   localizations?: InputMaybe<ProjectCreateLocalizationsInput>;
-  /** name input for default locale (en) */
+  /** name input for default locale (tr) */
   name: Scalars["String"];
-  /** tags input for default locale (en) */
+  /** tags input for default locale (tr) */
   tags?: InputMaybe<Array<Scalars["String"]>>;
   updatedAt?: InputMaybe<Scalars["DateTime"]>;
 };
@@ -3405,15 +3405,15 @@ export enum ProjectOrderByInput {
 }
 
 export type ProjectUpdateInput = {
-  /** description input for default locale (en) */
+  /** description input for default locale (tr) */
   description?: InputMaybe<Scalars["String"]>;
   image?: InputMaybe<AssetUpdateManyInlineInput>;
   link?: InputMaybe<Scalars["String"]>;
   /** Manage document localizations */
   localizations?: InputMaybe<ProjectUpdateLocalizationsInput>;
-  /** name input for default locale (en) */
+  /** name input for default locale (tr) */
   name?: InputMaybe<Scalars["String"]>;
-  /** tags input for default locale (en) */
+  /** tags input for default locale (tr) */
   tags?: InputMaybe<Array<Scalars["String"]>>;
 };
 
@@ -3456,12 +3456,12 @@ export type ProjectUpdateManyInlineInput = {
 };
 
 export type ProjectUpdateManyInput = {
-  /** description input for default locale (en) */
+  /** description input for default locale (tr) */
   description?: InputMaybe<Scalars["String"]>;
   link?: InputMaybe<Scalars["String"]>;
   /** Optional updates to localizations */
   localizations?: InputMaybe<ProjectUpdateManyLocalizationsInput>;
-  /** tags input for default locale (en) */
+  /** tags input for default locale (tr) */
   tags?: InputMaybe<Array<Scalars["String"]>>;
 };
 
@@ -4149,9 +4149,9 @@ export type ReportCreateInput = {
   /** Inline mutations for managing document localizations excluding the default locale */
   localizations?: InputMaybe<ReportCreateLocalizationsInput>;
   report: AssetCreateOneInlineInput;
-  /** slug input for default locale (en) */
+  /** slug input for default locale (tr) */
   slug: Scalars["String"];
-  /** title input for default locale (en) */
+  /** title input for default locale (tr) */
   title: Scalars["String"];
   updatedAt?: InputMaybe<Scalars["DateTime"]>;
 };
@@ -4299,9 +4299,9 @@ export type ReportUpdateInput = {
   /** Manage document localizations */
   localizations?: InputMaybe<ReportUpdateLocalizationsInput>;
   report?: InputMaybe<AssetUpdateOneInlineInput>;
-  /** slug input for default locale (en) */
+  /** slug input for default locale (tr) */
   slug?: InputMaybe<Scalars["String"]>;
-  /** title input for default locale (en) */
+  /** title input for default locale (tr) */
   title?: InputMaybe<Scalars["String"]>;
 };
 
@@ -4345,7 +4345,7 @@ export type ReportUpdateManyInlineInput = {
 export type ReportUpdateManyInput = {
   /** Optional updates to localizations */
   localizations?: InputMaybe<ReportUpdateManyLocalizationsInput>;
-  /** title input for default locale (en) */
+  /** title input for default locale (tr) */
   title?: InputMaybe<Scalars["String"]>;
 };
 
@@ -6159,7 +6159,7 @@ export type SimilarPostsQuery = {
 };
 
 export const BoardOfDirectorsMembersDocument = gql`
-  query BoardOfDirectorsMembers($locales: [Locale!] = [en]) {
+  query BoardOfDirectorsMembers($locales: [Locale!] = [tr]) {
     people(where: { boardOfDirectorsMember: true }, locales: $locales) {
       fullName
       role
@@ -6180,7 +6180,7 @@ export const BoardOfDirectorsMembersDocument = gql`
   }
 `;
 export const BoardOfSupervisorsMembersDocument = gql`
-  query BoardOfSupervisorsMembers($locales: [Locale!] = [en]) {
+  query BoardOfSupervisorsMembers($locales: [Locale!] = [tr]) {
     people(where: { boardOfSupervisorsMember: true }, locales: $locales) {
       fullName
       role
