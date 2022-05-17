@@ -123,7 +123,7 @@ const About = ({ directors, supervisors, reports }: Props) => {
             {t("reports")}
           </h1>
           <div className="max-w-3xl mx-auto mt-8 font-thin text-center">
-            {t("reportsDescription")}
+            {t("reportDescription")}
           </div>
         </div>
         <div className="flex flex-wrap justify-center w-2/3 mx-auto">
