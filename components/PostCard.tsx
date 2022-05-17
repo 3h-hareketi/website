@@ -1,3 +1,5 @@
+import { GetStaticProps } from "next";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { Post } from "../interfaces";
 import BASE_URL from "../lib/baseUrl";
@@ -8,6 +10,8 @@ type Props = {
 };
 
 const PostCard = ({ blog, index }: Props) => {
+  const t = useTranslations("PostCard");
+
   return (
     <div
       style={{
@@ -38,8 +42,8 @@ const PostCard = ({ blog, index }: Props) => {
         <div className="mt-2 text-sm text-left">{blog.excerpt}</div>
         <div className="text-left">
           <Link href={`/blog/${blog.id}`}>
-            <a href="#" className="text-sm text-left text-primary-500">
-              Read more...
+            <a className="text-sm text-left text-primary-500">
+              {t("readMore")}
             </a>
           </Link>
         </div>

@@ -1,5 +1,6 @@
 {
   "Home": {
+    "description": "3H Movement: Discover liberalism, the ideology of freedom!",
     "heroTitle1": "Discover liberalism,",
     "heroTitle2": "the ideology of freedom!",
     "heroSubtitle": "Vulputate erat cubilia praesent, dolor mattis condimentum eget tellus phasellus auctor elementum morbi, justo torquent egestas, nulla cursus tellus, per.",
@@ -46,5 +47,8 @@
     "readMore": "Read more",
     "similarPosts": "Similar Posts",
     "similarPostsSubtitle": "We think you might like these articles too."
-  }
+  },
+  "PostCard": {
+    "readMore": "Read more"
+  } 
 }

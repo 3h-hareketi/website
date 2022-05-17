@@ -47,5 +47,8 @@
     "readMore": "Read more",
     "similarPosts": "Similar Posts",
     "similarPostsSubtitle": "We think you might like these articles too."
-  }
+  },
+  "PostCard": {
+    "readMore": "Read more"
+  } 
 }
