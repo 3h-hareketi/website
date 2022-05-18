@@ -52,7 +52,7 @@ const Footer = () => {
             </Link>
             <Link href="/cookies" passHref>
               <li className="font-thin">
-                <a>{t("cookies")}</a>
+                <a>{t("cookie")}</a>
               </li>
             </Link>
           </ul>
