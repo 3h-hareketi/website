@@ -6121,7 +6121,7 @@ export type PostQuery = {
 };
 
 export type PostsQueryVariables = Exact<{
-  locales?: InputMaybe<Array<Locale> | Locale>;
+  locales: Array<Locale> | Locale;
 }>;
 
 export type PostsQuery = {
@@ -6265,7 +6265,7 @@ export const PostDocument = gql`
   }
 `;
 export const PostsDocument = gql`
-  query Posts($locales: [Locale!] = [tr]) {
+  query Posts($locales: [Locale!]!) {
     posts(locales: $locales) {
       id
       content {
@@ -6407,7 +6407,7 @@ export function getSdk(
       );
     },
     Posts(
-      variables?: PostsQueryVariables,
+      variables: PostsQueryVariables,
       requestHeaders?: Dom.RequestInit["headers"]
     ): Promise<PostsQuery> {
       return withWrapper(
