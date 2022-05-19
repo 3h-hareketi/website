@@ -6271,7 +6271,7 @@ export const PostsDocument = gql`
       content {
         html
       }
-      coverImage(locales: [tr, en]) {
+      coverImage(locales: [en, tr]) {
         url
       }
       date
