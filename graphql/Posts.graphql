@@ -4,7 +4,7 @@ query Posts($locales: [Locale!]!) {
     content {
       html
     }
-    coverImage {
+    coverImage(locales: [tr, en]) {
       url
     }
     date
