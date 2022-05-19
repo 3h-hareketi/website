@@ -58,7 +58,6 @@ const BlogPost = ({ post, similarPosts }: Props) => {
       />
       <div className="flex justify-center w-full mb-24">
         <div className="flex flex-col">
-          {" "}
           <Image
             alt={`${post.title} ${
               router.locale === "tr" ? "Cover Image" : "Kapak Görseli"
@@ -84,7 +83,6 @@ const BlogPost = ({ post, similarPosts }: Props) => {
               <div className="flex flex-col text-xs text-left text-black md:text-sm">
                 <div className="">{post.createdBy?.name}</div>
                 <div className="mb-10 text-xs text-gray-600">
-                  {" "}
                   {post.createdAt}
                 </div>
               </div>
@@ -195,12 +193,11 @@ const BlogPost = ({ post, similarPosts }: Props) => {
           </div>
           {similarPosts && (
             <>
-              {" "}
               <h1 className="mx-auto mt-24 text-xl font-semibold text-gray-700 md:text-4xl">
                 {t("similarPosts")}
               </h1>
               <div className="mx-auto text-base text-gray-400">
-                We think you might like these articles too.
+                {t("similarPostsSubtitle")}
               </div>
               <div className="flex flex-row flex-wrap justify-around w-[90vw] mt-16 self-center">
                 {similarPosts &&
@@ -226,7 +223,6 @@ const BlogPost = ({ post, similarPosts }: Props) => {
                             {post.createdBy?.name}, {post.createdAt}
                           </div>
                           <div className="ml-auto">
-                            {" "}
                             {post.tags.slice(0, 1).map((tag) => (
                               <div
                                 key={tag}
