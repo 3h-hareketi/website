@@ -5,11 +5,11 @@ import { NextSeo } from "next-seo";
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "../../components/Layout";
-import { Post, getSdk, Locale } from "../../interfaces";
+import { getSdk, Locale, PostsQuery } from "../../interfaces";
 import { client } from "../../lib/graphCmsClient";
 
 type Props = {
-  posts: Array<Post>;
+  posts: PostsQuery["posts"];
 };
 
 function classNames(...classes: string[]) {

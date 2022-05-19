@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { Report } from "../interfaces";
+import { ReportsQuery } from "../interfaces";
 
 type Props = {
-  report: Report;
+  report: ReportsQuery["reports"][0];
 };
 
 const ReportCard = ({ report }: Props) => {

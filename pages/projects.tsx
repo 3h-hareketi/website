@@ -3,11 +3,11 @@ import { useTranslations } from "next-intl";
 import { NextSeo } from "next-seo";
 import Link from "next/link";
 import Layout from "../components/Layout";
-import { getSdk, Locale, Project } from "../interfaces";
+import { getSdk, Locale, ProjectsQuery } from "../interfaces";
 import { client } from "../lib/graphCmsClient";
 
 type Props = {
-  projects: Array<Project>;
+  projects: ProjectsQuery["projects"];
 };
 
 const Projects = ({ projects }: Props) => {
@@ -58,7 +58,7 @@ const Projects = ({ projects }: Props) => {
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const sdk = getSdk(client);
-  const { projects } = await sdk.Projects({ locales: [locale as Locale] });
+  const { projects } = await sdk.Projects({ locale: locale as Locale });
 
   return {
     props: {

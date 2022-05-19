@@ -5,13 +5,19 @@ import { NextSeo } from "next-seo";
 import Layout from "../components/Layout";
 import PersonCard from "../components/PersonCard";
 import ReportCard from "../components/ReportCard";
-import { getSdk, Locale, Person, Report } from "../interfaces";
+import {
+  BoardOfDirectorsMembersQuery,
+  BoardOfSupervisorsMembersQuery,
+  getSdk,
+  Locale,
+  ReportsQuery,
+} from "../interfaces";
 import { client } from "../lib/graphCmsClient";
 
 type Props = {
-  directors: Array<Person>;
-  supervisors: Array<Person>;
-  reports: Array<Report>;
+  directors: BoardOfDirectorsMembersQuery["people"];
+  supervisors: BoardOfSupervisorsMembersQuery["people"];
+  reports: ReportsQuery["reports"];
 };
 
 function classNames(...classes: string[]) {
@@ -139,10 +145,10 @@ const About = ({ directors, supervisors, reports }: Props) => {
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const sdk = getSdk(client);
   const { people: directors } = await sdk.BoardOfDirectorsMembers({
-    locales: [locale as Locale],
+    locale: locale as Locale,
   });
   const { people: supervisors } = await sdk.BoardOfSupervisorsMembers({
-    locales: [locale as Locale],
+    locale: locale as Locale,
   });
   const { reports } = await sdk.Reports();
 

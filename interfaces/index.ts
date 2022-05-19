@@ -6043,7 +6043,7 @@ export enum _SystemDateTimeFieldVariation {
 }
 
 export type BoardOfDirectorsMembersQueryVariables = Exact<{
-  locales?: InputMaybe<Array<Locale> | Locale>;
+  locale?: Locale;
 }>;
 
 export type BoardOfDirectorsMembersQuery = {
@@ -6063,7 +6063,7 @@ export type BoardOfDirectorsMembersQuery = {
 };
 
 export type BoardOfSupervisorsMembersQueryVariables = Exact<{
-  locales?: InputMaybe<Array<Locale> | Locale>;
+  locale?: Locale;
 }>;
 
 export type BoardOfSupervisorsMembersQuery = {
@@ -6082,9 +6082,9 @@ export type BoardOfSupervisorsMembersQuery = {
   }>;
 };
 
-export type FeaturedBlogsQueryVariables = Exact<{ [key: string]: never }>;
+export type FeaturedPostsQueryVariables = Exact<{ [key: string]: never }>;
 
-export type FeaturedBlogsQuery = {
+export type FeaturedPostsQuery = {
   __typename?: "Query";
   posts: Array<{
     __typename?: "Post";
@@ -6108,6 +6108,7 @@ export type PostQuery = {
     id: string;
     title: string;
     createdAt: any;
+    updatedAt: any;
     tags: Array<string>;
     excerpt: string;
     coverImage: { __typename?: "Asset"; url: string };
@@ -6142,16 +6143,25 @@ export type PostsQuery = {
   }>;
 };
 
+export type PostsPathsQueryVariables = Exact<{
+  locale: Locale;
+}>;
+
+export type PostsPathsQuery = {
+  __typename?: "Query";
+  posts: Array<{ __typename?: "Post"; id: string; locale: Locale }>;
+};
+
 export type ProjectsQueryVariables = Exact<{
-  locales?: InputMaybe<Array<Locale> | Locale>;
+  locale?: Locale;
 }>;
 
 export type ProjectsQuery = {
   __typename?: "Query";
   projects: Array<{
     __typename?: "Project";
-    description: string;
     id: string;
+    description: string;
     link?: string | null;
     name: string;
     image: Array<{ __typename?: "Asset"; url: string }>;
@@ -6167,6 +6177,7 @@ export type ReportsQuery = {
     id: string;
     title: string;
     slug: string;
+    description?: string | null;
     report: { __typename?: "Asset"; url: string };
   }>;
 };
@@ -6192,46 +6203,56 @@ export type SimilarPostsQuery = {
   }>;
 };
 
+export type HumanFragment = {
+  __typename?: "Person";
+  fullName: string;
+  role: string;
+  biography?: string | null;
+  facebook?: string | null;
+  id: string;
+  instagram?: string | null;
+  linkedIn?: string | null;
+  twitter?: string | null;
+  image?: { __typename?: "Asset"; url: string } | null;
+};
+
+export const HumanFragmentDoc = gql`
+  fragment Human on Person {
+    fullName
+    role
+    biography
+    facebook
+    id
+    image {
+      url(
+        transformation: {
+          image: { resize: { height: 96, width: 96, fit: clip } }
+        }
+      )
+    }
+    instagram
+    linkedIn
+    twitter
+  }
+`;
 export const BoardOfDirectorsMembersDocument = gql`
-  query BoardOfDirectorsMembers($locales: [Locale!] = [tr]) {
-    people(where: { boardOfDirectorsMember: true }, locales: $locales) {
-      fullName
-      role
-      biography
-      facebook
-      id
-      image {
-        url(
-          transformation: {
-            image: { resize: { height: 96, width: 96, fit: clip } }
-          }
-        )
-      }
-      instagram
-      linkedIn
-      twitter
+  query BoardOfDirectorsMembers($locale: Locale! = tr) {
+    people(where: { boardOfDirectorsMember: true }, locales: [$locale]) {
+      ...Human
     }
   }
+  ${HumanFragmentDoc}
 `;
 export const BoardOfSupervisorsMembersDocument = gql`
-  query BoardOfSupervisorsMembers($locales: [Locale!] = [tr]) {
-    people(where: { boardOfSupervisorsMember: true }, locales: $locales) {
-      fullName
-      role
-      biography
-      facebook
-      id
-      image {
-        url(transformation: { image: { resize: { height: 96, width: 96 } } })
-      }
-      instagram
-      linkedIn
-      twitter
+  query BoardOfSupervisorsMembers($locale: Locale! = tr) {
+    people(where: { boardOfSupervisorsMember: true }, locales: [$locale]) {
+      ...Human
     }
   }
+  ${HumanFragmentDoc}
 `;
-export const FeaturedBlogsDocument = gql`
-  query FeaturedBlogs {
+export const FeaturedPostsDocument = gql`
+  query FeaturedPosts {
     posts(where: { tags_contains_some: "featured" }) {
       id
       date
@@ -6253,6 +6274,7 @@ export const PostDocument = gql`
         url
       }
       createdAt
+      updatedAt
       createdBy {
         name
         picture
@@ -6287,11 +6309,19 @@ export const PostsDocument = gql`
     }
   }
 `;
-export const ProjectsDocument = gql`
-  query Projects($locales: [Locale!] = [tr]) {
-    projects(locales: $locales) {
-      description
+export const PostsPathsDocument = gql`
+  query PostsPaths($locale: Locale!) {
+    posts(locales: [$locale]) {
       id
+      locale
+    }
+  }
+`;
+export const ProjectsDocument = gql`
+  query Projects($locale: Locale! = tr) {
+    projects(locales: [$locale]) {
+      id
+      description
       image {
         url
       }
@@ -6306,6 +6336,7 @@ export const ReportsDocument = gql`
       id
       title
       slug
+      description
       report {
         url
       }
@@ -6379,17 +6410,17 @@ export function getSdk(
         "query"
       );
     },
-    FeaturedBlogs(
-      variables?: FeaturedBlogsQueryVariables,
+    FeaturedPosts(
+      variables?: FeaturedPostsQueryVariables,
       requestHeaders?: Dom.RequestInit["headers"]
-    ): Promise<FeaturedBlogsQuery> {
+    ): Promise<FeaturedPostsQuery> {
       return withWrapper(
         (wrappedRequestHeaders) =>
-          client.request<FeaturedBlogsQuery>(FeaturedBlogsDocument, variables, {
+          client.request<FeaturedPostsQuery>(FeaturedPostsDocument, variables, {
             ...requestHeaders,
             ...wrappedRequestHeaders,
           }),
-        "FeaturedBlogs",
+        "FeaturedPosts",
         "query"
       );
     },
@@ -6418,6 +6449,20 @@ export function getSdk(
             ...wrappedRequestHeaders,
           }),
         "Posts",
+        "query"
+      );
+    },
+    PostsPaths(
+      variables: PostsPathsQueryVariables,
+      requestHeaders?: Dom.RequestInit["headers"]
+    ): Promise<PostsPathsQuery> {
+      return withWrapper(
+        (wrappedRequestHeaders) =>
+          client.request<PostsPathsQuery>(PostsPathsDocument, variables, {
+            ...requestHeaders,
+            ...wrappedRequestHeaders,
+          }),
+        "PostsPaths",
         "query"
       );
     },

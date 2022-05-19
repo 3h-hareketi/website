@@ -1,15 +1,5 @@
-query BoardOfSupervisorsMembers($locales: [Locale!] = [tr]) {
-  people(where: { boardOfSupervisorsMember: true }, locales: $locales) {
-    fullName
-    role
-    biography
-    facebook
-    id
-    image {
-      url(transformation: { image: { resize: { height: 96, width: 96 } } })
-    }
-    instagram
-    linkedIn
-    twitter
+query BoardOfSupervisorsMembers($locale: Locale! = tr) {
+  people(where: { boardOfSupervisorsMember: true }, locales: [$locale]) {
+    ...Human
   }
 }

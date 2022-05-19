@@ -1,11 +1,10 @@
-import { GetStaticProps } from "next";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { Post } from "../interfaces";
+import { FeaturedPostsQuery, Post } from "../interfaces";
 import BASE_URL from "../lib/baseUrl";
 
 type Props = {
-  blog: Post;
+  blog: FeaturedPostsQuery["posts"][0];
   index: number;
 };
 

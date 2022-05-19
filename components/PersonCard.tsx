@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { Person } from "../interfaces";
+import { HumanFragment } from "../interfaces";
 
 type Props = {
-  person: Person;
+  person: HumanFragment;
 };
 
 const PersonCard = ({ person }: Props) => {

@@ -4,11 +4,11 @@ import { NextSeo } from "next-seo";
 import PostCard from "../components/PostCard";
 import Layout from "../components/Layout";
 import Newsletter from "../components/Newsletter";
-import { getSdk, Post } from "../interfaces";
+import { FeaturedPostsQuery, getSdk } from "../interfaces";
 import { client } from "../lib/graphCmsClient";
 
 type Props = {
-  posts: Array<Post>;
+  posts: FeaturedPostsQuery["posts"];
 };
 
 const Home = ({ posts }: Props) => {
@@ -39,8 +39,8 @@ const Home = ({ posts }: Props) => {
             {t("blogPostsDescription")}
           </div>
           <div className="mx-4 md:mx-24 lg:mx-48 xl:mx-96">
-            {posts.map((blog, blogIdx) => (
-              <PostCard key={blog.id} blog={blog} index={blogIdx} />
+            {posts.map((post, postIdx) => (
+              <PostCard key={post.id} blog={post} index={postIdx} />
             ))}
           </div>
         </div>
@@ -52,7 +52,7 @@ const Home = ({ posts }: Props) => {
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const sdk = getSdk(client);
-  const { posts } = await sdk.FeaturedBlogs();
+  const { posts } = await sdk.FeaturedPosts();
 
   return {
     props: {

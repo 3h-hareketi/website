@@ -1,5 +1,11 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import { getSdk, Locale, Post } from "../../interfaces";
+import {
+  getSdk,
+  Locale,
+  Post,
+  PostQuery,
+  PostsPathsQuery,
+} from "../../interfaces";
 import { client } from "../../lib/graphCmsClient";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,8 +17,8 @@ import { useTranslations } from "next-intl";
 import { useRouter } from "next/router";
 
 type Props = {
-  post: Post;
-  similarPosts: Post[];
+  post: PostQuery["post"];
+  similarPosts: PostQuery["post"][];
 };
 
 const BlogPost = ({ post, similarPosts }: Props) => {
@@ -22,24 +28,24 @@ const BlogPost = ({ post, similarPosts }: Props) => {
   return (
     <Layout bgColor="bg-white" textColor="text-black" hamburgerColor="black">
       <NextSeo
-        title={post.title}
-        description={post.excerpt}
+        title={post?.title}
+        description={post?.excerpt}
         openGraph={{
-          title: post.title,
-          description: post.excerpt,
+          title: post?.title,
+          description: post?.excerpt,
           type: "article",
           article: {
-            publishedTime: post.createdAt,
-            modifiedTime: post.updatedAt,
-            authors: [post.createdBy?.name || ""],
-            tags: post.tags,
+            publishedTime: post?.createdAt,
+            modifiedTime: post?.updatedAt,
+            authors: [post?.createdBy?.name || ""],
+            tags: post?.tags,
           },
           images: [
             {
-              url: post.coverImage.url,
+              url: post?.coverImage.url!,
               width: 600,
               height: 400,
-              alt: `${post.title} ${
+              alt: `${post?.title} ${
                 router.locale === "tr" ? "Cover Image" : "Kapak Görseli"
               }`,
             },
@@ -48,21 +54,21 @@ const BlogPost = ({ post, similarPosts }: Props) => {
       />
       <ArticleJsonLd
         type="Blog"
-        url={`${BASE_URL}/blog/${post.id}`}
-        title={post.title}
-        images={[post.coverImage.url]}
-        datePublished={post.createdAt}
-        dateModified={post.updatedAt}
-        authorName={post.createdBy?.name || ""}
-        description={post.excerpt}
+        url={`${BASE_URL}/blog/${post?.id}`}
+        title={post?.title!}
+        images={[post?.coverImage.url!]}
+        datePublished={post?.createdAt}
+        dateModified={post?.updatedAt}
+        authorName={post?.createdBy?.name || ""}
+        description={post?.excerpt!}
       />
       <div className="flex justify-center w-full mb-24">
         <div className="flex flex-col">
           <Image
-            alt={`${post.title} ${
+            alt={`${post?.title} ${
               router.locale === "tr" ? "Cover Image" : "Kapak Görseli"
             }`}
-            src={post.coverImage.url || `${BASE_URL}/placeholder.jpg`}
+            src={post?.coverImage.url || `${BASE_URL}/placeholder.jpg`}
             height={720}
             width={1600}
             className="mx-auto rounded-xl -z-10"
@@ -71,7 +77,7 @@ const BlogPost = ({ post, similarPosts }: Props) => {
             <div className="flex flex-row flex-wrap md:-mt-12 md:-ml-12 md:flex-nowrap">
               <Image
                 className="rounded-full"
-                src={post.createdBy?.picture || `${BASE_URL}/placeholder.jpg`}
+                src={post?.createdBy?.picture || `${BASE_URL}/placeholder.jpg`}
                 alt={
                   post?.createdBy?.name! + router.locale === "tr"
                     ? "'s profile picture"
@@ -81,9 +87,9 @@ const BlogPost = ({ post, similarPosts }: Props) => {
                 height={60}
               />
               <div className="flex flex-col text-xs text-left text-black md:text-sm">
-                <div className="">{post.createdBy?.name}</div>
+                <div className="">{post?.createdBy?.name}</div>
                 <div className="mb-10 text-xs text-gray-600">
-                  {post.createdAt}
+                  {post?.createdAt}
                 </div>
               </div>
               <div className="md:ml-auto">
@@ -168,14 +174,14 @@ const BlogPost = ({ post, similarPosts }: Props) => {
               </div>
             </div>
             <h1 className="my-10 text-2xl font-bold text-black md:text-4xl">
-              {post.title}
+              {post?.title}
             </h1>
             <h2 className="mb-6 text-base font-bold text-gray-600 md:text-xl">
-              {post.excerpt}
+              {post?.excerpt}
             </h2>
-            {post.content?.raw && (
+            {post?.content?.raw && (
               <RichText
-                content={post.content?.raw}
+                content={post.content.raw}
                 renderers={{
                   blockquote: ({ children }) => (
                     <div className="">
@@ -203,16 +209,16 @@ const BlogPost = ({ post, similarPosts }: Props) => {
                 {similarPosts &&
                   similarPosts.map((post) => (
                     <div
-                      key={post.id}
+                      key={post?.id}
                       className="flex flex-col max-w-lg mt-8 shadow-xl rounded-xl"
                     >
                       <Image
-                        src={post.coverImage.url}
+                        src={post?.coverImage.url!}
                         alt={`${
                           router.locale === "tr"
                             ? "Kapak görseli"
                             : "Cover image of suggested article:"
-                        } ${post.title}`}
+                        } ${post?.title}`}
                         width={500}
                         height={300}
                         className="rounded-t-xl"
@@ -220,10 +226,10 @@ const BlogPost = ({ post, similarPosts }: Props) => {
                       <div className="flex flex-col justify-between p-3 md:p-6">
                         <div className="flex flex-row">
                           <div className="text-sm text-gray-400">
-                            {post.createdBy?.name}, {post.createdAt}
+                            {post?.createdBy?.name}, {post?.createdAt}
                           </div>
                           <div className="ml-auto">
-                            {post.tags.slice(0, 1).map((tag) => (
+                            {post?.tags.slice(0, 1).map((tag) => (
                               <div
                                 key={tag}
                                 className={`hidden md:block text-white text-xs rounded-xl md:p-1.5 md:mx-1 uppercase md:max-h-8 max-h-6 p-0.5 ${"bg-purple-500"}`}
@@ -234,12 +240,12 @@ const BlogPost = ({ post, similarPosts }: Props) => {
                           </div>
                         </div>
                         <h1 className="text-base font-semibold">
-                          {post.title}
+                          {post?.title}
                         </h1>
                         <div className="mt-4 text-xs text-gray-800">
-                          {post.excerpt}
+                          {post?.excerpt}
                         </div>
-                        <Link passHref href={`/blog/${post.id}`}>
+                        <Link passHref href={`/blog/${post?.id}`}>
                           <a className="w-24 p-3 mt-6 text-xs text-center text-white rounded-full bg-primary-500">
                             {t("readMore")}
                           </a>
@@ -278,14 +284,20 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
 
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   const sdk = getSdk(client);
-  const { posts } = await sdk.Posts({ locales: locales as Locale[] });
+  let posts: PostsPathsQuery["posts"] = [];
+  for (const locale of locales!) {
+    const { posts } = await sdk.PostsPaths({
+      locale: locale as Locale,
+    });
+    posts.concat(posts);
+  }
 
   return {
     paths: posts.map((post) => ({
       params: {
-        id: post.id,
+        id: post?.id,
       },
-      locale: post.locale,
+      locale: post?.locale,
     })),
     fallback: false,
   };
