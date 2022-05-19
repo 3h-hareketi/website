@@ -272,8 +272,11 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   const similarPosts = posts.slice(0, 3);
 
   return {
-    props: { post, similarPosts },
-    messages: (await import(`../../messages/${locale}.json`)).default,
+    props: {
+      post,
+      similarPosts,
+      messages: (await import(`../../messages/${locale}.json`)).default,
+    },
   };
 };
 
