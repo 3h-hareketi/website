@@ -6121,7 +6121,8 @@ export type PostQuery = {
 };
 
 export type PostsQueryVariables = Exact<{
-  locales: Array<Locale> | Locale;
+  locale: Locale;
+  fallbackLocale: Locale;
 }>;
 
 export type PostsQuery = {
@@ -6265,13 +6266,13 @@ export const PostDocument = gql`
   }
 `;
 export const PostsDocument = gql`
-  query Posts($locales: [Locale!]!) {
-    posts(locales: $locales) {
+  query Posts($locale: Locale!, $fallbackLocale: Locale!) {
+    posts(locales: [$locale]) {
       id
       content {
         html
       }
-      coverImage(locales: [en, tr]) {
+      coverImage(locales: [$locale, $fallbackLocale]) {
         url
       }
       date
