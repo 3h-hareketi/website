@@ -289,6 +289,7 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
       params: {
         id: post.id,
       },
+      locale: post.locale,
     })),
     fallback: false,
   };
