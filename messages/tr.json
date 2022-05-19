@@ -68,6 +68,9 @@
   "PostCard": {
     "readMore": "Read more"
   },
+  "ReportCard": {
+    "download": "Download"
+  },
   "Newsletter": {
     "title": "Subscribe to our newsletter!",
     "subtitle": "We'll send you the best of our blog just once a month. We promise.",
