@@ -2,10 +2,10 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 
-function MyApp({ Component, pageProps, router }: AppProps) {
+function MyApp({ Component, router, pageProps }: AppProps) {
   return (
     <GoogleReCaptchaProvider
-      reCaptchaKey={process.env.GOOGLE_RECAPTCHA_KEY}
+      reCaptchaKey={process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_KEY}
       useEnterprise={true}
       language={router.locale}
     >
