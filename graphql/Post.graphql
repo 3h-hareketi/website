@@ -6,6 +6,7 @@ query Post($id: ID!) {
       url
     }
     createdAt
+    updatedAt
     createdBy {
       name
       picture

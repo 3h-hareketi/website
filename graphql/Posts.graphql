@@ -1,10 +1,10 @@
-query Posts {
-  posts {
+query Posts($locale: Locale!, $fallbackLocale: Locale!) {
+  posts(locales: [$locale]) {
     id
     content {
       html
     }
-    coverImage {
+    coverImage(locales: [$locale, $fallbackLocale]) {
       url
     }
     date

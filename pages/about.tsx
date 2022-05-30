@@ -1,15 +1,23 @@
 import { Tab } from "@headlessui/react";
+import { GetStaticProps } from "next";
+import { useTranslations } from "next-intl";
 import { NextSeo } from "next-seo";
 import Layout from "../components/Layout";
 import PersonCard from "../components/PersonCard";
-import Reports from "../components/Reports";
-import { getSdk, Person, Report } from "../interfaces";
+import ReportCard from "../components/ReportCard";
+import {
+  BoardOfDirectorsMembersQuery,
+  BoardOfSupervisorsMembersQuery,
+  getSdk,
+  Locale,
+  ReportsQuery,
+} from "../interfaces";
 import { client } from "../lib/graphCmsClient";
 
 type Props = {
-  directors: Array<Person>;
-  supervisors: Array<Person>;
-  reports: Array<Report>;
+  directors: BoardOfDirectorsMembersQuery["people"];
+  supervisors: BoardOfSupervisorsMembersQuery["people"];
+  reports: ReportsQuery["reports"];
 };
 
 function classNames(...classes: string[]) {
@@ -17,24 +25,23 @@ function classNames(...classes: string[]) {
 }
 
 const About = ({ directors, supervisors, reports }: Props) => {
+  const t = useTranslations("About");
+
   return (
     <Layout bgColor="bg-white" textColor="text-black" hamburgerColor="black">
-      <NextSeo title="About us" description="Meet the minds behind 3H" />
+      <NextSeo title={t("title")} description={t("description")} />
       <div className="flex flex-col mx-auto bg-primary-500">
         <h1 className="mx-auto text-2xl font-extrabold text-center text-white md:text-8xl">
-          Meet the minds <br /> behind 3H
+          {t("heroTitle1")} <br /> {t("heroTitle2")}
         </h1>
       </div>
       <div className="flex flex-col bg-gray-100">
-        <h1 className="mx-auto text-3xl font-semibold mt-36">Our Team</h1>
+        <h1 className="mx-auto text-3xl font-semibold mt-36">{t("ourTeam")}</h1>
         <div className="max-w-3xl mx-auto mt-8 font-thin text-center">
-          Ornare aptent aenean tristique tortor egestas habitasse, netus
-          praesent taciti sagittis nulla proin vivamus habitasse, non aptent
-          neque curabitur cubilia habitasse taciti, id vulputate quis
-          consectetur turpis, blandit cursus aenean interdum.{" "}
+          {t("teamDescription")}{" "}
         </div>
         <strong className="mx-auto mt-3 text-center">
-          Believe in yourself!
+          {t("teamSubtitle")}
         </strong>
         <div className="py-16 mx-auto md:px-2 md:w-7/12 sm:px-0">
           <Tab.Group>
@@ -50,7 +57,7 @@ const About = ({ directors, supervisors, reports }: Props) => {
                   )
                 }
               >
-                {"All"}
+                {t("all")}
               </Tab>
               <Tab
                 className={({ selected }) =>
@@ -63,7 +70,7 @@ const About = ({ directors, supervisors, reports }: Props) => {
                   )
                 }
               >
-                {"Board of Directors"}
+                {t("boardOfDirectors")}
               </Tab>
               <Tab
                 className={({ selected }) =>
@@ -76,7 +83,7 @@ const About = ({ directors, supervisors, reports }: Props) => {
                   )
                 }
               >
-                {"Board of Supervisors"}
+                {t("boardOfSupervisors")}
               </Tab>
             </Tab.List>
             <Tab.Panels className="w-11/12 mx-auto mt-2">
@@ -116,16 +123,33 @@ const About = ({ directors, supervisors, reports }: Props) => {
             </Tab.Panels>
           </Tab.Group>
         </div>
-        <Reports reports={reports} />
+        <div className="flex flex-col">
+          {" "}
+          <h1 className="mx-auto text-3xl font-semibold mt-36">
+            {t("reports")}
+          </h1>
+          <div className="max-w-3xl mx-auto mt-8 font-thin text-center">
+            {t("reportsDescription")}
+          </div>
+        </div>
+        <div className="flex flex-wrap justify-center w-2/3 mx-auto">
+          {reports.map((report) => (
+            <ReportCard key={report.id} report={report} />
+          ))}
+        </div>
       </div>
     </Layout>
   );
 };
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const sdk = getSdk(client);
-  const { people: directors } = await sdk.BoardOfDirectorsMembers();
-  const { people: supervisors } = await sdk.BoardOfSupervisorsMembers();
+  const { people: directors } = await sdk.BoardOfDirectorsMembers({
+    locale: locale as Locale,
+  });
+  const { people: supervisors } = await sdk.BoardOfSupervisorsMembers({
+    locale: locale as Locale,
+  });
   const { reports } = await sdk.Reports();
 
   return {
@@ -133,8 +157,9 @@ export async function getStaticProps() {
       directors,
       supervisors,
       reports,
+      messages: (await import(`../messages/${locale}.json`)).default,
     },
   };
-}
+};
 
 export default About;

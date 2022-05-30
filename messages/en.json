@@ -1,0 +1,80 @@
+{
+  "Navbar": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "projects": "Projects",
+    "blog": "Blog",
+    "joinUs": "Join Us",
+    "contactUs": "Contact Us"
+  },
+  "Footer": {
+    "motto": "React out to us!",
+    "copyright": "All rights reserved.",
+    "learnMore": "Learn More",
+    "support": "Support",
+    "tos": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "cookie": "Cookie Policy"
+  },
+  "Home": {
+    "description": "3H Movement: Discover liberalism, the ideology of freedom!",
+    "heroTitle1": "Discover liberalism,",
+    "heroTitle2": "the ideology of freedom!",
+    "heroSubtitle": "Vulputate erat cubilia praesent, dolor mattis condimentum eget tellus phasellus auctor elementum morbi, justo torquent egestas, nulla cursus tellus, per.",
+    "heroButton": "See More",
+    "blogPosts": "Blog Posts",
+    "blogPostsDescription": "Ornare aptent aenean tristique tortor egestas habitasse, netus praesent taciti sagittis nulla proin vivamus habitasse, non aptent neque curabitur cubilia habitasse taciti, id vulputate quis consectetur turpis, blandit cursus aenean interdum."
+  },
+  "Contact": {
+    "title": "Contact",
+    "description": "Let's get in touch",
+    "name": "Name",
+    "surname": "Surname",
+    "email": "E-mail",
+    "yourMessage": "Your Message...",
+    "sendMessage": "Send Message"
+  },
+  "About": {
+    "title": "About",
+    "description": "Meet the minds behind 3H",
+    "heroTitle1": "Meet the minds",
+    "heroTitle2": "behind 3H",
+    "ourTeam": "Our Team",
+    "teamDescription": "Ornare aptent aenean tristique tortor egestas habitasse, netus praesent taciti sagittis nulla proin vivamus habitasse, non aptent neque curabitur cubilia habitasse taciti, id vulputate quis consectetur turpis, blandit cursus aenean interdum.",
+    "teamSubtitle": "Believe in yourself!",
+    "all": "All",
+    "boardOfDirectors": "Board of Directors",
+    "boardOfSupervisors": "Board of Supervisors",
+    "reports": "Reports",
+    "reportsDescription": "Ornare aptent aenean tristique tortor egestas habitasse, netus praesent taciti sagittis nulla proin vivamus habitasse, non aptent neque curabitur cubilia habitasse taciti."
+  },
+  "Projects": {
+    "title": "Projects",
+    "description": "Our projects",
+    "projects": "Projects",
+    "projectsDescription": "Ornare aptent aenean tristique tortor egestas habitasse, netus praesent taciti sagittis nulla proin vivamus habitasse, non aptent neque curabitur cubilia habitasse taciti, id vulputate quis consectetur turpis, blandit cursus aenean interdum.",
+    "readMore": "Read more"
+  },
+  "Blog": {
+    "title": "Blog",
+    "description": "Our blog",
+    "readMore": "Read more"
+  },
+  "Post": {
+    "readMore": "Read more",
+    "similarPosts": "Similar Posts",
+    "similarPostsSubtitle": "We think you might like these articles too."
+  },
+  "PostCard": {
+    "readMore": "Read more"
+  },
+  "ReportCard": {
+    "download": "Download"
+  },
+  "Newsletter": {
+    "title": "Subscribe to our newsletter!",
+    "subtitle": "We'll send you the best of our blog just once a month. We promise.",
+    "emailPlaceholder": "Enter e-mail",
+    "submit": "Subscribe"
+  }
+}

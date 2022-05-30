@@ -3,6 +3,7 @@ query Reports {
     id
     title
     slug
+    description
     report {
       url
     }

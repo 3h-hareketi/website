@@ -1,26 +1,26 @@
-import { ArticleJsonLd, NextSeo } from "next-seo";
+import { GetStaticProps } from "next";
+import { useTranslations } from "next-intl";
+import { NextSeo } from "next-seo";
 import Link from "next/link";
-import Layout from "../../components/Layout";
-import { getSdk, Project } from "../../interfaces";
-import BASE_URL from "../../lib/baseUrl";
-import { client } from "../../lib/graphCmsClient";
+import Layout from "../components/Layout";
+import { getSdk, Locale, ProjectsQuery } from "../interfaces";
+import { client } from "../lib/graphCmsClient";
 
 type Props = {
-  projects: Array<Project>;
+  projects: ProjectsQuery["projects"];
 };
 
-const Blog = ({ projects }: Props) => {
+const Projects = ({ projects }: Props) => {
+  const t = useTranslations("Projects");
+
   return (
     <Layout bgColor="bg-white" textColor="text-black" hamburgerColor="black">
-      <NextSeo title="Projects" />
+      <NextSeo title={t("title")} description={t("description")} />
       <div className="mb-96 w-[90vw] mx-auto">
         <div className="flex flex-col w-full space-y-12 text-center bg-white">
-          <h1 className="text-3xl font-semibold">Projects</h1>{" "}
+          <h1 className="text-3xl font-semibold">{t("projects")}</h1>{" "}
           <div className="max-w-2xl mx-auto font-light text-gray-600">
-            Ornare aptent aenean tristique tortor egestas habitasse, netus
-            praesent taciti sagittis nulla proin vivamus habitasse, non aptent
-            neque curabitur cubilia habitasse taciti, id vulputate quis
-            consectetur turpis, blandit cursus aenean interdum.
+            {t("projectsDescription")}
           </div>
         </div>
         <div className="flex flex-row flex-wrap justify-between mx-auto mt-24">
@@ -44,7 +44,7 @@ const Blog = ({ projects }: Props) => {
                 </div>
                 <Link href={project.link as string}>
                   <a className="p-1 mb-4 text-xs text-center text-white rounded-full md:mr-auto md:p-3 md:mb-4 md:w-1/3 bg-primary-500 md:text-base">
-                    Read more{" "}
+                    {t("readMore")}
                   </a>
                 </Link>
               </div>
@@ -56,15 +56,16 @@ const Blog = ({ projects }: Props) => {
   );
 };
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const sdk = getSdk(client);
-  const { projects } = await sdk.Projects();
+  const { projects } = await sdk.Projects({ locale: locale as Locale });
 
   return {
     props: {
       projects,
+      messages: (await import(`../messages/${locale}.json`)).default,
     },
   };
-}
+};
 
-export default Blog;
+export default Projects;

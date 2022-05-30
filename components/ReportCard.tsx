@@ -1,11 +1,14 @@
+import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { Report } from "../interfaces";
+import { ReportsQuery } from "../interfaces";
 
 type Props = {
-  report: Report;
+  report: ReportsQuery["reports"][0];
 };
 
 const ReportCard = ({ report }: Props) => {
+  const t = useTranslations("ReportCard");
+
   return (
     <div className="flex flex-col max-w-xl p-2 my-5 bg-white shadow-md md:p-6 md:mx-8 rounded-xl">
       <div className="flex flex-row">
@@ -35,15 +38,11 @@ const ReportCard = ({ report }: Props) => {
         <h1 className="ml-2 text-xl font-semibold">{report.title}</h1>
       </div>
       <div className="flex flex-row">
-        {" "}
-        <div className="text-sm text-gray-400">
-          Eget venenatis donec venenatis faucibus tempus, ac dictum potenti,
-          nisl primis eleifend.
-        </div>
+        <div className="text-sm text-gray-400">{report.description}</div>
         <Link href={report.report.url} passHref>
           <a className="w-64 text-white md:px-4 md:py-2 md:mt-4 rounded-xl bg-primary-500 hover:bg-primary-700 max-h-8 md:max-h-full py-0.5 px-2">
             <div className="flex flex-row">
-              Download{" "}
+              {t("download")}
               <svg
                 width="27"
                 height="18"

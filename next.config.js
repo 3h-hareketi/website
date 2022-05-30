@@ -22,6 +22,10 @@ const nextConfig = {
       "localhost",
     ],
   },
+  i18n: {
+    locales: ["tr", "en"],
+    defaultLocale: "tr",
+  },
 };
 
 module.exports = withSentryConfig(nextConfig, sentryWebpackPluginOptions);
