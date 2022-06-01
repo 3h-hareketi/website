@@ -1,83 +1,83 @@
 {
   "Navbar": {
-    "home": "Home",
-    "aboutUs": "About Us",
-    "projects": "Projects",
+    "home": "Ana Sayfa",
+    "aboutUs": "Biz Kimiz",
+    "projects": "Projeler",
     "blog": "Blog",
-    "joinUs": "Join Us",
-    "contactUs": "Contact Us"
+    "joinUs": "Aramıza Katıl",
+    "contactUs": "Bize Ulaş"
   },
   "Footer": {
-    "motto": "React out to us!",
-    "copyright": "All rights reserved.",
-    "learnMore": "Learn More",
-    "support": "Support",
-    "tos": "Terms of Service",
-    "privacy": "Privacy Policy",
-    "cookie": "Cookie Policy"
+    "motto": "Bize ulaşın!",
+    "copyright": "Tüm hakları saklıdır.",
+    "learnMore": "Daha fazla bilgi edinin",
+    "support": "Destek",
+    "tos": "Hizmet Şartları",
+    "privacy": "Gizlilik Politikası",
+    "cookie": "Çerez Politikası"
   },
   "Home": {
-    "description": "3H Movement: Discover liberalism, the ideology of freedom!",
-    "heroTitle1": "Discover liberalism,",
-    "heroTitle2": "the ideology of freedom!",
+    "description": "3H Hareketi: Özgürlüğün ideolojisi liberalizmi keşfedin!",
+    "heroTitle1": "Özgürlüğün ideolojisi",
+    "heroTitle2": "liberalizmi keşfedin!",
     "heroSubtitle": "Vulputate erat cubilia praesent, dolor mattis condimentum eget tellus phasellus auctor elementum morbi, justo torquent egestas, nulla cursus tellus, per.",
-    "heroButton": "See More",
-    "blogPosts": "Blog Posts",
+    "heroButton": "Devamı için",
+    "blogPosts": "Blog Yazıları",
     "blogPostsDescription": "Ornare aptent aenean tristique tortor egestas habitasse, netus praesent taciti sagittis nulla proin vivamus habitasse, non aptent neque curabitur cubilia habitasse taciti, id vulputate quis consectetur turpis, blandit cursus aenean interdum."
   },
   "Contact": {
-    "title": "Contact",
-    "description": "Let's get in touch",
-    "name": "Name",
-    "surname": "Surname",
+    "title": "İletişim",
+    "description": "Bize ulaşın",
+    "name": "İsim",
+    "surname": "Soy isim",
     "email": "E-mail",
-    "yourMessage": "Your Message...",
-    "sendMessage": "Send Message"
+    "yourMessage": "Mesajınız...",
+    "sendMessage": "Gönder"
   },
   "About": {
-    "title": "About",
-    "aboutUs": "About Us",
+    "title": "Hakkımızda",
+    "aboutUs": "Biz Kimiz",
     "aboutUsDescription1": "<strong>3H Hareketi</strong>, 2006 yilinda Liberal Ofis ismiyle İstanbul'da kuruldu. 2006 yılından itibaren bu isim altında <strong>Türkiye'de insan hakları, ekonomik özgürlükler ve hak savunuculuğu</strong> alanlarında etkin oldu.",
     "aboutUsDescription2": "2013 yılında dernek statüsünü almak için ismini <strong>3H Hareketi (Hürriyet, Hukuk, Hoşgörü)</strong> olarak değiştirdi. 2006 yılından bu yana 3H Hareketi bir gençlik hareketi olarak konumlanır. Üye ve gönüllülerini, <soft>insan hakları, hukukun üstünlüğü ve ekonomik özgürlükler konusunda eğitir; aktivizm, siyaset ve sivil toplum</soft> alanlarında çalışmaları konusunda onları teşvik eder. <strong>Liberal Gençlik Kongreleri, Liberal İktisat Kongreleri, Özgürlük Forumları, Liberalizm Yaz ve Kış Kampları</strong> gibi etkinlikleri ile gençlerin liberalizm, insan hakları gibi alanlarda bilgi ve fikir sahibi olmasını, yeteneklerini geliştirmesini amaçlar.",
-    "description": "Meet the minds behind 3H",
-    "heroTitle1": "Meet the minds",
-    "heroTitle2": "behind 3H",
-    "ourTeam": "Our Team",
+    "description": "3H Hareketi'nin arkasındakı isimlerle tanış",
+    "heroTitle1": "3H Hareketi'nin",
+    "heroTitle2": "arkasındakı isimlerle tanış",
+    "ourTeam": "Ekibimiz",
     "teamDescription": "",
-    "teamSubtitle": "Believe in yourself!",
-    "all": "All",
-    "boardOfDirectors": "Board of Directors",
-    "boardOfSupervisors": "Board of Supervisors",
-    "reports": "Reports",
+    "teamSubtitle": "Kendine güven!",
+    "all": "Tümü",
+    "boardOfDirectors": "Yönetim Kurulu",
+    "boardOfSupervisors": "Denetim Kurulu",
+    "reports": "Raporlar",
     "reportsDescription": "Ornare aptent aenean tristique tortor egestas habitasse, netus praesent taciti sagittis nulla proin vivamus habitasse, non aptent neque curabitur cubilia habitasse taciti."
   },
   "Projects": {
-    "title": "Projects",
-    "description": "Our projects",
-    "projects": "Projects",
+    "title": "Projeler",
+    "description": "Projelerimiz",
+    "projects": "Projeler",
     "projectsDescription": "Ornare aptent aenean tristique tortor egestas habitasse, netus praesent taciti sagittis nulla proin vivamus habitasse, non aptent neque curabitur cubilia habitasse taciti, id vulputate quis consectetur turpis, blandit cursus aenean interdum.",
-    "readMore": "Read more"
+    "readMore": "Devamını oku"
   },
   "Blog": {
     "title": "Blog",
-    "description": "Our blog",
-    "readMore": "Read more"
+    "description": "Blogumuz",
+    "readMore": "Devamını oku"
   },
   "Post": {
-    "readMore": "Read more",
-    "similarPosts": "Similar Posts",
-    "similarPostsSubtitle": "We think you might like these articles too."
+    "readMore": "Devamını oku",
+    "similarPosts": "Benzer Yazılar",
+    "similarPostsSubtitle": "Bu yazıları da beğeneceğini düşünüyoruz."
   },
   "PostCard": {
-    "readMore": "Read more"
+    "readMore": "Devamını oku"
   },
   "ReportCard": {
-    "download": "Download"
+    "download": "İndir"
   },
   "Newsletter": {
-    "title": "Subscribe to our newsletter!",
-    "subtitle": "We'll send you the best of our blog just once a month. We promise.",
-    "emailPlaceholder": "Enter e-mail",
-    "submit": "Subscribe"
+    "title": "Bültenimize abone ol!",
+    "subtitle": "En iyi blog yazılarımızı, sadece ayda bir göndereceğiz. Söz veriyoruz.",
+    "emailPlaceholder": "E-mail adresinizi girin",
+    "submit": "Abone ol"
   }
 }
