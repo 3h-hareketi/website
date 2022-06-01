@@ -4,6 +4,7 @@ import { DefaultSeo, LogoJsonLd, OrganizationJsonLd } from "next-seo";
 import { useRouter } from "next/router";
 import Footer from "./Footer";
 import BASE_URL from "../lib/baseUrl";
+import { useSwipeable } from "react-swipeable";
 
 type Props = {
   children: React.ReactNode;
@@ -23,6 +24,10 @@ const Layout = ({
   const router = useRouter();
   const [navbarOpen, setNavbarOpen] = useState(false);
   const defaultTitle = `3H ${router.locale === "tr" ? "Hareketi" : "Movement"}`;
+  const handlers = useSwipeable({
+    onSwipedLeft: () => setNavbarOpen(false),
+    onSwipedRight: () => setNavbarOpen(true),
+  });
 
   return (
     <div
@@ -39,6 +44,7 @@ const Layout = ({
             }
           : {}
       }
+      {...handlers}
     >
       <DefaultSeo
         titleTemplate={`%s | ${defaultTitle}`}
