@@ -29,6 +29,19 @@ const About = ({ people, reports }: Props) => {
         </h1>
       </div>
       <div className="flex flex-col bg-gray-100">
+        <h1 className="mx-auto text-3xl font-semibold mt-36">{t("aboutUs")}</h1>
+        <div className="max-w-3xl mx-auto mt-8 font-thin text-center">
+          {t.rich("aboutUsDescription1", {
+            strong: (children) => <span className="font-bold">{children}</span>,
+            soft: (children) => <i>{children}</i>,
+          })}
+        </div>
+        <div className="max-w-3xl mx-auto mt-8 font-thin text-center">
+          {t.rich("aboutUsDescription2", {
+            strong: (children) => <span className="font-bold">{children}</span>,
+            soft: (children) => <i>{children}</i>,
+          })}
+        </div>
         <h1 className="mx-auto text-3xl font-semibold mt-36">{t("ourTeam")}</h1>
         <div className="max-w-3xl mx-auto mt-8 font-thin text-center">
           {t("teamDescription")}

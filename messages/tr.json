@@ -36,6 +36,9 @@
   },
   "About": {
     "title": "About",
+    "aboutUs": "About Us",
+    "aboutUsDescription1": "<strong>3H Hareketi</strong>, 2006 yilinda Liberal Ofis ismiyle İstanbul'da kuruldu. 2006 yılından itibaren bu isim altında <strong>Türkiye'de insan hakları, ekonomik özgürlükler ve hak savunuculuğu</strong> alanlarında etkin oldu.",
+    "aboutUsDescription2": "2013 yılında dernek statüsünü almak için ismini <strong>3H Hareketi (Hürriyet, Hukuk, Hoşgörü)</strong> olarak değiştirdi. 2006 yılından bu yana 3H Hareketi bir gençlik hareketi olarak konumlanır. Üye ve gönüllülerini, <soft>insan hakları, hukukun üstünlüğü ve ekonomik özgürlükler konusunda eğitir; aktivizm, siyaset ve sivil toplum</soft> alanlarında çalışmaları konusunda onları teşvik eder. <strong>Liberal Gençlik Kongreleri, Liberal İktisat Kongreleri, Özgürlük Forumları, Liberalizm Yaz ve Kış Kampları</strong> gibi etkinlikleri ile gençlerin liberalizm, insan hakları gibi alanlarda bilgi ve fikir sahibi olmasını, yeteneklerini geliştirmesini amaçlar.",
     "description": "Meet the minds behind 3H",
     "heroTitle1": "Meet the minds",
     "heroTitle2": "behind 3H",
