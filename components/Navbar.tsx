@@ -25,7 +25,7 @@ const Navbar = ({
 
   return (
     <section className={`relative w-full flex justify-center z-50 ${bgColor}`}>
-      <nav className="flex flex-row items-center w-full lg:w-3/4 md:mx-auto">
+      <nav className="flex flex-row items-center w-full px-2 lg:w-3/4 md:mx-auto">
         <a
           className="mr-auto md:ml-0 md:hidden md:mr-0"
           onClick={() => setNavbarOpen(true)}
