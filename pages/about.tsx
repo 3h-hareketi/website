@@ -31,7 +31,7 @@ const About = ({ people, reports }: Props) => {
       <div className="flex flex-col bg-gray-100">
         <h1 className="mx-auto text-3xl font-semibold mt-36">{t("ourTeam")}</h1>
         <div className="max-w-3xl mx-auto mt-8 font-thin text-center">
-          {t("teamDescription")}{" "}
+          {t("teamDescription")}
         </div>
         <strong className="mx-auto mt-3 text-center">
           {t("teamSubtitle")}
@@ -118,7 +118,6 @@ const About = ({ people, reports }: Props) => {
           </Tab.Group>
         </div>
         <div className="flex flex-col">
-          {" "}
           <h1 className="mx-auto text-3xl font-semibold mt-36">
             {t("reports")}
           </h1>
