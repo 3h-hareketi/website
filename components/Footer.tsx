@@ -1,11 +1,13 @@
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import BlurImage from "./BlurImage";
 import logo from "/public/3h-vector.png";
 
 const Footer = () => {
   const t = useTranslations("Footer");
   const tMenu = useTranslations("Navbar");
+  const router = useRouter();
 
   return (
     <footer className="bg-primary-500">
@@ -40,21 +42,31 @@ const Footer = () => {
               </li>
             </Link>
             <li className="mt-16 uppercase">{t("support")}</li>
-            <Link href="/terms" passHref>
+            <Link
+              href={router.locale === "tr" ? "/yasal-bildirim" : "/terms"}
+              passHref
+            >
               <li className="font-thin">
                 <a>{t("tos")}</a>
               </li>
             </Link>
-            <Link href="/privacy" passHref>
+            <Link
+              href={
+                router.locale === "tr"
+                  ? "/gizlilik-politikasi"
+                  : "/privacy-policy"
+              }
+              passHref
+            >
               <li className="font-thin">
                 <a>{t("privacy")}</a>
               </li>
             </Link>
-            <Link href="/cookies" passHref>
+            {/* <Link href="/cookies" passHref>
               <li className="font-thin">
                 <a>{t("cookie")}</a>
               </li>
-            </Link>
+            </Link> */}
           </ul>
         </div>
       </div>
