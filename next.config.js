@@ -26,6 +26,22 @@ const nextConfig = {
     locales: ["tr", "en"],
     defaultLocale: "tr",
   },
+  async rewrites() {
+    return [
+      {
+        source: "/about",
+        destination: "/hakkimizda",
+      },
+      {
+        source: "/contact",
+        destination: "/iletisim",
+      },
+      {
+        source: "/projects",
+        destination: "/projeler",
+      },
+    ];
+  },
 };
 
 module.exports = withSentryConfig(nextConfig, sentryWebpackPluginOptions);
