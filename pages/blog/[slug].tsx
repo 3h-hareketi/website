@@ -1,11 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import {
-  getSdk,
-  Locale,
-  Post,
-  PostQuery,
-  PostsPathsQuery,
-} from "../../interfaces";
+import { getSdk, Locale, PostQuery, PostsPathsQuery } from "../../interfaces";
 import { client } from "../../lib/graphCmsClient";
 import Image from "next/image";
 import Link from "next/link";
@@ -295,7 +289,7 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   return {
     paths: posts.map((post) => ({
       params: {
-        id: post?.id,
+        slug: post?.slug,
       },
       locale: post?.locale,
     })),

@@ -6876,7 +6876,7 @@ export type PostsPathsQueryVariables = Exact<{
 
 export type PostsPathsQuery = {
   __typename?: "Query";
-  posts: Array<{ __typename?: "Post"; id: string; locale: Locale }>;
+  posts: Array<{ __typename?: "Post"; slug: string; locale: Locale }>;
 };
 
 export type ProjectsQueryVariables = Exact<{
@@ -7053,7 +7053,7 @@ export const PostsDocument = gql`
 export const PostsPathsDocument = gql`
   query PostsPaths($locale: Locale!) {
     posts(locales: [$locale]) {
-      id
+      slug
       locale
     }
   }
