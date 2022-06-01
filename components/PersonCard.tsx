@@ -13,7 +13,7 @@ const PersonCard = ({ person }: Props) => {
     <div className="flex flex-col w-64 max-w-xl p-6 mt-24 bg-white shadow-md rounded-xl">
       <div className="mx-auto -translate-y-16 rounded-full ring-8 ring-white">
         <Image
-          src={person.image?.url || ""}
+          src={person.image?.url || "/avatar.jpg"}
           alt={
             person.fullName + " " + router.locale === "tr"
               ? "profil fotoğrafı"
