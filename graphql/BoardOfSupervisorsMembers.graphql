@@ -1,5 +1,0 @@
-query BoardOfSupervisorsMembers($locale: Locale! = tr) {
-  people(where: { boardOfSupervisorsMember: true }, locales: [$locale]) {
-    ...Human
-  }
-}

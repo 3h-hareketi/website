@@ -6042,46 +6042,6 @@ export enum _SystemDateTimeFieldVariation {
   Localization = "localization",
 }
 
-export type BoardOfDirectorsMembersQueryVariables = Exact<{
-  locale?: Locale;
-}>;
-
-export type BoardOfDirectorsMembersQuery = {
-  __typename?: "Query";
-  people: Array<{
-    __typename?: "Person";
-    fullName: string;
-    role: string;
-    biography?: string | null;
-    facebook?: string | null;
-    id: string;
-    instagram?: string | null;
-    linkedIn?: string | null;
-    twitter?: string | null;
-    image?: { __typename?: "Asset"; url: string } | null;
-  }>;
-};
-
-export type BoardOfSupervisorsMembersQueryVariables = Exact<{
-  locale?: Locale;
-}>;
-
-export type BoardOfSupervisorsMembersQuery = {
-  __typename?: "Query";
-  people: Array<{
-    __typename?: "Person";
-    fullName: string;
-    role: string;
-    biography?: string | null;
-    facebook?: string | null;
-    id: string;
-    instagram?: string | null;
-    linkedIn?: string | null;
-    twitter?: string | null;
-    image?: { __typename?: "Asset"; url: string } | null;
-  }>;
-};
-
 export type FeaturedPostsQueryVariables = Exact<{ [key: string]: never }>;
 
 export type FeaturedPostsQuery = {
@@ -6094,6 +6054,29 @@ export type FeaturedPostsQuery = {
     title: string;
     tags: Array<string>;
     coverImage: { __typename?: "Asset"; url: string };
+  }>;
+};
+
+export type PeopleQueryVariables = Exact<{
+  locale: Locale;
+  fallbackLocale: Locale;
+}>;
+
+export type PeopleQuery = {
+  __typename?: "Query";
+  people: Array<{
+    __typename?: "Person";
+    fullName: string;
+    role: string;
+    biography?: string | null;
+    facebook?: string | null;
+    id: string;
+    boardOfDirectorsMember: boolean;
+    boardOfSupervisorsMember: boolean;
+    instagram?: string | null;
+    linkedIn?: string | null;
+    twitter?: string | null;
+    image?: { __typename?: "Asset"; url: string } | null;
   }>;
 };
 
@@ -6210,6 +6193,8 @@ export type HumanFragment = {
   biography?: string | null;
   facebook?: string | null;
   id: string;
+  boardOfDirectorsMember: boolean;
+  boardOfSupervisorsMember: boolean;
   instagram?: string | null;
   linkedIn?: string | null;
   twitter?: string | null;
@@ -6223,7 +6208,9 @@ export const HumanFragmentDoc = gql`
     biography
     facebook
     id
-    image {
+    boardOfDirectorsMember
+    boardOfSupervisorsMember
+    image(locales: [$locale, $fallbackLocale]) {
       url(
         transformation: {
           image: { resize: { height: 96, width: 96, fit: clip } }
@@ -6234,22 +6221,6 @@ export const HumanFragmentDoc = gql`
     linkedIn
     twitter
   }
-`;
-export const BoardOfDirectorsMembersDocument = gql`
-  query BoardOfDirectorsMembers($locale: Locale! = tr) {
-    people(where: { boardOfDirectorsMember: true }, locales: [$locale]) {
-      ...Human
-    }
-  }
-  ${HumanFragmentDoc}
-`;
-export const BoardOfSupervisorsMembersDocument = gql`
-  query BoardOfSupervisorsMembers($locale: Locale! = tr) {
-    people(where: { boardOfSupervisorsMember: true }, locales: [$locale]) {
-      ...Human
-    }
-  }
-  ${HumanFragmentDoc}
 `;
 export const FeaturedPostsDocument = gql`
   query FeaturedPosts {
@@ -6264,6 +6235,14 @@ export const FeaturedPostsDocument = gql`
       }
     }
   }
+`;
+export const PeopleDocument = gql`
+  query People($locale: Locale!, $fallbackLocale: Locale!) {
+    people(locales: [$locale]) {
+      ...Human
+    }
+  }
+  ${HumanFragmentDoc}
 `;
 export const PostDocument = gql`
   query Post($id: ID!) {
@@ -6380,36 +6359,6 @@ export function getSdk(
   withWrapper: SdkFunctionWrapper = defaultWrapper
 ) {
   return {
-    BoardOfDirectorsMembers(
-      variables?: BoardOfDirectorsMembersQueryVariables,
-      requestHeaders?: Dom.RequestInit["headers"]
-    ): Promise<BoardOfDirectorsMembersQuery> {
-      return withWrapper(
-        (wrappedRequestHeaders) =>
-          client.request<BoardOfDirectorsMembersQuery>(
-            BoardOfDirectorsMembersDocument,
-            variables,
-            { ...requestHeaders, ...wrappedRequestHeaders }
-          ),
-        "BoardOfDirectorsMembers",
-        "query"
-      );
-    },
-    BoardOfSupervisorsMembers(
-      variables?: BoardOfSupervisorsMembersQueryVariables,
-      requestHeaders?: Dom.RequestInit["headers"]
-    ): Promise<BoardOfSupervisorsMembersQuery> {
-      return withWrapper(
-        (wrappedRequestHeaders) =>
-          client.request<BoardOfSupervisorsMembersQuery>(
-            BoardOfSupervisorsMembersDocument,
-            variables,
-            { ...requestHeaders, ...wrappedRequestHeaders }
-          ),
-        "BoardOfSupervisorsMembers",
-        "query"
-      );
-    },
     FeaturedPosts(
       variables?: FeaturedPostsQueryVariables,
       requestHeaders?: Dom.RequestInit["headers"]
@@ -6421,6 +6370,20 @@ export function getSdk(
             ...wrappedRequestHeaders,
           }),
         "FeaturedPosts",
+        "query"
+      );
+    },
+    People(
+      variables: PeopleQueryVariables,
+      requestHeaders?: Dom.RequestInit["headers"]
+    ): Promise<PeopleQuery> {
+      return withWrapper(
+        (wrappedRequestHeaders) =>
+          client.request<PeopleQuery>(PeopleDocument, variables, {
+            ...requestHeaders,
+            ...wrappedRequestHeaders,
+          }),
+        "People",
         "query"
       );
     },

@@ -4,7 +4,9 @@ fragment Human on Person {
   biography
   facebook
   id
-  image {
+  boardOfDirectorsMember
+  boardOfSupervisorsMember
+  image(locales: [$locale, $fallbackLocale]) {
     url(
       transformation: {
         image: { resize: { height: 96, width: 96, fit: clip } }

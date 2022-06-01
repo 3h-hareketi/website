@@ -5,18 +5,11 @@ import { NextSeo } from "next-seo";
 import Layout from "../components/Layout";
 import PersonCard from "../components/PersonCard";
 import ReportCard from "../components/ReportCard";
-import {
-  BoardOfDirectorsMembersQuery,
-  BoardOfSupervisorsMembersQuery,
-  getSdk,
-  Locale,
-  ReportsQuery,
-} from "../interfaces";
+import { getSdk, Locale, PeopleQuery, ReportsQuery } from "../interfaces";
 import { client } from "../lib/graphCmsClient";
 
 type Props = {
-  directors: BoardOfDirectorsMembersQuery["people"];
-  supervisors: BoardOfSupervisorsMembersQuery["people"];
+  people: PeopleQuery["people"];
   reports: ReportsQuery["reports"];
 };
 
@@ -24,7 +17,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-const About = ({ directors, supervisors, reports }: Props) => {
+const About = ({ people, reports }: Props) => {
   const t = useTranslations("About");
 
   return (
@@ -93,10 +86,7 @@ const About = ({ directors, supervisors, reports }: Props) => {
                   "flex flex-wrap md:justify-between justify-center"
                 )}
               >
-                {supervisors.map((person) => (
-                  <PersonCard key={person.id} person={person} />
-                ))}
-                {directors.map((person) => (
+                {people.map((person) => (
                   <PersonCard key={person.id} person={person} />
                 ))}
               </Tab.Panel>
@@ -106,9 +96,11 @@ const About = ({ directors, supervisors, reports }: Props) => {
                   "flex flex-wrap md:justify-between justify-center"
                 )}
               >
-                {directors.map((person) => (
-                  <PersonCard key={person.id} person={person} />
-                ))}
+                {people
+                  .filter((person) => person.boardOfDirectorsMember)
+                  .map((person) => (
+                    <PersonCard key={person.id} person={person} />
+                  ))}
               </Tab.Panel>
               <Tab.Panel
                 className={classNames(
@@ -116,9 +108,11 @@ const About = ({ directors, supervisors, reports }: Props) => {
                   "flex flex-wrap md:justify-between justify-center"
                 )}
               >
-                {supervisors.map((person) => (
-                  <PersonCard key={person.id} person={person} />
-                ))}
+                {people
+                  .filter((person) => person.boardOfSupervisorsMember)
+                  .map((person) => (
+                    <PersonCard key={person.id} person={person} />
+                  ))}
               </Tab.Panel>
             </Tab.Panels>
           </Tab.Group>
@@ -142,20 +136,17 @@ const About = ({ directors, supervisors, reports }: Props) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
+export const getStaticProps: GetStaticProps = async ({ locale, locales }) => {
   const sdk = getSdk(client);
-  const { people: directors } = await sdk.BoardOfDirectorsMembers({
+  const { people: people } = await sdk.People({
     locale: locale as Locale,
-  });
-  const { people: supervisors } = await sdk.BoardOfSupervisorsMembers({
-    locale: locale as Locale,
+    fallbackLocale: locales?.filter((l) => l !== locale)[0] as Locale,
   });
   const { reports } = await sdk.Reports();
 
   return {
     props: {
-      directors,
-      supervisors,
+      people,
       reports,
       messages: (await import(`../messages/${locale}.json`)).default,
     },
