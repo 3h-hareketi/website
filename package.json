@@ -12,6 +12,7 @@
     "generate": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
+    "@elgorditosalsero/react-gtm-hook": "^2.4.0",
     "@graphcms/rich-text-react-renderer": "^0.5.0",
     "@headlessui/react": "^1.6.0",
     "@sentry/nextjs": "^6.19.7",

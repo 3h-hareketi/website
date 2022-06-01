@@ -468,6 +468,11 @@
   resolved "https://registry.yarnpkg.com/@corex/deepmerge/-/deepmerge-2.6.148.tgz#8fa825d53ffd1cbcafce1b6a830eefd3dcc09dd5"
   integrity sha512-6QMz0/2h5C3ua51iAnXMPWFbb1QOU1UvSM4bKBw5mzdT+WtLgjbETBBIQZ+Sh9WvEcGwlAt/DEdRpIC3XlDBMA==
 
+"@elgorditosalsero/react-gtm-hook@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@elgorditosalsero/react-gtm-hook/-/react-gtm-hook-2.4.0.tgz#0a54d249dc2bc6c26c25b1452c150be022aea607"
+  integrity sha512-ysKEg79MVk5bnrR6ZlhXNvTcPydsdKTfxdSgji9JdH1GYYyJ+muilNFqKlr0AnWmXbZfN0gzQRSB6oP6V+zuyQ==
+
 "@endemolshinegroup/cosmiconfig-typescript-loader@3.0.2":
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/@endemolshinegroup/cosmiconfig-typescript-loader/-/cosmiconfig-typescript-loader-3.0.2.tgz#eea4635828dde372838b0909693ebd9aafeec22d"
