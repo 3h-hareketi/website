@@ -289,6 +289,7 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   return {
     paths: posts.map((post) => ({
       params: {
+        id: post?.id,
         slug: post?.slug,
       },
       locale: post?.locale,
