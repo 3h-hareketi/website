@@ -280,10 +280,10 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   const sdk = getSdk(client);
   let posts: PostsPathsQuery["posts"] = [];
   for (const locale of locales!) {
-    const { posts } = await sdk.PostsPaths({
+    const { posts: data } = await sdk.PostsPaths({
       locale: locale as Locale,
     });
-    posts.concat(posts);
+    posts = [...posts, ...data];
   }
 
   return {
