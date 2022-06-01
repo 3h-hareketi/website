@@ -6992,7 +6992,7 @@ export const PageDocument = gql`
 `;
 export const PagesDocument = gql`
   query Pages($locale: Locale!) {
-    pages {
+    pages(locales: [$locale]) {
       slug
       locale
     }

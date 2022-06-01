@@ -1,5 +1,5 @@
 query Pages($locale: Locale!) {
-  pages {
+  pages(locales: [$locale]) {
     slug
     locale
   }
