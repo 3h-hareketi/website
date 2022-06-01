@@ -1,23 +1,22 @@
 import { Tab } from "@headlessui/react";
+import { parseISO } from "date-fns";
 import { GetStaticProps } from "next";
-import { useTranslations } from "next-intl";
+import { useIntl, useTranslations } from "next-intl";
 import { NextSeo } from "next-seo";
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "../../components/Layout";
 import { getSdk, Locale, PostsQuery } from "../../interfaces";
+import classNames from "../../lib/classNames";
 import { client } from "../../lib/graphCmsClient";
 
 type Props = {
   posts: PostsQuery["posts"];
 };
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
-
 const Blog = ({ posts }: Props) => {
   const t = useTranslations("Blog");
+  const intl = useIntl();
 
   const highlightedPost = posts.filter((post) =>
     post.tags.includes("highlighted")
@@ -145,7 +144,11 @@ const Blog = ({ posts }: Props) => {
                       />
                       <div className="flex flex-col mr-auto space-y-5 md:w-1/3">
                         <div className="mt-2 text-sm font-light text-gray-400 md:mt-0">
-                          {post.createdBy?.name || " - "}, {post.createdAt}
+                          {intl.formatDateTime(parseISO(post.createdAt), {
+                            year: "numeric",
+                            month: "numeric",
+                            day: "numeric",
+                          })}
                         </div>
                         <h1 className="text-xl font-bold">{post.title}</h1>
                         <div className="text-base font-light text-gray-600">

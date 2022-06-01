@@ -6,16 +6,13 @@ import Layout from "../components/Layout";
 import PersonCard from "../components/PersonCard";
 import ReportCard from "../components/ReportCard";
 import { getSdk, Locale, PeopleQuery, ReportsQuery } from "../interfaces";
+import classNames from "../lib/classNames";
 import { client } from "../lib/graphCmsClient";
 
 type Props = {
   people: PeopleQuery["people"];
   reports: ReportsQuery["reports"];
 };
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
 
 const About = ({ people, reports }: Props) => {
   const t = useTranslations("About");
