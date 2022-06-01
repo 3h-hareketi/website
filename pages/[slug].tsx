@@ -13,6 +13,7 @@ const Page = ({ page }: Props) => {
   return (
     <Layout bgColor="bg-white" textColor="text-black" hamburgerColor="black">
       <NextSeo title={page.title} />
+      <h1 className="font-bold">{page.title}</h1>
       <div className="flex flex-col bg-gray-100">
         <RichText content={page.content?.json} />
       </div>
@@ -30,6 +31,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   return {
     props: {
       page: pages[0],
+      messages: (await import(`../messages/${locale}.json`)).default,
     },
   };
 };
