@@ -1,0 +1,8 @@
+query Page($locale: Locale!, $slug: String!) {
+  pages(where: { slug: $slug }, locales: [$locale]) {
+    title
+    content {
+      json
+    }
+  }
+}
