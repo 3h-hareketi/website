@@ -6858,6 +6858,7 @@ export type PostsQuery = {
   posts: Array<{
     __typename?: "Post";
     id: string;
+    slug: string;
     date: any;
     locale: Locale;
     title: string;
@@ -7037,6 +7038,7 @@ export const PostsDocument = gql`
   query Posts($locale: Locale!, $fallbackLocale: Locale!) {
     posts(locales: [$locale]) {
       id
+      slug
       content {
         html
       }

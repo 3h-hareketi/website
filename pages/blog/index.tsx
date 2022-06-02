@@ -154,11 +154,8 @@ const Blog = ({ posts }: Props) => {
                         <div className="text-base font-light text-gray-600">
                           {post.excerpt}
                         </div>
-                        <Link href={`/blog/${post.id}`} passHref>
-                          <a
-                            href="#"
-                            className="w-4/5 p-2 text-sm text-center text-white md:w-1/6 rounded-3xl bg-primary-500"
-                          >
+                        <Link href={`/blog/${post.slug}`} passHref>
+                          <a className="w-4/5 p-2 text-sm text-center text-white md:w-1/6 rounded-3xl bg-primary-500">
                             {t("readMore")}
                           </a>
                         </Link>

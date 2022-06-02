@@ -1,6 +1,7 @@
 query Posts($locale: Locale!, $fallbackLocale: Locale!) {
   posts(locales: [$locale]) {
     id
+    slug
     content {
       html
     }
