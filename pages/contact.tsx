@@ -27,24 +27,22 @@ const Contact = () => {
             <input
               type="text"
               id="name"
-              className="block w-1/3 p-1 text-sm text-gray-600 border border-gray-300 rounded-lg md:p-3 focus:ring-primary-500 focus:border-primary-500 "
+              name="name"
+              className="block w-1/2 p-1 text-sm text-gray-600 border border-gray-300 rounded-lg md:p-3 focus:ring-primary-500 focus:border-primary-500 "
               placeholder={t("name")}
             />
             <input
-              type="text"
-              id="surname"
-              className="block w-1/3 p-1 text-sm text-gray-600 border border-gray-300 rounded-lg md:p-3 focus:ring-primary-500 focus:border-primary-500 "
-              placeholder={t("surname")}
-            />
-            <input
-              type="text"
+              type="email"
               id="e-mail"
-              className="block w-1/3 p-1 text-sm text-gray-600 border border-gray-300 rounded-lg md:p-3 focus:ring-primary-500 focus:border-primary-500 "
+              name="email"
+              className="block w-1/2 p-1 text-sm text-gray-600 border border-gray-300 rounded-lg md:p-3 focus:ring-primary-500 focus:border-primary-500 "
               placeholder={t("email")}
             />
           </div>{" "}
           <textarea
             id="message"
+            name="message"
+            rows={5}
             className="block w-full h-full p-1 text-sm text-gray-600 border border-gray-300 rounded-lg md:p-3 focus:ring-primary-500 focus:border-primary-500 "
             placeholder={t("yourMessage")}
           />
