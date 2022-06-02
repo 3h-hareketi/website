@@ -3219,6 +3219,7 @@ export type Post = Node & {
   /** User that last published this document */
   publishedBy?: Maybe<User>;
   scheduledIn: Array<ScheduledOperation>;
+  slug: Scalars["String"];
   /** System stage field */
   stage: Stage;
   tags: Array<Scalars["String"]>;
