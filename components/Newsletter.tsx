@@ -25,8 +25,7 @@ const Newsletter = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormState("submitting");
-    // const token = await handleReCaptchaVerify();
-    const token = true;
+    const token = await handleReCaptchaVerify();
     if (token) {
       try {
         const res = await axios.post("/api/newsletter", {
