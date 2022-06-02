@@ -135,7 +135,7 @@ const About = ({ people, reports }: Props) => {
             {t("reportsDescription")}
           </div>
         </div>
-        <div className="flex flex-wrap justify-center w-2/3 mx-auto">
+        <div className="flex flex-col w-2/3 mx-auto md:grid md:grid-cols-3">
           {reports.map((report) => (
             <ReportCard key={report.id} report={report} />
           ))}

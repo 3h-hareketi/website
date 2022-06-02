@@ -11,7 +11,7 @@ const ReportCard = ({ report }: Props) => {
 
   return (
     <div className="flex flex-col max-w-xl p-2 my-5 bg-white shadow-md md:p-6 md:mx-8 rounded-xl">
-      <div className="flex flex-row">
+      <div className="flex flex-row flex-grow">
         <svg
           width="28"
           height="23"
@@ -37,8 +37,10 @@ const ReportCard = ({ report }: Props) => {
         </svg>
         <h1 className="ml-2 text-xl font-semibold">{report.title}</h1>
       </div>
-      <div className="flex flex-row">
-        <div className="text-sm text-gray-400">{report.description}</div>
+      <div className="flex flex-col items-center flex-grow mt-2">
+        <div className="mb-auto text-sm text-gray-400">
+          {report.description}
+        </div>
         <Link href={report.report.url} passHref>
           <a className="w-64 text-white md:px-4 md:py-2 md:mt-4 rounded-xl bg-primary-500 hover:bg-primary-700 max-h-8 md:max-h-full py-0.5 px-2">
             <div className="flex flex-row">
