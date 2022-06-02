@@ -258,11 +258,16 @@ const BlogPost = ({ post, similarPosts }: Props) => {
 
 export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   const sdk = getSdk(client);
+
+  const { posts: postPaths } = await sdk.PostsPaths({
+    locale: locale as Locale,
+  });
+  const id = postPaths.find((path) => path.slug === params?.slug)?.id!;
   const { post } = await sdk.Post({
-    id: params?.id as string,
+    id: id!,
   });
   const { posts } = await sdk.SimilarPosts({
-    currentPost: post?.id || "",
+    currentPost: id || "",
     tag: [post?.tags[0] || ""],
   });
   const similarPosts = posts.slice(0, 3);
@@ -289,7 +294,6 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   return {
     paths: posts.map((post) => ({
       params: {
-        id: post?.id,
         slug: post?.slug,
       },
       locale: post?.locale,
