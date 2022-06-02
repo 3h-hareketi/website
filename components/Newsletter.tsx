@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
@@ -17,35 +18,31 @@ const Newsletter = () => {
       return;
     }
 
-    return await executeRecaptcha("yourAction");
+    return await executeRecaptcha("handleSubmit");
     // Do whatever you want with the token
   }, [executeRecaptcha]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormState("submitting");
-    const token = await handleReCaptchaVerify();
+    // const token = await handleReCaptchaVerify();
+    const token = true;
     if (token) {
-      fetch("/api/newsletter", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          Email: email,
-        }),
-      })
-        .then((res) => {
-          if (res.status === 200) {
-            setEmail("");
-            setFormState("success");
-          } else {
-            setFormState("fail");
-          }
-        })
-        .catch((err) => {
-          console.error(err);
+      try {
+        const res = await axios.post("/api/newsletter", {
+          email: email,
         });
+
+        if (res.status === 200) {
+          setEmail("");
+          setFormState("success");
+        } else {
+          setFormState("fail");
+        }
+      } catch (e) {
+        setFormState("fail");
+        console.error(e);
+      }
     }
   };
 

@@ -2,12 +2,14 @@ import { withSentry } from "@sentry/nextjs";
 import type { NextApiRequest, NextApiResponse } from "next";
 import axios from "axios";
 
-const handler = (req: NextApiRequest, res: NextApiResponse) => {
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  const { email } = req.body;
+
   if (req.method !== "POST") {
     res.status(405);
   }
 
-  if (!req.body.email) {
+  if (!email) {
     res.status(400);
   }
 
@@ -20,28 +22,28 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
     },
   });
 
-  let clientId = "";
-  mailjet
-    .post("/contact", req.body.email)
-    .then((r) => {
-      clientId = r.data.Data[0].ID;
-    })
-    .catch((e) => {
-      console.error("Error", e);
-      res.status(500);
+  let clientId = 0;
+  try {
+    const contactData = await mailjet.post("/contact", {
+      Email: email,
     });
+    clientId = contactData.data.Data[0]["ID"];
+  } catch (e) {
+    console.error(e);
+    res.status(500).end();
+  }
 
-  mailjet
-    .post("/contact/listrecipient", {
+  try {
+    await mailjet.post("/listrecipient", {
       ContactID: clientId,
-      ListID: "12633",
-    })
-    .catch((e) => {
-      console.error("Error", e);
-      res.status(500);
+      ListID: 12633,
     });
+  } catch (e) {
+    console.error(e);
+    res.status(500).end();
+  }
 
-  res.status(200);
+  res.status(200).end();
 };
 
 export default withSentry(handler);
