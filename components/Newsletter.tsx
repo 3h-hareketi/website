@@ -11,7 +11,6 @@ type Inputs = {
 
 const Newsletter = () => {
   const t = useTranslations("Newsletter");
-  const [email, setEmail] = useState("");
   const {
     register,
     handleSubmit,
@@ -68,7 +67,6 @@ const Newsletter = () => {
                   {...register("email", { required: true })}
                   className="block w-full p-3 text-sm text-gray-600 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 "
                   placeholder={t("emailPlaceholder")}
-                  onChange={(v) => setEmail(v.target.value)}
                   disabled={isSubmitted}
                 />
               </div>
