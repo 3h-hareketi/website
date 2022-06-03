@@ -3,13 +3,31 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { SubmitHandler, useForm } from "react-hook-form";
+
+type Inputs = {
+  email: string;
+};
 
 const Newsletter = () => {
   const t = useTranslations("Newsletter");
   const [email, setEmail] = useState("");
-  const [formState, setFormState] = useState<
-    "idle" | "submitting" | "success" | "fail"
-  >("idle");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitted, isSubmitting, isSubmitSuccessful },
+  } = useForm<Inputs>();
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    const token = await handleReCaptchaVerify();
+    if (token) {
+      try {
+        const res = await axios.post("", data);
+      } catch (e) {
+        console.error(e);
+      }
+    }
+  };
+
   const { executeRecaptcha } = useGoogleReCaptcha();
 
   const handleReCaptchaVerify = useCallback(async () => {
@@ -21,29 +39,6 @@ const Newsletter = () => {
     return await executeRecaptcha("handleSubmit");
     // Do whatever you want with the token
   }, [executeRecaptcha]);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormState("submitting");
-    const token = await handleReCaptchaVerify();
-    if (token) {
-      try {
-        const res = await axios.post("/api/newsletter", {
-          email: email,
-        });
-
-        if (res.status === 200) {
-          setEmail("");
-          setFormState("success");
-        } else {
-          setFormState("fail");
-        }
-      } catch (e) {
-        setFormState("fail");
-        console.error(e);
-      }
-    }
-  };
 
   // You can use useEffect to trigger the verification as soon as the component being loaded
   useEffect(() => {
@@ -65,39 +60,38 @@ const Newsletter = () => {
           <div className="text-lg font-light text-gray-400 md:text-sm">
             {t("subtitle")}
           </div>
-          {formState === "idle" && (
-            <form onSubmit={(e) => handleSubmit(e)}>
+          {!isSubmitted && (
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div>
                 <input
                   type="email"
-                  id="email"
-                  name="email"
+                  {...register("email", { required: true })}
                   className="block w-full p-3 text-sm text-gray-600 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 "
                   placeholder={t("emailPlaceholder")}
                   onChange={(v) => setEmail(v.target.value)}
-                  disabled={formState !== "idle" ? true : false}
+                  disabled={isSubmitted}
                 />
               </div>
               <button
                 className="p-3 text-white rounded-3xl bg-primary-500"
-                disabled={formState !== "idle" ? true : false}
+                disabled={isSubmitted}
                 type="submit"
               >
                 Subscribe
               </button>
             </form>
           )}
-          {formState === "submitting" && (
+          {isSubmitting && (
             <div className="text-lg font-light text-gray-400 md:text-sm">
               Submitting
             </div>
           )}
-          {formState === "success" && (
+          {isSubmitSuccessful && (
             <div className="text-lg font-light text-gray-400 md:text-sm">
               Thanks for subscribing!
             </div>
           )}
-          {formState === "fail" && (
+          {errors && (
             <div className="text-lg font-light text-gray-400 md:text-sm">
               You&apos;re already subscribed to our newsletter!
             </div>
