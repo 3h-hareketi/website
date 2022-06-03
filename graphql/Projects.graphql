@@ -1,0 +1,11 @@
+query Projects($locale: Locale! = tr) {
+  projects(locales: [$locale]) {
+    id
+    description
+    image {
+      url
+    }
+    link
+    name
+  }
+}

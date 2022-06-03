@@ -1,0 +1,6 @@
+query Pages($locale: Locale!) {
+  pages(locales: [$locale]) {
+    slug
+    locale
+  }
+}

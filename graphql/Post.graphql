@@ -1,0 +1,20 @@
+query Post($id: ID!) {
+  post(where: { id: $id }) {
+    id
+    title
+    coverImage {
+      url
+    }
+    createdAt
+    updatedAt
+    createdBy {
+      name
+      picture
+    }
+    content {
+      raw
+    }
+    tags
+    excerpt
+  }
+}

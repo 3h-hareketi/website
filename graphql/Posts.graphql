@@ -1,0 +1,21 @@
+query Posts($locale: Locale!, $fallbackLocale: Locale!) {
+  posts(locales: [$locale]) {
+    id
+    slug
+    content {
+      html
+    }
+    coverImage(locales: [$locale, $fallbackLocale]) {
+      url
+    }
+    date
+    locale
+    title
+    tags
+    excerpt
+    createdAt
+    createdBy {
+      name
+    }
+  }
+}

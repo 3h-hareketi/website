@@ -1,0 +1,12 @@
+query FeaturedPosts {
+  posts(where: { tags_contains_some: "featured" }) {
+    id
+    date
+    excerpt
+    title
+    tags
+    coverImage {
+      url
+    }
+  }
+}

@@ -1,0 +1,5 @@
+query People($locale: Locale!, $fallbackLocale: Locale!) {
+  people(locales: [$locale]) {
+    ...Human
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "Navbar": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "projects": "Projects",
+    "blog": "Blog",
+    "joinUs": "Join Us",
+    "contactUs": "Contact Us"
+  },
+  "Footer": {
+    "motto": "React out to us!",
+    "copyright": "All rights reserved.",
+    "learnMore": "Learn More",
+    "support": "Support",
+    "tos": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "cookie": "Cookie Policy"
+  },
+  "Home": {
+    "description": "3H Movement: Discover liberalism, the ideology of freedom!",
+    "heroTitle1": "Discover liberalism,",
+    "heroTitle2": "the ideology of freedom!",
+    "heroSubtitle": "Vulputate erat cubilia praesent, dolor mattis condimentum eget tellus phasellus auctor elementum morbi, justo torquent egestas, nulla cursus tellus, per.",
+    "heroButton": "See More",
+    "blogPosts": "Blog Posts",
+    "blogPostsDescription": "Ornare aptent aenean tristique tortor egestas habitasse, netus praesent taciti sagittis nulla proin vivamus habitasse, non aptent neque curabitur cubilia habitasse taciti, id vulputate quis consectetur turpis, blandit cursus aenean interdum."
+  },
+  "Contact": {
+    "title": "Contact",
+    "description": "Let's get in touch",
+    "name": "Name",
+    "surname": "Surname",
+    "email": "E-mail",
+    "yourMessage": "Your Message...",
+    "sendMessage": "Send Message"
+  },
+  "About": {
+    "title": "About",
+    "aboutUs": "About Us",
+    "aboutUsDescription1": "The <strong>3H Movement</strong> was founded in 2006 in Istanbul as Liberal Office. Since 2006, 3H Movement started to be active in the fields of <strong>human rights, economic freedoms, and rights advocacy in Turkey</strong> using the name Liberal Office.",
+    "aboutUsDescription2": "In 2013, it changed its name to <strong>3H Movement (Freedom, Law, Tolerance)</strong> in order to attain the status of an association. Since 2006, the 3H Movement as a youth movement has educated its volunteers and members on <soft>human rights, the rule of law, and economic freedoms; encourages them to become political activist, policy-making, and non-governmental workers</soft>. With its activities such as <strong>Liberal Youth Congressses, Liberal Economics Congresses, Freedom Forums, Liberalism Summer, and Winter Camps</strong>, it aims to enable young people to have knowledge and ideas in areas such as liberalism and human rights, and to develop their skills.",
+    "description": "Meet the minds behind 3H",
+    "heroTitle1": "Meet the minds",
+    "heroTitle2": "behind 3H",
+    "ourTeam": "Our Team",
+    "teamDescription": "",
+    "teamSubtitle": "Believe in yourself!",
+    "all": "All",
+    "boardOfDirectors": "Board of Directors",
+    "boardOfSupervisors": "Board of Supervisors",
+    "reports": "Reports",
+    "reportsDescription": "Ornare aptent aenean tristique tortor egestas habitasse, netus praesent taciti sagittis nulla proin vivamus habitasse, non aptent neque curabitur cubilia habitasse taciti."
+  },
+  "Projects": {
+    "title": "Projects",
+    "description": "Our projects",
+    "projects": "Projects",
+    "projectsDescription": "Ornare aptent aenean tristique tortor egestas habitasse, netus praesent taciti sagittis nulla proin vivamus habitasse, non aptent neque curabitur cubilia habitasse taciti, id vulputate quis consectetur turpis, blandit cursus aenean interdum.",
+    "readMore": "Read more"
+  },
+  "Blog": {
+    "title": "Blog",
+    "description": "Our blog",
+    "readMore": "Read more"
+  },
+  "Post": {
+    "readMore": "Read more",
+    "similarPosts": "Similar Posts",
+    "similarPostsSubtitle": "We think you might like these articles too."
+  },
+  "PostCard": {
+    "readMore": "Read more"
+  },
+  "ReportCard": {
+    "download": "Download"
+  },
+  "Newsletter": {
+    "title": "Subscribe to our newsletter!",
+    "subtitle": "We'll send you the best of our blog just once a month. We promise.",
+    "emailPlaceholder": "Enter e-mail",
+    "submit": "Subscribe"
+  }
+}

@@ -1,0 +1,19 @@
+fragment Human on Person {
+  fullName
+  role
+  biography
+  facebook
+  id
+  boardOfDirectorsMember
+  boardOfSupervisorsMember
+  image(locales: [$locale, $fallbackLocale]) {
+    url(
+      transformation: {
+        image: { resize: { height: 96, width: 96, fit: clip } }
+      }
+    )
+  }
+  instagram
+  linkedIn
+  twitter
+}

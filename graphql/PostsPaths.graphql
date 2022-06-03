@@ -1,0 +1,7 @@
+query PostsPaths($locale: Locale!) {
+  posts(locales: [$locale]) {
+    id
+    slug
+    locale
+  }
+}
