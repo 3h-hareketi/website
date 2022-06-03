@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import { useTranslations } from "next-intl";
 import { NextSeo } from "next-seo";
 import { useCallback, useEffect } from "react";
@@ -98,41 +98,7 @@ const Contact = () => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async ({
-  locale,
-  params,
-}) => {
-  try {
-    await axios.post("https://api.mailjet.com/v3.1/send", {
-      auth: {
-        username: process.env.MAILJET_API_KEY!,
-        password: process.env.MAILJET_SECRET_KEY!,
-      },
-      data: {
-        // SandboxMode: "true",
-        Messages: [
-          {
-            From: [
-              {
-                Email: "noreply@3hhareketi.org",
-                Name: "3H Website",
-              },
-            ],
-            Subject: "New Contact Form Submission",
-            TextPart: `You have a new contact form submission. Please check the details below. \n\nName: ${params?.name} \nEmail: ${params?.email} \nMessage: ${params?.message}`,
-            To: [
-              {
-                Email: "info@3hhareketi.org",
-              },
-            ],
-          },
-        ],
-      },
-    });
-  } catch (e) {
-    console.error(e);
-  }
-
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       messages: (await import(`../messages/${locale}.json`)).default,
