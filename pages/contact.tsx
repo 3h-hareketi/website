@@ -102,32 +102,36 @@ export const getServerSideProps: GetServerSideProps = async ({
   locale,
   params,
 }) => {
-  const { data } = await axios.post("https://api.mailjet.com/v3.1/send", {
-    auth: {
-      username: process.env.MAILJET_API_KEY!,
-      password: process.env.MAILJET_SECRET_KEY!,
-    },
-    data: {
-      // SandboxMode: "true",
-      Messages: [
-        {
-          From: [
-            {
-              Email: "noreply@3hhareketi.org",
-              Name: "3H Website",
-            },
-          ],
-          Subject: "New Contact Form Submission",
-          TextPart: `You have a new contact form submission. Please check the details below. \n\nName: ${params?.name} \nEmail: ${params?.email} \nMessage: ${params?.message}`,
-          To: [
-            {
-              Email: "info@3hhareketi.org",
-            },
-          ],
-        },
-      ],
-    },
-  });
+  try {
+    await axios.post("https://api.mailjet.com/v3.1/send", {
+      auth: {
+        username: process.env.MAILJET_API_KEY!,
+        password: process.env.MAILJET_SECRET_KEY!,
+      },
+      data: {
+        // SandboxMode: "true",
+        Messages: [
+          {
+            From: [
+              {
+                Email: "noreply@3hhareketi.org",
+                Name: "3H Website",
+              },
+            ],
+            Subject: "New Contact Form Submission",
+            TextPart: `You have a new contact form submission. Please check the details below. \n\nName: ${params?.name} \nEmail: ${params?.email} \nMessage: ${params?.message}`,
+            To: [
+              {
+                Email: "info@3hhareketi.org",
+              },
+            ],
+          },
+        ],
+      },
+    });
+  } catch (e) {
+    console.error(e);
+  }
 
   return {
     props: {
