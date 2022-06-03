@@ -8,15 +8,15 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { name, email, message, csrfToken } = req.body;
 
   if (req.method !== "POST") {
-    res.status(405);
+    res.status(405).end();
   }
 
   if (!email || !name || !message || !csrfToken) {
-    res.status(400);
+    res.status(400).end();
   }
 
   if (!tokens.verify(process.env.SECRET_KEY!, csrfToken)) {
-    res.status(403);
+    res.status(403).end();
   }
 
   try {

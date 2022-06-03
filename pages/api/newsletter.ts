@@ -6,11 +6,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { email } = req.body;
 
   if (req.method !== "POST") {
-    res.status(405);
+    res.status(405).end();
   }
 
   if (!email) {
-    res.status(400);
+    res.status(400).end();
   }
 
   const mailjet = axios.create({
