@@ -88,7 +88,7 @@ const Home: NextPage = () => {
           {/* ----- Main Logo ----- */}
           <Image
             className="object-cover"
-            src="/logo.png"
+            src="/logo.svg"
             alt="3H Movement-3H Hareketi"
             width={384}
             height={384}
