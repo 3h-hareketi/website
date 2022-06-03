@@ -1,5 +1,6 @@
 import axios from "axios";
-import { GetStaticProps } from "next";
+import csrf from "csrf";
+import { GetServerSideProps } from "next";
 import { useTranslations } from "next-intl";
 import { NextSeo } from "next-seo";
 import { useCallback, useEffect } from "react";
@@ -8,12 +9,17 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import Layout from "../components/Layout";
 
 type Inputs = {
+  csrfToken: string;
   name: string;
   email: string;
   message: string;
 };
 
-const Contact = () => {
+type Props = {
+  csrfToken: string;
+};
+
+const Contact = ({ csrfToken }: Props) => {
   const t = useTranslations("Contact");
 
   const {
@@ -63,6 +69,11 @@ const Contact = () => {
           onSubmit={handleSubmit(onSubmit)}
           className="relative md:w-1/3 p-3 md:p-6 bg-white md:left-[10%] rounded-xl mt-24 flex flex-col space-y-4"
         >
+          <input
+            type="hidden"
+            value={csrfToken}
+            {...register("csrfToken", { required: true })}
+          />
           <h1 className="font-bold text-black text-md md:text-2xl">
             {t("description")}
           </h1>
@@ -98,9 +109,12 @@ const Contact = () => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+  const tokens = new csrf();
+
   return {
     props: {
+      csrfToken: await tokens.create(process.env.SECRET_KEY!),
       messages: (await import(`../messages/${locale}.json`)).default,
     },
   };
