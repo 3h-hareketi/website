@@ -6,6 +6,7 @@ import Layout from "../components/Layout";
 import Newsletter from "../components/Newsletter";
 import { FeaturedPostsQuery, getSdk } from "../interfaces";
 import { client } from "../lib/graphCmsClient";
+import Link from "next/link";
 
 type Props = {
   posts: FeaturedPostsQuery["posts"];
@@ -29,9 +30,11 @@ const Home = ({ posts }: Props) => {
             {t("heroTitle1")} <br /> {t("heroTitle2")}
           </h1>
           <div className="max-w-2xl mt-10">{t("heroSubtitle")}</div>
-          <button className="p-2 mt-4 font-medium text-black uppercase bg-white shadow-md w-36 rounded-2xl hover:text-primary-500 hover:shadow-lg">
-            {t("heroButton")}
-          </button>
+          <Link href="/blog">
+            <button className="p-2 mt-4 font-medium text-black uppercase bg-white shadow-md w-36 rounded-2xl hover:text-primary-500 hover:shadow-lg">
+              {t("heroButton")}
+            </button>
+          </Link>
         </div>
         <div className="flex flex-col w-full space-y-12 text-center bg-white">
           <h1 className="text-3xl font-semibold">{t("blogPosts")}</h1>{" "}
