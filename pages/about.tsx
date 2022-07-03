@@ -127,19 +127,23 @@ const About = ({ people, reports }: Props) => {
             </Tab.Panels>
           </Tab.Group>
         </div>
-        <div className="flex flex-col">
-          <h1 className="mx-auto text-3xl font-semibold mt-36">
-            {t("reports")}
-          </h1>
-          <div className="max-w-3xl mx-auto mt-8 font-thin text-center">
-            {t("reportsDescription")}
-          </div>
-        </div>
-        <div className="flex flex-col w-2/3 mx-auto md:grid md:grid-cols-3">
-          {reports.map((report) => (
-            <ReportCard key={report.id} report={report} />
-          ))}
-        </div>
+        {reports.length > 0 && (
+          <>
+            <div className="flex flex-col">
+              <h1 className="mx-auto text-3xl font-semibold mt-36">
+                {t("reports")}
+              </h1>
+              <div className="max-w-3xl mx-auto mt-8 font-thin text-center">
+                {t("reportsDescription")}
+              </div>
+            </div>
+            <div className="flex flex-col w-2/3 mx-auto md:grid md:grid-cols-3">
+              {reports.map((report) => (
+                <ReportCard key={report.id} report={report} />
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </Layout>
   );
