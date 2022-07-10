@@ -2,7 +2,7 @@ query Projects($locale: Locale! = tr, $fallbackLocale: Locale!) {
   projects(locales: [$locale]) {
     id
     description
-    image {
+    image(locales: [$locale, $fallbackLocale]) {
       url
     }
     link
