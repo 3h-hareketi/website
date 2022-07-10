@@ -1,5 +1,5 @@
 query Projects($locale: Locale! = tr, $fallbackLocale: Locale!) {
-  projects(locales: [$locale]) {
+  projects(locales: [$locale, $fallbackLocale]) {
     id
     description
     image(locales: [$locale, $fallbackLocale]) {

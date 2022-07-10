@@ -7069,10 +7069,10 @@ export const PostsPathsDocument = gql`
 `;
 export const ProjectsDocument = gql`
   query Projects($locale: Locale! = tr, $fallbackLocale: Locale!) {
-    projects(locales: [$locale]) {
+    projects(locales: [$locale, $fallbackLocale]) {
       id
       description
-      image {
+      image(locales: [$locale, $fallbackLocale]) {
         url
       }
       link
