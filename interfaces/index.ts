@@ -6887,6 +6887,7 @@ export type PostsPathsQuery = {
 
 export type ProjectsQueryVariables = Exact<{
   locale?: Locale;
+  fallbackLocale: Locale;
 }>;
 
 export type ProjectsQuery = {
@@ -7067,7 +7068,7 @@ export const PostsPathsDocument = gql`
   }
 `;
 export const ProjectsDocument = gql`
-  query Projects($locale: Locale! = tr) {
+  query Projects($locale: Locale! = tr, $fallbackLocale: Locale!) {
     projects(locales: [$locale]) {
       id
       description
@@ -7228,7 +7229,7 @@ export function getSdk(
       );
     },
     Projects(
-      variables?: ProjectsQueryVariables,
+      variables: ProjectsQueryVariables,
       requestHeaders?: Dom.RequestInit["headers"]
     ): Promise<ProjectsQuery> {
       return withWrapper(

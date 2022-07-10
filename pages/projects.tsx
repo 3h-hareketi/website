@@ -56,9 +56,12 @@ const Projects = ({ projects }: Props) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
+export const getStaticProps: GetStaticProps = async ({ locale, locales }) => {
   const sdk = getSdk(client);
-  const { projects } = await sdk.Projects({ locale: locale as Locale });
+  const { projects } = await sdk.Projects({
+    locale: locale as Locale,
+    fallbackLocale: locales?.filter((l) => l !== locale)[0] as Locale,
+  });
 
   return {
     props: {

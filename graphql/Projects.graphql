@@ -1,4 +1,4 @@
-query Projects($locale: Locale! = tr) {
+query Projects($locale: Locale! = tr, $fallbackLocale: Locale!) {
   projects(locales: [$locale]) {
     id
     description
