@@ -42,7 +42,7 @@ const Projects = ({ projects }: Props) => {
                 <div className="hidden text-xs md:block md:text-base text-ellipsis">
                   {project.description}
                 </div>
-                <Link href={project.link as string}>
+                <Link href={project.link as string} passHref>
                   <a className="p-1 mb-4 text-xs text-center text-white rounded-full md:mr-auto md:p-3 md:mb-4 md:w-1/3 bg-primary-500 md:text-base">
                     {t("readMore")}
                   </a>
