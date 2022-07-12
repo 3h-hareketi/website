@@ -37,6 +37,25 @@ const JoinUs = () => {
           </button>
         </div>
       </div>
+      <div className="flex flex-col bg-slate-200 px-4 md:px-16 lg:px-32 md:py-16 lg:py-32 py-4">
+        {" "}
+        <h1 className="mx-auto text-2xl font-extrabold md:text-4xl text-primary-400">
+          What is the newcomers program?
+        </h1>{" "}
+        <h3 className="my-4 text-black text-center">
+          In the newcomers program, you will get to know more about liberalism,
+          discuss your ideas with likeminded people, upskill yourself and become
+          part of an international liberal network. We offer mentoring, free
+          classes on various topics, priority attendance to our events,
+          exclusive events tailored to your needs and desires, professional
+          experience and many chances to take part in international events both
+          in Turkey and abroad. You can also demonstrate your skills and have a
+          safe space to practice your writing, editing, presentation and other
+          skills. After you successfully complete the program and become a
+          newcomer alumni, you will have the chance to be an official member and
+          contribute even more!{" "}
+        </h3>
+      </div>
     </Layout>
   );
 };
