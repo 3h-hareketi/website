@@ -13,7 +13,7 @@ const JoinUs = () => {
       logo="alt"
       hamburgerColor="white"
     >
-      <NextSeo description={t("description")} />
+      <NextSeo description={t("buttonText")} />
       <div className="mx-auto md:ml-auto md:mr-0 w-1/2 pb-6 md:pb-16 h-[50vh] flex">
         <div className="my-auto">
           {" "}
