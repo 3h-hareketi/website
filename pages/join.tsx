@@ -57,9 +57,9 @@ const JoinUs = () => {
           backgroundPosition: "right",
         }}
       >
-        <div className="mr-auto w-1/2 my-auto ">
+        <div className="mr-auto w-1/2 my-auto p-8 md:p-16 ">
           <h1 className="text-3xl font-extrabold md:text-5xl text-primary-400">
-            Are you young and share the values of liberalism?
+            Dont hesitate, join the family!
           </h1>
           <h3 className="my-4 text-black">For more information and queries:</h3>
           <h3 className="my-4 text-primary-400">atabirol@3hhareketi.org </h3>
