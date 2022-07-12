@@ -2,7 +2,6 @@ import { GetStaticProps } from "next";
 import { useTranslations } from "next-intl";
 import { NextSeo } from "next-seo";
 import Layout from "../components/Layout";
-import Image from "next/image";
 import Link from "next/link";
 const JoinUs = () => {
   const t = useTranslations("Join Us");
@@ -59,8 +58,6 @@ const JoinUs = () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  //   const sdk = getSdk(client);
-
   return {
     props: {
       messages: (await import(`../messages/${locale}.json`)).default,
