@@ -56,6 +56,23 @@ const JoinUs = () => {
           contribute even more!{" "}
         </h3>
       </div>
+      <div
+        className="w-screen h-[50vh] flex flex-col"
+        style={{
+          backgroundImage: `url("/joinus2.svg")`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "fit",
+          backgroundPosition: "right",
+        }}
+      >
+        <div className="mr-auto w-1/2 my-auto">
+          <h1 className="text-3xl font-extrabold md:text-5xl text-primary-400">
+            Are you young and share the values of liberalism?
+          </h1>
+          <h3 className="my-4 text-black">For more information and queries:</h3>
+          <h3 className="my-4 text-primary-400">atabirol@3hhareketi.org </h3>
+        </div>
+      </div>
     </Layout>
   );
 };
