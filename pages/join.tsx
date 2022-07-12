@@ -14,7 +14,7 @@ const JoinUs = () => {
       hamburgerColor="white"
     >
       <NextSeo description={t("description")} />
-      <div className="ml-auto w-1/2 pb-6 md:pb-16 h-[50vh] flex">
+      <div className="mx-auto md:ml-auto md:mr-0 w-1/2 pb-6 md:pb-16 h-[50vh] flex">
         <div className="my-auto">
           {" "}
           <h1 className="text-4xl font-extrabold md:text-6xl text-white">
@@ -57,7 +57,7 @@ const JoinUs = () => {
           backgroundPosition: "right",
         }}
       >
-        <div className="mr-auto w-1/2 my-auto p-8 md:p-16 ">
+        <div className="mx-auto md:mr-auto md:ml-0 w-1/2 my-auto md:p-16 ">
           <h1 className="text-3xl font-extrabold md:text-5xl text-primary-400">
             Dont hesitate, join the family!
           </h1>
