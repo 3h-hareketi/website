@@ -32,7 +32,7 @@ const Layout = ({
   return (
     <div
       className={`flex flex-col justify-between ${
-        router.pathname === "/" ? "h-screen" : ""
+        router.pathname === "/" ? "h-screen" : "h-screen"
       } subpixel-antialiased`}
       style={
         router.pathname === "/" || router.pathname === "/join"

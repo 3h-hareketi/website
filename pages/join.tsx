@@ -14,7 +14,7 @@ const JoinUs = () => {
       hamburgerColor="white"
     >
       <NextSeo description={t("description")} />
-      <div className="ml-auto w-1/2 pb-6 md:pb-16">
+      <div className="ml-auto w-1/2 pb-6 md:pb-16 h-[50vh]">
         <h1 className="text-4xl font-extrabold md:text-6xl text-white">
           Are you young and share the values of liberalism?
         </h1>
