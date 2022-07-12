@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import { NextSeo } from "next-seo";
 import Layout from "../components/Layout";
 import Image from "next/image";
+import Link from "next/link";
 const JoinUs = () => {
   const t = useTranslations("Home");
 
@@ -24,7 +25,9 @@ const JoinUs = () => {
             Great! You are what we are looking for.
           </h3>
           <button className="p-3 bg-white rounded-full shadow-lg uppercase">
-            Join us now!
+            <Link href="/contact" passHref>
+              <a>Join us Now!</a>
+            </Link>
           </button>
         </div>
       </div>
