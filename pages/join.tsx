@@ -46,7 +46,7 @@ const JoinUs = () => {
         </h3>
       </div>
       <div
-        className="w-screen h-[50vh] flex flex-col"
+        className="w-screen h-[50vh] flex flex-col bg-white"
         style={{
           backgroundImage: `url("/joinus2.svg")`,
           backgroundRepeat: "no-repeat",
