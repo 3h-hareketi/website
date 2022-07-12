@@ -14,16 +14,19 @@ const JoinUs = () => {
       hamburgerColor="white"
     >
       <NextSeo description={t("description")} />
-      <div className="ml-auto w-1/2 pb-6 md:pb-16 h-[50vh]">
-        <h1 className="text-4xl font-extrabold md:text-6xl text-white">
-          Are you young and share the values of liberalism?
-        </h1>
-        <h3 className="my-4 text-white">
-          Great! You are what we are looking for.
-        </h3>
-        <button className="p-3 bg-white rounded-full shadow-lg uppercase">
-          Join us now!
-        </button>
+      <div className="ml-auto w-1/2 pb-6 md:pb-16 h-[50vh] flex">
+        <div className="my-auto">
+          {" "}
+          <h1 className="text-4xl font-extrabold md:text-6xl text-white">
+            Are you young and share the values of liberalism?
+          </h1>
+          <h3 className="my-4 text-white">
+            Great! You are what we are looking for.
+          </h3>
+          <button className="p-3 bg-white rounded-full shadow-lg uppercase">
+            Join us now!
+          </button>
+        </div>
       </div>
 
       <div className="flex flex-col bg-slate-200 px-4 md:px-16 lg:px-32 md:py-16 lg:py-32 py-4">
