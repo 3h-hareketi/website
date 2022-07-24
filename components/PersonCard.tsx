@@ -24,7 +24,7 @@ const PersonCard = ({ person }: Props) => {
           className="rounded-full"
         />
       </div>
-      <h1 className="-mt-16 text-xl font-extrabold text-center">
+      <h1 className="-mt-12 text-xl font-extrabold text-center">
         {person.fullName}
       </h1>
       <div className="mx-auto text-lg text-center">{person.role}</div>
