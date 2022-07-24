@@ -20,10 +20,13 @@ const About = ({ people, reports }: Props) => {
   return (
     <Layout bgColor="bg-white" textColor="text-black" hamburgerColor="black">
       <NextSeo title={t("title")} description={t("description")} />
-      <div className="flex flex-col mx-auto bg-primary-500">
-        <h1 className="mx-auto text-2xl font-extrabold text-center text-white md:text-8xl">
-          {t("heroTitle1")} <br /> {t("heroTitle2")}
+      <div className="flex flex-col mx-auto bg-primary-500 py-6">
+        <h1 className="mx-auto my-auto text-2xl font-extrabold text-center text-white md:text-8xl">
+          {t("heroTitle1")}
         </h1>
+        <h1 className="mx-auto my-auto text-2xl font-extrabold text-center text-white md:text-8xl">
+          {t("heroTitle2")}
+        </h1>{" "}
       </div>
       <div className="flex flex-col bg-gray-100">
         <h1 className="mx-auto text-3xl font-semibold mt-36">{t("aboutUs")}</h1>
