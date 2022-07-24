@@ -79,6 +79,11 @@ const Navbar = ({
               <a className={`${textColor} uppercase`}>{t("contactUs")}</a>
             </Link>
           </li>
+          <li>
+            <Link href="https:akademi.3hhareketi.org" passHref>
+              <a className={`${textColor} uppercase`}>{t("academyLink")}</a>
+            </Link>
+          </li>
         </ul>
         <Link
           href={router.pathname}
@@ -180,6 +185,16 @@ const Navbar = ({
                     onClick={() => setNavbarOpen(false)}
                   >
                     {t("contactUs")}
+                  </a>
+                </Link>
+              </li>
+              <li className="mb-1">
+                <Link href="https:3hhareketi.org" passHref>
+                  <a
+                    className="block p-4 text-sm rounded hover:bg-gray-50 hover:text-primary-500"
+                    onClick={() => setNavbarOpen(false)}
+                  >
+                    {t("academyLink")}
                   </a>
                 </Link>
               </li>

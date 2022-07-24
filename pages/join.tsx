@@ -22,7 +22,7 @@ const JoinUs = () => {
           </h1>
           <h3 className="my-4 text-white">{t("subtitle1")}</h3>
           <button className="p-3 bg-white rounded-full shadow-lg uppercase">
-            <Link href="/contact" passHref>
+            <Link href="https://forms.gle/ABRRLHft69bqetnv6" passHref>
               <a> {t("buttonText")}</a>
             </Link>
           </button>
