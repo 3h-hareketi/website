@@ -96,7 +96,7 @@ const About = ({ people, reports }: Props) => {
               <Tab.Panel
                 className={classNames(
                   "bg-gray-100 rounded-xl p-3",
-                  "flex flex-wrap md:justify-between justify-center"
+                  "justify-items-center md:grid-cols-2 grid grid-cols-1"
                 )}
               >
                 {people.map((person) => (
@@ -106,7 +106,7 @@ const About = ({ people, reports }: Props) => {
               <Tab.Panel
                 className={classNames(
                   "bg-gray-100 rounded-xl p-3",
-                  "flex flex-wrap md:justify-between justify-center"
+                  "justify-items-center md:grid-cols-2 grid grid-cols-1"
                 )}
               >
                 {people
@@ -118,7 +118,7 @@ const About = ({ people, reports }: Props) => {
               <Tab.Panel
                 className={classNames(
                   "bg-gray-100 rounded-xl p-3",
-                  "flex flex-wrap md:justify-between justify-center"
+                  "justify-items-center md:grid-cols-2 grid grid-cols-1"
                 )}
               >
                 {people
