@@ -2473,6 +2473,7 @@ export type Person = Node & {
   locale: Locale;
   /** Get the other localizations for this document */
   localizations: Array<Person>;
+  order?: Maybe<Scalars["Int"]>;
   /** The time the document was published. Null on documents in draft stage. */
   publishedAt?: Maybe<Scalars["DateTime"]>;
   /** User that last published this document */
@@ -2573,6 +2574,7 @@ export type PersonCreateInput = {
   linkedIn?: InputMaybe<Scalars["String"]>;
   /** Inline mutations for managing document localizations excluding the default locale */
   localizations?: InputMaybe<PersonCreateLocalizationsInput>;
+  order?: InputMaybe<Scalars["Int"]>;
   /** role input for default locale (tr) */
   role: Scalars["String"];
   twitter?: InputMaybe<Scalars["String"]>;
@@ -2748,6 +2750,21 @@ export type PersonManyWhereInput = {
   linkedIn_not_starts_with?: InputMaybe<Scalars["String"]>;
   /** All values starting with the given string. */
   linkedIn_starts_with?: InputMaybe<Scalars["String"]>;
+  order?: InputMaybe<Scalars["Int"]>;
+  /** All values greater than the given value. */
+  order_gt?: InputMaybe<Scalars["Int"]>;
+  /** All values greater than or equal the given value. */
+  order_gte?: InputMaybe<Scalars["Int"]>;
+  /** All values that are contained in given list. */
+  order_in?: InputMaybe<Array<Scalars["Int"]>>;
+  /** All values less than the given value. */
+  order_lt?: InputMaybe<Scalars["Int"]>;
+  /** All values less than or equal the given value. */
+  order_lte?: InputMaybe<Scalars["Int"]>;
+  /** All values that are not equal to given value. */
+  order_not?: InputMaybe<Scalars["Int"]>;
+  /** All values that are not contained in given list. */
+  order_not_in?: InputMaybe<Array<Scalars["Int"]>>;
   publishedAt?: InputMaybe<Scalars["DateTime"]>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars["DateTime"]>;
@@ -2823,6 +2840,8 @@ export enum PersonOrderByInput {
   InstagramDesc = "instagram_DESC",
   LinkedInAsc = "linkedIn_ASC",
   LinkedInDesc = "linkedIn_DESC",
+  OrderAsc = "order_ASC",
+  OrderDesc = "order_DESC",
   PublishedAtAsc = "publishedAt_ASC",
   PublishedAtDesc = "publishedAt_DESC",
   RoleAsc = "role_ASC",
@@ -2845,6 +2864,7 @@ export type PersonUpdateInput = {
   linkedIn?: InputMaybe<Scalars["String"]>;
   /** Manage document localizations */
   localizations?: InputMaybe<PersonUpdateLocalizationsInput>;
+  order?: InputMaybe<Scalars["Int"]>;
   /** role input for default locale (tr) */
   role?: InputMaybe<Scalars["String"]>;
   twitter?: InputMaybe<Scalars["String"]>;
@@ -2898,6 +2918,7 @@ export type PersonUpdateManyInput = {
   linkedIn?: InputMaybe<Scalars["String"]>;
   /** Optional updates to localizations */
   localizations?: InputMaybe<PersonUpdateManyLocalizationsInput>;
+  order?: InputMaybe<Scalars["Int"]>;
   /** role input for default locale (tr) */
   role?: InputMaybe<Scalars["String"]>;
   twitter?: InputMaybe<Scalars["String"]>;
@@ -3114,6 +3135,21 @@ export type PersonWhereInput = {
   linkedIn_not_starts_with?: InputMaybe<Scalars["String"]>;
   /** All values starting with the given string. */
   linkedIn_starts_with?: InputMaybe<Scalars["String"]>;
+  order?: InputMaybe<Scalars["Int"]>;
+  /** All values greater than the given value. */
+  order_gt?: InputMaybe<Scalars["Int"]>;
+  /** All values greater than or equal the given value. */
+  order_gte?: InputMaybe<Scalars["Int"]>;
+  /** All values that are contained in given list. */
+  order_in?: InputMaybe<Array<Scalars["Int"]>>;
+  /** All values less than the given value. */
+  order_lt?: InputMaybe<Scalars["Int"]>;
+  /** All values less than or equal the given value. */
+  order_lte?: InputMaybe<Scalars["Int"]>;
+  /** All values that are not equal to given value. */
+  order_not?: InputMaybe<Scalars["Int"]>;
+  /** All values that are not contained in given list. */
+  order_not_in?: InputMaybe<Array<Scalars["Int"]>>;
   publishedAt?: InputMaybe<Scalars["DateTime"]>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars["DateTime"]>;
@@ -7007,7 +7043,7 @@ export const PagesDocument = gql`
 `;
 export const PeopleDocument = gql`
   query People($locale: Locale!, $fallbackLocale: Locale!) {
-    people(locales: [$locale]) {
+    people(locales: [$locale], orderBy: order_DESC) {
       ...Human
     }
   }
