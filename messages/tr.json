@@ -5,7 +5,9 @@
     "projects": "Projeler",
     "blog": "Blog",
     "joinUs": "Aramıza Katıl",
-    "contactUs": "Bize Ulaş"
+    "contactUs": "Bize Ulaş",
+    "academyLink": "3H Akademi"
+
   },
   "Footer": {
     "motto": "Hürriyet, Hukuk, Hoşgörü",
@@ -85,7 +87,7 @@
     "subtitle1": "Harika! Tam aradığımız gibi birisiniz.",
     "buttonText": "Hemen bize katılın!",
     "textHeader": "Yeni gelenler programımız nedir?",
-    "paragraph": "In the newcomers program, you will get to know more about liberalism, discuss your ideas with likeminded people, upskill yourself and become part of an international liberal network. We offer mentoring, free classes on various topics, priority attendance to our events, exclusive events tailored to your needs and desires, professional experience and many chances to take part in international events both in Turkey and abroad. You can also demonstrate your skills and have a safe space to practice your writing, editing, presentation and other skills. After you successfully complete the program and become a newcomer alumni, you will have the chance to be an official member and contribute even more!",
+    "paragraph": "Newcomers programında liberalizmi daha iyi öğrenecek, fikirlerini senin gibi düşünen insanlarla paylaşabilecek ve uluslararası liberal networkün bir parçası olarak kendini geliştirebileceksin. Bu program katılımcılarına workshoplar, eğitimler ve yurtdışı olanakları sunmanın yanında cv yazma, network oluşturma, mail yazma gibi temel kabiliyetler için de mentorluk sağlıyor olacak. Aynı zamanda yazı yazma,çeviri yapma, video editleme ve sunum yapma gibi yeteneklerini sergileyebileceğin ve geliştirebileceğin güvenli bir ortam sunacak. Programı tamamladıktan sonra resmi üyemiz olma ve projelerimize çok daha aktif katılma imkanın olacak.",
     "title2": "Tereddüt etmeyin, bize katılın!",
     "subtitle2": "Daha fazla bilgi ve sorularınız için:",
     "contactMail": "atabirol@3hhareketi.org "
