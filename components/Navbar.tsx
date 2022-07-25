@@ -80,9 +80,12 @@ const Navbar = ({
             </Link>
           </li>
           <li>
-            <Link href="https:akademi.3hhareketi.org" passHref>
-              <a className={`${textColor} uppercase`}>{t("academyLink")}</a>
-            </Link>
+            <a
+              href="https://akademi.3hhareketi.org"
+              className={`${textColor} uppercase`}
+            >
+              {t("academyLink")}
+            </a>
           </li>
         </ul>
         <Link
