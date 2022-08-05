@@ -33,13 +33,13 @@ const Projects = ({ projects }: Props) => {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
-              className="w-full md:w-1/4 rounded-md h-[60vh] m-4 md:m-8 flex flex-col group"
+              className="w-full md:w-1/4 rounded-md h-[70vh] m-4 md:m-8 flex flex-col group"
             >
-              <div className="md:hidden flex group-hover:flex flex-col items-center h-[15vh] md:h-[40vh] bg-white mt-auto justify-between rounded-t-md px-2 md:px-8 bg-opacity-90 backdrop-filter backdrop-blur-[50px]">
+              <div className="md:hidden flex group-hover:flex flex-col items-center bg-white mt-auto justify-between rounded-t-md p-2 md:p-8 bg-opacity-90 backdrop-filter backdrop-blur-[50px]">
                 <h1 className="mt-4 text-sm font-bold md:mb-0 md:mt-8 md:text-2xl">
                   {project.name}
                 </h1>
-                <div className="hidden text-xs md:block md:text-base text-ellipsis">
+                <div className="hidden text-xs md:block md:text-sm mt-4">
                   {project.description}
                 </div>
                 {project.link && (
