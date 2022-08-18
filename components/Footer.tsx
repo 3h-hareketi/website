@@ -11,7 +11,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-primary-500">
-      <div className="flex flex-col items-center mt-16 md:flex-row md:mx-64">
+      <div className="flex flex-col items-center px-2 mx-auto mt-16 max-w-7xl md:flex-row">
         <div className="space-y-3 text-center md:mr-auto">
           <BlurImage src={logo} height={128} width={128} />
           <ul className="text-white">
@@ -20,7 +20,7 @@ const Footer = () => {
             <li className="font-thin">(+90) 212 564 78 90</li>
           </ul>
         </div>
-        <h1 className="text-4xl font-bold text-center text-white md:text-6xl">
+        <h1 className="text-xl font-bold text-center text-white md:text-6xl">
           {t("motto")}
         </h1>
         <div className="flex flex-col mt-5 ml-10 mr-auto text-left md:mr-0 md:mt-0 md:ml-auto md:text-right">
