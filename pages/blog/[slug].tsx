@@ -68,7 +68,7 @@ const BlogPost = ({ post, similarPosts }: Props) => {
             className="mx-auto rounded-xl -z-10"
           />
           <div className="z-10 w-11/12 max-w-7xl p-8 md:p-24 mx-auto -mt-16 md:-mt-48 bg-white shadow-xl bg-opacity-90 rounded-xl backdrop-filter backdrop-blur-[80px] ">
-            <div className="flex flex-row flex-wrap md:-mt-12 md:-ml-12 md:flex-nowrap">
+            <div className="flex flex-row flex-wrap md:-mt-12 md:flex-nowrap">
               <Image
                 className="rounded-full"
                 src={post?.createdBy?.picture || `${BASE_URL}/placeholder.jpg`}
@@ -78,7 +78,7 @@ const BlogPost = ({ post, similarPosts }: Props) => {
                     : "'nın profil görseli"
                 }
                 width={80}
-                height={60}
+                height={80}
               />
               <div className="flex flex-col text-xs text-left text-black md:text-sm">
                 <div className="">{post?.createdBy?.name}</div>
