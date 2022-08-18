@@ -83,7 +83,7 @@ const BlogPost = ({ post, similarPosts }: Props) => {
               <div className="flex flex-col text-xs text-left text-black md:text-sm">
                 <div className="">{post?.createdBy?.name}</div>
                 <div className="mb-10 text-xs text-gray-600">
-                  {post?.createdAt}
+                  {new Date(post?.createdAt).toLocaleDateString()}
                 </div>
               </div>
               <div className="md:ml-auto">
