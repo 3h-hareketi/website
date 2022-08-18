@@ -152,7 +152,7 @@ const Blog = ({ posts }: Props) => {
                           {post.excerpt}
                         </div>
                         <Link href={`/blog/${post.slug}`}>
-                          <button className="w-40 p-3 text-sm text-center text-white rounded-3xl bg-primary-500">
+                          <button className="w-40 p-3 text-center text-white text-md rounded-3xl bg-primary-500">
                             {t("readMore")}
                           </button>
                         </Link>
