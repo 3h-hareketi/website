@@ -41,7 +41,6 @@ const Blog = ({ posts }: Props) => {
       textColor="text-black"
       hamburgerColor="black"
     >
-      {" "}
       <NextSeo title={t("title")} description={t("description")} />
       <div className="bg-gray-200">
         {highlightedPost && (
@@ -123,7 +122,7 @@ const Blog = ({ posts }: Props) => {
                   key={tag}
                   className={classNames(
                     "rounded-xl p-3",
-                    "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 flex flex-col justify-center space-y-5"
+                    "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-primary-400 ring-white ring-opacity-60 flex flex-col justify-center space-y-5"
                   )}
                 >
                   {filterPostsByTag(tag).map((post) => (
@@ -147,7 +146,11 @@ const Blog = ({ posts }: Props) => {
                             day: "numeric",
                           })}
                         </div>
-                        <h1 className="text-xl font-bold">{post.title}</h1>
+                        <Link href={`/blog/${post.slug}`}>
+                          <h1 className="text-xl font-bold cursor-pointer">
+                            {post.title}
+                          </h1>
+                        </Link>
                         <div className="text-base font-light text-gray-600">
                           {post.excerpt}
                         </div>
