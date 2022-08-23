@@ -34,15 +34,15 @@ const Layout = ({
       className="flex flex-col justify-between h-screen subpixel-antialiased"
       {...handlers}
     >
-      <div
-        className={`h-full w-full absolute bg-primary-500 bg-no-repeat ${
-          router.pathname === "/" || router.pathname === "/join"
-            ? router.pathname === "/"
+      {(router.pathname === "/" || router.pathname === "/join") && (
+        <div
+          className={`h-full w-full absolute bg-primary-500 bg-no-repeat ${
+            router.pathname === "/"
               ? "bg-[url(/background.svg)] bg-cover md:bg-contain md:bg-right bg-center"
               : "bg-[url(/joinus.svg)] bg-left bg-cover md:bg-contain md:bg-left-bottom"
-            : ""
-        }`}
-      />
+          }`}
+        />
+      )}
       <DefaultSeo
         titleTemplate={`%s | ${defaultTitle}`}
         defaultTitle={defaultTitle}
