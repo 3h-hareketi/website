@@ -28,40 +28,56 @@ const Footer = () => {
             <li className="font-thin">(+90) 212 564 78 90</li>
           </ul>
           <div className="space-x-4">
-            <Link href="https://www.facebook.com/3hhareketi/">
-              <FontAwesomeIcon
-                icon={faFacebook}
-                className="text-white"
-                size="lg"
-              />
+            <Link href="https://www.facebook.com/3hhareketi/" passHref>
+              <a target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon
+                  icon={faFacebook}
+                  className="text-white"
+                  size="lg"
+                />
+              </a>
             </Link>
-            <Link href="https://www.instagram.com/3hhareketi/">
-              <FontAwesomeIcon
-                icon={faInstagram}
-                className="text-white"
-                size="lg"
-              />
+            <Link href="https://www.instagram.com/3hhareketi/" passHref>
+              <a target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon
+                  icon={faInstagram}
+                  className="text-white"
+                  size="lg"
+                />
+              </a>
             </Link>
-            <Link href="https://twitter.com/3hhareketi/">
-              <FontAwesomeIcon
-                icon={faTwitter}
-                className="text-white"
-                size="lg"
-              />
+            <Link href="https://twitter.com/3hhareketi/" passHref>
+              <a target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon
+                  icon={faTwitter}
+                  className="text-white"
+                  size="lg"
+                />
+              </a>
             </Link>
-            <Link href="https://www.linkedin.com/company/the-3h-movement/about/">
-              <FontAwesomeIcon
-                icon={faLinkedin}
-                className="text-white"
-                size="lg"
-              />
+            <Link
+              href="https://www.linkedin.com/company/the-3h-movement/about/"
+              passHref
+            >
+              <a target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon
+                  icon={faLinkedin}
+                  className="text-white"
+                  size="lg"
+                />
+              </a>
             </Link>
-            <Link href="https://www.youtube.com/channel/UCpNJRC7fCGASPkltHxGJesQ">
-              <FontAwesomeIcon
-                icon={faYoutube}
-                className="text-white"
-                size="lg"
-              />
+            <Link
+              href="https://www.youtube.com/channel/UCpNJRC7fCGASPkltHxGJesQ"
+              passHref
+            >
+              <a href="">
+                <FontAwesomeIcon
+                  icon={faYoutube}
+                  className="text-white"
+                  size="lg"
+                />
+              </a>
             </Link>
           </div>
         </div>
