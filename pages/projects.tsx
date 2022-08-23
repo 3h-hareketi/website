@@ -23,7 +23,7 @@ const Projects = ({ projects }: Props) => {
             {t("projectsDescription")}
           </div>
         </div>
-        <div className="flex flex-row flex-wrap justify-between mx-auto mt-24">
+        <div className="grid grid-cols-1 gap-32 mx-auto mt-24 md:grid-cols-2 max-w-7xl justify-evenly">
           {projects.map((project) => (
             <div
               key={project.id}
@@ -33,13 +33,13 @@ const Projects = ({ projects }: Props) => {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
-              className="w-full md:w-1/4 rounded-md h-[70vh] m-4 md:m-8 flex flex-col group"
+              className="w-full rounded-md h-[70vh] flex flex-col group"
             >
               <div className="md:hidden flex group-hover:flex flex-col items-center bg-white mt-auto justify-between rounded-t-md p-2 md:p-8 bg-opacity-90 backdrop-filter backdrop-blur-[50px]">
                 <h1 className="mt-4 text-sm font-bold md:mb-0 md:mt-8 md:text-2xl">
                   {project.name}
                 </h1>
-                <div className="hidden text-xs md:block md:text-sm mt-4">
+                <div className="hidden mt-4 text-xs md:block md:text-sm">
                   {project.description}
                 </div>
                 {project.link && (
