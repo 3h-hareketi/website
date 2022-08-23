@@ -39,15 +39,17 @@ const Projects = ({ projects }: Props) => {
                 <h1 className="mt-4 text-sm font-bold md:mb-0 md:mt-8 md:text-2xl">
                   {project.name}
                 </h1>
-                <div className="hidden mt-4 text-xs md:block md:text-sm">
+                <div className="hidden my-4 text-xs md:block md:text-sm">
                   {project.description}
                 </div>
                 {project.link && (
-                  <Link href={project.link as string} passHref>
-                    <a className="p-1 mb-4 text-xs text-center text-white rounded-full md:mr-auto md:p-3 md:mb-4 md:w-1/3 bg-primary-500 md:text-base">
-                      {t("readMore")}
-                    </a>
-                  </Link>
+                  <div className="flex flex-row justify-center flex-grow">
+                    <Link href={project.link as string} passHref>
+                      <a className="px-3 py-2 my-3 text-xs text-center text-white rounded-full bg-primary-500 md:text-base">
+                        {t("readMore")}
+                      </a>
+                    </Link>
+                  </div>
                 )}
               </div>
             </div>
