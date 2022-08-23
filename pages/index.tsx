@@ -23,9 +23,8 @@ const Home = ({ posts }: Props) => {
       hamburgerColor="white"
     >
       <NextSeo description={t("description")} />
-      <div className="flex flex-col mx-auto">
-        <div className="h-screen mx-auto mt-16 text-white">
-          {" "}
+      <div className="flex flex-col items-center">
+        <div className="h-screen mt-16 text-white max-w-7xl">
           <h1 className="text-4xl font-extrabold md:text-8xl">
             {t("heroTitle1")} <br /> {t("heroTitle2")}
           </h1>
