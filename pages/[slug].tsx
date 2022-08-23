@@ -13,9 +13,11 @@ const Page = ({ page }: Props) => {
   return (
     <Layout bgColor="bg-white" textColor="text-black" hamburgerColor="black">
       <NextSeo title={page.title} />
-      <h1 className="font-bold">{page.title}</h1>
-      <div className="flex flex-col bg-gray-100">
-        <RichText content={page.content?.json} />
+      <div className="flex flex-col items-center">
+        <h1 className="mb-8 font-bold">{page.title}</h1>
+        <div className="flex flex-col items-center px-2 mb-10 max-w-7xl">
+          <RichText content={page.content?.json} />
+        </div>
       </div>
     </Layout>
   );
