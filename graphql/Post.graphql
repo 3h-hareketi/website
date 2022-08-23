@@ -11,6 +11,10 @@ query Post($id: ID!) {
       name
       picture
     }
+    updatedBy {
+      name
+      picture
+    }
     content {
       raw
     }

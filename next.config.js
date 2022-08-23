@@ -20,6 +20,7 @@ const nextConfig = {
       "media.graphassets.com",
       "avatars.githubusercontent.com",
       "localhost",
+      "s.gravatar.com",
     ],
   },
   i18n: {

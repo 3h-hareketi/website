@@ -80,9 +80,9 @@ const BlogPost = ({ post, similarPosts }: Props) => {
                 width={80}
                 height={80}
               />
-              <div className="flex flex-col text-xs text-left text-black md:text-sm">
-                <div className="">{post?.createdBy?.name}</div>
-                <div className="mb-10 text-xs text-gray-600">
+              <div className="flex flex-col justify-center ml-3 text-xs text-left text-black md:text-sm">
+                <div>{post?.createdBy?.name || post?.updatedBy?.name}</div>
+                <div className="text-xs text-gray-600">
                   {new Date(post?.createdAt).toLocaleDateString()}
                 </div>
               </div>
