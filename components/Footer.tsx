@@ -25,7 +25,7 @@ const Footer = () => {
         </h1>
         <div className="flex flex-col mt-5 ml-10 mr-auto text-left md:mr-0 md:mt-0 md:ml-auto md:text-right">
           <ul className="text-white">
-            <li className="uppercase">{t("learnMore")}</li>
+            <li className="font-bold uppercase">{t("learnMore")}</li>
             <Link href="/about" passHref>
               <li className="font-thin">
                 <a>{tMenu("aboutUs")}</a>
@@ -41,7 +41,7 @@ const Footer = () => {
                 <a>{tMenu("projects")}</a>
               </li>
             </Link>
-            <li className="mt-16 uppercase">{t("support")}</li>
+            <li className="mt-16 font-bold uppercase">{t("support")}</li>
             <Link
               href={router.locale === "tr" ? "/yasal-bildirim" : "/terms"}
               passHref
