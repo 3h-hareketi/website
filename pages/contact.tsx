@@ -63,7 +63,7 @@ const Contact = ({ csrfToken }: Props) => {
           backgroundSize: "fit",
           backgroundPosition: "center",
         }}
-        className="flex flex-col justify-between h-screen subpixel-antialiased"
+        className="relative flex flex-col justify-between h-screen"
       >
         <form
           onSubmit={handleSubmit(onSubmit)}
