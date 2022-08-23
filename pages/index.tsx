@@ -24,11 +24,13 @@ const Home = ({ posts }: Props) => {
     >
       <NextSeo description={t("description")} />
       <div className="flex flex-col items-center">
-        <div className="h-screen mt-16 text-white max-w-7xl">
-          <h1 className="text-4xl font-extrabold md:text-8xl">
+        <div className="h-screen px-2 mt-16 text-white max-w-7xl">
+          <h1 className="text-4xl font-extrabold md:text-8xl drop-shadow-lg shadow-black">
             {t("heroTitle1")} <br /> {t("heroTitle2")}
           </h1>
-          <div className="max-w-2xl mt-10">{t("heroSubtitle")}</div>
+          <div className="max-w-2xl mt-10 drop-shadow-lg shadow-black">
+            {t("heroSubtitle")}
+          </div>
           <Link href="/blog">
             <button className="p-2 mt-4 font-medium text-black uppercase bg-white shadow-md w-36 rounded-2xl hover:text-primary-500 hover:shadow-lg">
               {t("heroButton")}
