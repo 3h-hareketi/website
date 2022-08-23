@@ -32,7 +32,7 @@ const Home = ({ posts }: Props) => {
             {t("heroSubtitle")}
           </div>
           <Link href="/blog">
-            <button className="p-2 mt-4 font-medium text-black uppercase bg-white shadow-md w-36 rounded-2xl hover:text-primary-500 hover:shadow-lg">
+            <button className="relative p-2 mt-4 font-medium text-black uppercase bg-white shadow-md w-36 rounded-2xl hover:text-primary-500 hover:shadow-lg">
               {t("heroButton")}
             </button>
           </Link>
