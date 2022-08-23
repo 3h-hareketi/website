@@ -71,7 +71,7 @@ const BlogPost = ({ post, similarPosts }: Props) => {
             <div className="flex flex-row flex-wrap md:-mt-12 md:flex-nowrap">
               <Image
                 className="rounded-full"
-                src={post?.createdBy?.picture || `${BASE_URL}/placeholder.jpg`}
+                src={post?.createdBy?.picture || `${BASE_URL}/logo.svg`}
                 alt={
                   post?.createdBy?.name! + router.locale === "tr"
                     ? "'s profile picture"
