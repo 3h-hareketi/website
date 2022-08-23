@@ -3,38 +3,36 @@ import { useTranslations } from "next-intl";
 import { NextSeo } from "next-seo";
 import Layout from "../components/Layout";
 import Link from "next/link";
+
 const JoinUs = () => {
   const t = useTranslations("Join Us");
 
   return (
     <Layout
       bgColor=""
-      textColor="text-primary-50"
+      textColor="text-gray-600"
       logo="alt"
       hamburgerColor="white"
     >
       <NextSeo description={t("buttonText")} />
-      <div className="mx-auto md:ml-auto md:mr-0 w-1/2 pb-6 md:pb-16 h-[50vh] flex">
+      <div className="flex px-2 pb-6 mx-auto my-32 xl:w-1/2 md:ml-auto md:mr-0 md:pb-16 drop-shadow-lg shadow-black">
         <div className="my-auto">
-          {" "}
-          <h1 className="text-4xl font-extrabold md:text-6xl text-white">
+          <h1 className="relative text-4xl font-extrabold text-white md:text-6xl">
             {t("title1")}
           </h1>
-          <h3 className="my-4 text-white">{t("subtitle1")}</h3>
-          <button className="p-3 bg-white rounded-full shadow-lg uppercase">
+          <h3 className="relative my-4 text-white">{t("subtitle1")}</h3>
+          <button className="relative p-3 uppercase bg-white rounded-full shadow-lg">
             <Link href="https://forms.gle/ABRRLHft69bqetnv6" passHref>
               <a> {t("buttonText")}</a>
             </Link>
           </button>
         </div>
       </div>
-
-      <div className="flex flex-col bg-slate-200 px-4 md:px-16 lg:px-32 md:py-16 lg:py-32 py-4">
-        {" "}
+      <div className="relative flex flex-col px-4 py-16 bg-slate-200 md:px-16 lg:px-32 lg:py-32">
         <h1 className="mx-auto text-2xl font-extrabold md:text-4xl text-primary-400">
           {t("textHeader")}
-        </h1>{" "}
-        <h3 className="my-4 text-black text-center">{t("paragraph")}</h3>
+        </h1>
+        <h3 className="my-4 text-center text-black">{t("paragraph")}</h3>
       </div>
       <div
         className="w-screen h-[50vh] flex flex-col bg-white"
@@ -45,7 +43,7 @@ const JoinUs = () => {
           backgroundPosition: "right",
         }}
       >
-        <div className="mx-auto md:mr-auto md:ml-0 w-1/2 my-auto md:p-16 ">
+        <div className="w-1/2 mx-auto my-auto md:mr-auto md:ml-0 md:p-16 ">
           <h1 className="text-3xl font-extrabold md:text-5xl text-primary-400">
             {t("title2")}
           </h1>

@@ -32,24 +32,17 @@ const Layout = ({
   return (
     <div
       className="flex flex-col justify-between h-screen subpixel-antialiased"
-      style={
-        router.pathname === "/" || router.pathname === "/join"
-          ? {
-              background:
-                "radial-gradient(50% 50% at 50% 50%, #1BC3D5 2.1%, #1696BE 100%), #12ABBB",
-              backgroundImage: `url("${
-                router.pathname === "/" ? "/background.svg" : "/joinus.svg"
-              }")`,
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "fit",
-              backgroundPosition: `${
-                router.pathname === "/" ? "right" : "left"
-              }`,
-            }
-          : {}
-      }
       {...handlers}
     >
+      <div
+        className={`h-full w-full absolute bg-primary-500 bg-no-repeat ${
+          router.pathname === "/" || router.pathname === "/join"
+            ? router.pathname === "/"
+              ? "bg-[url(/background.svg)] bg-cover md:bg-contain md:bg-right bg-center"
+              : "bg-[url(/joinus.svg)] bg-left bg-cover md:bg-contain md:bg-left-bottom"
+            : ""
+        }`}
+      />
       <DefaultSeo
         titleTemplate={`%s | ${defaultTitle}`}
         defaultTitle={defaultTitle}
@@ -111,6 +104,7 @@ const Layout = ({
         navbarOpen={navbarOpen}
         setNavbarOpen={setNavbarOpen}
       />
+      {/* </div> */}
       <main className="mb-auto">{children}</main>
       <Footer />
     </div>
