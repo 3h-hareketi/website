@@ -1,3 +1,11 @@
+import {
+  faFacebook,
+  faInstagram,
+  faLinkedin,
+  faTwitter,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -19,6 +27,43 @@ const Footer = () => {
             <li className="font-thin">iletisim@3hhareketi.org</li>
             <li className="font-thin">(+90) 212 564 78 90</li>
           </ul>
+          <div className="space-x-4">
+            <Link href="https://www.facebook.com/3hhareketi/">
+              <FontAwesomeIcon
+                icon={faFacebook}
+                className="text-white"
+                size="lg"
+              />
+            </Link>
+            <Link href="https://www.instagram.com/3hhareketi/">
+              <FontAwesomeIcon
+                icon={faInstagram}
+                className="text-white"
+                size="lg"
+              />
+            </Link>
+            <Link href="https://twitter.com/3hhareketi/">
+              <FontAwesomeIcon
+                icon={faTwitter}
+                className="text-white"
+                size="lg"
+              />
+            </Link>
+            <Link href="https://www.linkedin.com/company/the-3h-movement/about/">
+              <FontAwesomeIcon
+                icon={faLinkedin}
+                className="text-white"
+                size="lg"
+              />
+            </Link>
+            <Link href="https://www.youtube.com/channel/UCpNJRC7fCGASPkltHxGJesQ">
+              <FontAwesomeIcon
+                icon={faYoutube}
+                className="text-white"
+                size="lg"
+              />
+            </Link>
+          </div>
         </div>
         <h1 className="text-xl font-bold text-center text-white md:text-6xl">
           {t("motto")}
