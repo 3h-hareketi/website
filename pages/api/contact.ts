@@ -20,32 +20,33 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   try {
-    await axios.post("https://api.mailjet.com/v3.1/send", {
-      auth: {
-        username: process.env.MAILJET_API_KEY!,
-        password: process.env.MAILJET_SECRET_KEY!,
-      },
-      data: {
+    await axios.post(
+      "https://api.mailjet.com/v3.1/send",
+      {
         // SandboxMode: "true",
         Messages: [
           {
-            From: [
-              {
-                Email: "noreply@3hhareketi.org",
-                Name: "3H Website",
-              },
-            ],
+            From: {
+              Email: "noreply@3hhareketi.org",
+              Name: "3H Website",
+            },
             Subject: "New Contact Form Submission",
             TextPart: `You have a new contact form submission. Please check the details below. \n\nName: ${name} \nEmail: ${email} \nMessage: ${message}`,
             To: [
               {
-                Email: "info@3hhareketi.org",
+                Email: "iletisim@3hhareketi.org",
               },
             ],
           },
         ],
       },
-    });
+      {
+        auth: {
+          username: process.env.MAILJET_API_KEY!,
+          password: process.env.MAILJET_SECRET_KEY!,
+        },
+      }
+    );
   } catch (e) {
     console.error(e);
   }
