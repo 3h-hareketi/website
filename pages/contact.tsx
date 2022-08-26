@@ -1,9 +1,11 @@
+import { faCheck, faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import csrf from "csrf";
 import { GetServerSideProps } from "next";
 import { useTranslations } from "next-intl";
 import { NextSeo } from "next-seo";
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { useForm, SubmitHandler } from "react-hook-form";
 import Layout from "../components/Layout";
@@ -25,7 +27,7 @@ const Contact = ({ csrfToken }: Props) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitted, isSubmitSuccessful },
   } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     const token = await handleReCaptchaVerify();
@@ -98,10 +100,17 @@ const Contact = ({ csrfToken }: Props) => {
             placeholder={t("yourMessage")}
           />
           <button
-            className="p-3 text-white rounded-3xl bg-primary-500"
+            className={`p-3 text-white rounded-3xl bg-primary-500 ${
+              isSubmitted && "opacity-50"
+            }`}
             type="submit"
+            disabled={isSubmitted}
           >
-            {t("sendMessage")}
+            {!isSubmitted ? (
+              t("sendMessage")
+            ) : (
+              <FontAwesomeIcon icon={faCheck} />
+            )}
           </button>
         </form>
       </div>
