@@ -9,8 +9,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Image from "./BlurImage";
+import logo from "../public/3h-vector.png";
+import VercelLogo from "../public/1618983297-powered-by-vercel.svg";
+import KorsanDao from "../public/korsandao-logo.svg";
 import BlurImage from "./BlurImage";
-import logo from "/public/3h-vector.png";
 
 const Footer = () => {
   const t = useTranslations("Footer");
@@ -135,6 +138,31 @@ const Footer = () => {
         <div className="mx-auto">
           {"© " + new Date().getFullYear() + ` ${t("copyright")}`}
         </div>
+      </div>
+      <div className="flex flex-col flex-wrap justify-center mt-8 space-x-2 md:flex-row lg:space-x-4">
+        <Link
+          href="https://vercel.com/?utm_source=3h-hareketi&utm_campaign=oss"
+          passHref
+        >
+          <a>
+            <BlurImage
+              src={VercelLogo}
+              alt="Powered by Vercel"
+              width="160"
+              height="33"
+            />
+          </a>
+        </Link>
+        <Link href="https://www.korsandao.com" passHref>
+          <a>
+            <BlurImage
+              src={KorsanDao}
+              alt="korsanDAO Logo"
+              width="144"
+              height="33"
+            />
+          </a>
+        </Link>
       </div>
     </footer>
   );
