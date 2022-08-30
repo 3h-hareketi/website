@@ -7,6 +7,12 @@ query Post($id: ID!) {
     }
     createdAt
     updatedAt
+    author {
+      name
+      picture {
+        url
+      }
+    }
     createdBy {
       name
       picture

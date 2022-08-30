@@ -10,12 +10,9 @@ import Layout from "../../components/Layout";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/router";
 import {
-  EmailShareButton,
   FacebookShareButton,
   LinkedinShareButton,
-  TelegramShareButton,
   TwitterShareButton,
-  WhatsappShareButton,
 } from "react-share";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -85,9 +82,9 @@ const BlogPost = ({ post, similarPosts }: Props) => {
             <div className="flex flex-row flex-wrap md:-mt-12 md:flex-nowrap">
               <Image
                 className="rounded-full"
-                src={post?.createdBy?.picture || `${BASE_URL}/logo.svg`}
+                src={post?.author?.picture?.url || `${BASE_URL}/logo.svg`}
                 alt={
-                  post?.createdBy?.name! + router.locale === "tr"
+                  post?.author?.name! + router.locale === "tr"
                     ? "'s profile picture"
                     : "'nın profil görseli"
                 }
@@ -95,7 +92,7 @@ const BlogPost = ({ post, similarPosts }: Props) => {
                 height={80}
               />
               <div className="flex flex-col justify-center ml-3 text-xs text-left text-black md:text-sm">
-                <div>{post?.createdBy?.name || post?.updatedBy?.name}</div>
+                <div>{post?.author?.name}</div>
                 <div className="text-xs text-gray-600">
                   {new Date(post?.createdAt).toLocaleDateString()}
                 </div>
