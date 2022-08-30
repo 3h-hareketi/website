@@ -20,7 +20,7 @@ const About = ({ people, reports }: Props) => {
   return (
     <Layout bgColor="bg-white" textColor="text-black" hamburgerColor="black">
       <NextSeo title={t("title")} description={t("description")} />
-      <div className="flex flex-col mx-auto bg-primary-500 py-6">
+      <div className="flex flex-col py-6 mx-auto bg-primary-500">
         <h1 className="mx-auto my-auto text-2xl font-extrabold text-center text-white md:text-8xl">
           {t("heroTitle1")}
         </h1>
@@ -28,7 +28,7 @@ const About = ({ people, reports }: Props) => {
           {t("heroTitle2")}
         </h1>{" "}
       </div>
-      <div className="flex flex-col bg-gray-100">
+      <div className="flex flex-col items-center bg-gray-100">
         <h1 className="mx-auto text-3xl font-semibold mt-36">{t("aboutUs")}</h1>
         <div className="max-w-3xl mx-auto mt-8 font-thin text-center">
           {t.rich("aboutUsDescription1", {
@@ -49,9 +49,9 @@ const About = ({ people, reports }: Props) => {
         <strong className="mx-auto mt-3 text-center">
           {t("teamSubtitle")}
         </strong>
-        <div className="py-16 mx-auto md:px-2 md:w-7/12 sm:px-0">
+        <div className="w-full py-16 md:px-2 max-w-7xl sm:px-0">
           <Tab.Group>
-            <Tab.List className="flex justify-between w-screen max-w-md mx-auto mb-6 overflow-scroll bg-white shadow-md md:w-auto md:p-1 md:space-x-1 md:rounded-3xl md:overflow-auto">
+            <Tab.List className="flex justify-between w-full mx-auto mb-6 overflow-scroll bg-white shadow-md max-w-7xl md:w-auto md:p-1 md:space-x-1 md:rounded-3xl md:overflow-auto">
               <Tab
                 className={({ selected }) =>
                   classNames(
@@ -92,7 +92,7 @@ const About = ({ people, reports }: Props) => {
                 {t("boardOfSupervisors")}
               </Tab>
             </Tab.List>
-            <Tab.Panels className="w-11/12 mx-auto mt-2">
+            <Tab.Panels className="mx-auto mt-2">
               <Tab.Panel
                 className={classNames(
                   "bg-gray-100 rounded-xl p-3",
