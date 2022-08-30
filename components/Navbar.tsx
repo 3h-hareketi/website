@@ -100,7 +100,7 @@ const Navbar = ({
       </nav>
       {/* mobile navbar */}
       <div
-        className={`fixed top-0 bottom-0 left-0 z-50 w-5/6 max-w-sm navbar-menu ${
+        className={`fixed top-0 bottom-0 left-0 z-50 w-5/6 max-w-sm h-screen navbar-menu ${
           !navbarOpen && "hidden"
         }`}
       >
