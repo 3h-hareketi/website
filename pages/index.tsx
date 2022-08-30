@@ -42,7 +42,7 @@ const Home = ({ posts }: Props) => {
           <div className="max-w-2xl mx-auto font-light text-gray-600">
             {t("blogPostsDescription")}
           </div>
-          <div className="mx-4 md:mx-24 lg:mx-48 xl:mx-96">
+          <div className="mx-4 max-w-7xl">
             {posts.map((post, postIdx) => (
               <PostCard key={post.id} blog={post} index={postIdx} />
             ))}
@@ -56,7 +56,8 @@ const Home = ({ posts }: Props) => {
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const sdk = getSdk(client);
-  const { posts } = await sdk.FeaturedPosts();
+  const { posts } =
+    locale === "en" ? await sdk.FeaturedPosts() : await sdk.OneCikanPosts();
 
   return {
     props: {

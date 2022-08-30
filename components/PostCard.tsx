@@ -23,14 +23,14 @@ const PostCard = ({ blog, index }: Props) => {
       }`}
     >
       <div className="w-5/6 p-2 mt-auto overflow-x-hidden bg-white md:w-2/3 md:p-6 rounded-tr-xl">
-        <div className="flex flex-row">
+        <div className="flex flex-row ıtems-center">
           <h1 className="mr-auto text-sm font-semibold text-left md:text-xl">
             {blog.date + " - " + blog.title}{" "}
           </h1>
           {blog.tags.map((tag, tagIdx) => (
             <div
               key={tag}
-              className={`text-white text-xs rounded-xl md:p-1.5 md:mx-1 uppercase md:max-h-8 max-h-6 p-0.5 ${
+              className={`text-white text-xs rounded-xl md:mx-1 uppercase ${
                 tagIdx === 0 ? "bg-purple-500" : "bg-red-500"
               }`}
             >

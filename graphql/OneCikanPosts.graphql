@@ -1,0 +1,12 @@
+query OneCikanPosts {
+  posts(where: { tags_contains_some: "Öne Çıkan" }) {
+    id
+    date
+    excerpt
+    title
+    tags
+    coverImage {
+      url
+    }
+  }
+}

@@ -6845,6 +6845,21 @@ export type FeaturedPostsQuery = {
   }>;
 };
 
+export type OneCikanPostsQueryVariables = Exact<{ [key: string]: never }>;
+
+export type OneCikanPostsQuery = {
+  __typename?: "Query";
+  posts: Array<{
+    __typename?: "Post";
+    id: string;
+    date: any;
+    excerpt: string;
+    title: string;
+    tags: Array<string>;
+    coverImage: { __typename?: "Asset"; url: string };
+  }>;
+};
+
 export type PageQueryVariables = Exact<{
   locale: Locale;
   slug: Scalars["String"];
@@ -7059,6 +7074,20 @@ export const FeaturedPostsDocument = gql`
     }
   }
 `;
+export const OneCikanPostsDocument = gql`
+  query OneCikanPosts {
+    posts(where: { tags_contains_some: "Öne Çıkan" }) {
+      id
+      date
+      excerpt
+      title
+      tags
+      coverImage {
+        url
+      }
+    }
+  }
+`;
 export const PageDocument = gql`
   query Page($locale: Locale!, $slug: String!) {
     pages(where: { slug: $slug }, locales: [$locale]) {
@@ -7217,6 +7246,20 @@ export function getSdk(
             ...wrappedRequestHeaders,
           }),
         "FeaturedPosts",
+        "query"
+      );
+    },
+    OneCikanPosts(
+      variables?: OneCikanPostsQueryVariables,
+      requestHeaders?: Dom.RequestInit["headers"]
+    ): Promise<OneCikanPostsQuery> {
+      return withWrapper(
+        (wrappedRequestHeaders) =>
+          client.request<OneCikanPostsQuery>(OneCikanPostsDocument, variables, {
+            ...requestHeaders,
+            ...wrappedRequestHeaders,
+          }),
+        "OneCikanPosts",
         "query"
       );
     },
