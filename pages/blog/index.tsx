@@ -71,7 +71,7 @@ const Blog = ({ posts }: Props) => {
                     <p className="mt-6 text-sm text-gray-300">
                       {highlightedPost.excerpt}
                     </p>
-                    <Link href={`/blog/${highlightedPost.id}`}>
+                    <Link href={`/blog/${highlightedPost.slug}`}>
                       <a className="p-3 mt-8 font-bold text-center text-black bg-white md:mt-16 w-36 rounded-3xl">
                         {t("readMore")}
                       </a>
@@ -88,7 +88,7 @@ const Blog = ({ posts }: Props) => {
                         {post.title}
                       </h1>
                       <p className="text-sm text-gray-300">{post.excerpt}</p>
-                      <Link href={`${post.id}`}>
+                      <Link href={`${post.slug}`}>
                         <a
                           href="#"
                           className="p-3 font-bold text-center text-black bg-white w-36 rounded-3xl"
