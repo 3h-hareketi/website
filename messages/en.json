@@ -79,7 +79,10 @@
     "title": "Subscribe to our newsletter!",
     "subtitle": "We'll send you the best of our blog just once a month. We promise.",
     "emailPlaceholder": "Enter e-mail",
-    "submit": "Subscribe"
+    "submit": "Subscribe",
+    "submitting": "Submitting...",
+    "success": "Thank you for subscribing!",
+    "alreadySubscribed": "You already subscribed!"
   },
   "Join Us": {
     "title1": "Are you young and share the values of liberalism?",

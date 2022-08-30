@@ -80,7 +80,10 @@
     "title": "Bültenimize abone ol!",
     "subtitle": "Yaklaşan Etkinliklerden ve Yeni İçeriklerden Haberdar Olmak İster Misin?",
     "emailPlaceholder": "E-mail adresinizi girin",
-    "submit": "Abone ol"
+    "submit": "Abone ol",
+    "submitting": "Gönderiliyor...",
+    "success": "Üye olduğunuz için teşekkürler!",
+    "alreadySubscribed": "Halihazırda üyesiniz."
   },
   "Join Us": {
     "title1": "Liberalizm değerlerini benimsemiş bir genç misiniz?",

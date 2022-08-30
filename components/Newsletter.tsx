@@ -71,27 +71,27 @@ const Newsletter = () => {
                 />
               </div>
               <button
-                className="p-3 text-white rounded-3xl bg-primary-500"
+                className="p-3 mt-3 text-white rounded-3xl bg-primary-500"
                 disabled={isSubmitted}
                 type="submit"
               >
-                Subscribe
+                {t("submit")}
               </button>
             </form>
           )}
           {isSubmitting && (
             <div className="text-lg font-light text-gray-400 md:text-sm">
-              Submitting
+              {t("submitting")}
             </div>
           )}
           {isSubmitSuccessful && (
             <div className="text-lg font-light text-gray-400 md:text-sm">
-              Thanks for subscribing!
+              {t("success")}
             </div>
           )}
           {errors && (
             <div className="text-lg font-light text-gray-400 md:text-sm">
-              You&apos;re already subscribed to our newsletter!
+              {t("alreadySubscribed")}
             </div>
           )}
         </div>
