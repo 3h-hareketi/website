@@ -5,6 +5,7 @@ import { useIntl, useTranslations } from "next-intl";
 import { NextSeo } from "next-seo";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
 import { getSdk, Locale, PostsQuery } from "../../interfaces";
 import classNames from "../../lib/classNames";
@@ -17,12 +18,13 @@ type Props = {
 const Blog = ({ posts }: Props) => {
   const t = useTranslations("Blog");
   const intl = useIntl();
+  const router = useRouter();
 
   const highlightedPost = posts.filter((post) =>
-    post.tags.includes("highlighted")
+    post.tags.includes("Highlighted" || "Seçili")
   )[0];
 
-  const uniqueTags: string[] = [];
+  const uniqueTags: string[] = [router.locale === "tr" ? "Tümü" : "All"];
   posts.forEach((post) => {
     post.tags.forEach((tag) => {
       if (!uniqueTags.includes(tag)) {
@@ -32,7 +34,10 @@ const Blog = ({ posts }: Props) => {
   });
 
   function filterPostsByTag(tag: string) {
-    return posts.filter((post) => post.tags.includes(tag));
+    if (tag !== ("Tümü" || "All")) {
+      return posts.filter((post) => post.tags.includes(tag));
+    }
+    return posts;
   }
 
   return (
