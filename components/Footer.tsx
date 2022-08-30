@@ -139,7 +139,7 @@ const Footer = () => {
           {"© " + new Date().getFullYear() + ` ${t("copyright")}`}
         </div>
       </div>
-      <div className="flex flex-col flex-wrap justify-center mt-8 space-x-2 md:flex-row lg:space-x-4">
+      <div className="flex flex-col flex-wrap items-center justify-center mt-8 space-x-2 md:flex-row lg:space-x-4">
         <Link
           href="https://vercel.com/?utm_source=3h-hareketi&utm_campaign=oss"
           passHref
