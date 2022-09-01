@@ -4639,12 +4639,12 @@ neo-async@^2.5.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
-next-intl@^2.7.4:
-  version "2.7.4"
-  resolved "https://registry.yarnpkg.com/next-intl/-/next-intl-2.7.4.tgz#67d3ea0b385678c7522c0e083c579ae183ed59ef"
-  integrity sha512-fspmOzhInd/m+cV3Qj6FzjfDIjEtNTS6Vi4Xv+/59ReZvcW9uGmn/py0NkltQnf5Oefl0RUZGdjbd+t6+G+PMw==
+next-intl@^2.7.5:
+  version "2.7.5"
+  resolved "https://registry.yarnpkg.com/next-intl/-/next-intl-2.7.5.tgz#62587147120853f4270e2906a2b7d7106cb5de5a"
+  integrity sha512-tzwWdh5eh7BMjlsRPq50K4QAv8LIeERbC9pjFL0t1FyMpHy1kdBjIXDxwUserpm/hKdbkGKSZd4S55gDf1glWQ==
   dependencies:
-    use-intl "^2.7.4"
+    use-intl "^2.7.5"
 
 next-seo@^5.4.0:
   version "5.4.0"
@@ -6184,10 +6184,10 @@ urix@^0.1.0:
   resolved "https://registry.yarnpkg.com/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
   integrity sha512-Am1ousAhSLBeB9cG/7k7r2R0zj50uDRlZHPGbazid5s9rlF1F/QKYObEKSIunSjIOkJZqwRRLpvewjEkM7pSqg==
 
-use-intl@^2.7.4:
-  version "2.7.4"
-  resolved "https://registry.yarnpkg.com/use-intl/-/use-intl-2.7.4.tgz#056ff6a73b125d2efe6f8d4bd174e5ce3d1dcd58"
-  integrity sha512-Ivo2dIUFTyLCj6YJ+fA4jsDggDQhUQSLT1OoXP7qurCAueOWFX6QaN/pL3cDR6z9gM7nVQH83piRvuBJTHjQzg==
+use-intl@^2.7.5:
+  version "2.7.5"
+  resolved "https://registry.yarnpkg.com/use-intl/-/use-intl-2.7.5.tgz#2657495f7393c8a6602e74f0e95ddbfb9159ab71"
+  integrity sha512-psop6JKypiABVsM7EOjImBesOX3/4mHTsrIoVWsi54eYJXViILrTrnboXqWs5Ftp45Ym/zg5G6iCfK7qUnoMzg==
   dependencies:
     "@formatjs/ecma402-abstract" "^1.11.4"
     intl-messageformat "^9.3.18"
