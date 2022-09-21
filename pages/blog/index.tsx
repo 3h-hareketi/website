@@ -81,18 +81,15 @@ const Blog = ({ posts }: Props) => {
                 {posts.slice(1, 3).map((post) => (
                   <div
                     key={post.id}
-                    className="hidden h-full p-10 mt-auto translate-y-1/2 bg-gray-700 shadow-xl md:block md:w-1/3 h-1/3 rounded-xl md:translate-y-0"
+                    className="hidden p-10 mt-auto translate-y-1/2 bg-gray-700 shadow-xl md:block md:w-1/3 h-1/3 rounded-xl md:translate-y-0"
                   >
                     <div className="flex flex-col space-y-5 text-left">
                       <h1 className="text-xl font-bold text-white">
                         {post.title}
                       </h1>
                       <p className="text-sm text-gray-300">{post.excerpt}</p>
-                      <Link href={`${post.slug}`}>
-                        <a
-                          href="#"
-                          className="p-3 font-bold text-center text-black bg-white w-36 rounded-3xl"
-                        >
+                      <Link href={`blog/${post.slug}`} passHref>
+                        <a className="p-3 font-bold text-center text-black bg-white w-36 rounded-3xl">
                           {t("readMore")}
                         </a>
                       </Link>
