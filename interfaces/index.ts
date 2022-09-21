@@ -7483,6 +7483,7 @@ export type FeaturedPostsQuery = {
     excerpt: string;
     title: string;
     tags: Array<string>;
+    slug: string;
     coverImage: { __typename?: "Asset"; url: string };
   }>;
 };
@@ -7498,6 +7499,7 @@ export type OneCikanPostsQuery = {
     excerpt: string;
     title: string;
     tags: Array<string>;
+    slug: string;
     coverImage: { __typename?: "Asset"; url: string };
   }>;
 };
@@ -7718,6 +7720,7 @@ export const FeaturedPostsDocument = gql`
       coverImage {
         url
       }
+      slug
     }
   }
 `;
@@ -7732,6 +7735,7 @@ export const OneCikanPostsDocument = gql`
       coverImage {
         url
       }
+      slug
     }
   }
 `;

@@ -8,5 +8,6 @@ query OneCikanPosts {
     coverImage {
       url
     }
+    slug
   }
 }
