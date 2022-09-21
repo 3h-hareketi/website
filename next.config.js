@@ -16,6 +16,7 @@ const sentryWebpackPluginOptions = {
 const nextConfig = {
   reactStrictMode: true,
   images: {
+    dangerouslyAllowSVG: true,
     domains: [
       "media.graphassets.com",
       "avatars.githubusercontent.com",
