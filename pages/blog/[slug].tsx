@@ -129,23 +129,41 @@ const BlogPost = ({ post, similarPosts }: Props) => {
             <h2 className="mb-6 text-base font-bold text-gray-600 md:text-xl">
               {post?.excerpt}
             </h2>
-            {post?.content?.raw && (
-              <RichText
-                content={post.content.raw}
-                renderers={{
-                  blockquote: ({ children }) => (
-                    <div className="">
-                      {/* TODO add custom serif font to tailwind config and import it here*/}
-                      {/* for  custom blockquote styling */}
-                      <div className="italic font-extrabold text-black">
-                        {children}
+            <div className="prose lg:prose-xl">
+              {post?.content?.raw && (
+                <RichText
+                  content={post.content.raw}
+                  renderers={{
+                    blockquote: ({ children }) => (
+                      <div className="">
+                        {/* TODO add custom serif font to tailwind config and import it here*/}
+                        {/* for  custom blockquote styling */}
+                        <div className="italic font-extrabold text-black">
+                          {children}
+                        </div>
+                        {/* TODO add simple quotation mark svg */}
                       </div>
-                      {/* TODO add simple quotation mark svg */}
-                    </div>
-                  ),
-                }}
-              />
-            )}
+                    ),
+                    p: ({ children }) => (
+                      <>
+                        <br />
+                        <p className="">{children}</p>
+                      </>
+                    ),
+                    h2: ({ children }) => (
+                      <h2 className="text-2xl font-bold">{children}</h2>
+                    ),
+                    h3: ({ children }) => (
+                      <h3 className="text-xl font-bold">{children}</h3>
+                    ),
+                    h4: ({ children }) => (
+                      <h4 className="text-lg font-bold">{children}</h4>
+                    ),
+                    bold: ({ children }) => <strong>{children}</strong>,
+                  }}
+                />
+              )}
+            </div>
           </div>
           {similarPosts && (
             <>
