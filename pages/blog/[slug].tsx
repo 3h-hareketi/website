@@ -175,29 +175,29 @@ const BlogPost = ({ post, similarPosts }: Props) => {
               </div>
               <div className="flex flex-row flex-wrap justify-around w-[90vw] mt-16 self-center">
                 {similarPosts &&
-                  similarPosts.map((post) => (
+                  similarPosts.map((similarPost) => (
                     <div
-                      key={post?.id}
+                      key={similarPost?.id}
                       className="flex flex-col max-w-lg mt-8 shadow-xl rounded-xl"
                     >
                       <Image
-                        src={post?.coverImage.url!}
+                        src={similarPost?.coverImage.url!}
                         alt={`${
                           router.locale === "tr"
                             ? "Kapak görseli"
                             : "Cover image of suggested article:"
-                        } ${post?.title}`}
+                        } ${similarPost?.title}`}
                         width={500}
                         height={300}
                         className="rounded-t-xl"
                       />
-                      <div className="flex flex-col justify-between p-3 md:p-6">
+                      <div className="flex flex-col justify-between flex-1 p-3 md:p-6">
                         <div className="flex flex-row">
-                          <div className="text-sm text-gray-400">
-                            {post?.createdBy?.name}, {post?.createdAt}
-                          </div>
+                          <h1 className="text-base font-semibold">
+                            {similarPost?.title}
+                          </h1>
                           <div className="ml-auto">
-                            {post?.tags.slice(0, 1).map((tag) => (
+                            {similarPost?.tags.slice(0, 1).map((tag) => (
                               <div
                                 key={tag}
                                 className={`hidden md:block text-white text-xs rounded-xl md:p-1.5 md:mx-1 uppercase md:max-h-8 max-h-6 p-0.5 ${"bg-purple-500"}`}
@@ -207,14 +207,18 @@ const BlogPost = ({ post, similarPosts }: Props) => {
                             ))}
                           </div>
                         </div>
-                        <h1 className="text-base font-semibold">
-                          {post?.title}
-                        </h1>
-                        <div className="mt-4 text-xs text-gray-800">
-                          {post?.excerpt}
+                        <div className="text-sm text-gray-400">
+                          {similarPost?.author?.name &&
+                            `${similarPost?.author?.name},`}{" "}
+                          {new Date(
+                            similarPost?.createdAt
+                          ).toLocaleDateString()}
                         </div>
-                        <Link passHref href={`/blog/${post?.id}`}>
-                          <a className="w-24 p-3 mt-6 text-xs text-center text-white rounded-full bg-primary-500">
+                        <div className="my-2 mb-auto text-xs text-gray-800">
+                          {similarPost?.excerpt}
+                        </div>
+                        <Link passHref href={`/blog/${similarPost?.slug}`}>
+                          <a className="items-end p-2 text-sm font-bold text-center text-white rounded-full w-28 bg-primary-500">
                             {t("readMore")}
                           </a>
                         </Link>

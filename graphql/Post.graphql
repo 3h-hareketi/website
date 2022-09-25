@@ -2,6 +2,7 @@ query Post($id: ID!) {
   post(where: { id: $id }) {
     id
     title
+    slug
     coverImage {
       url
     }
