@@ -100,7 +100,7 @@ const Blog = ({ posts }: Props) => {
             </div>
           </div>
         )}
-        <div className="mx-auto">
+        <div className="mx-auto mt-20 lg:mt-40 2xl:mt-0">
           <Tab.Group>
             <Tab.List className="flex flex-row p-1 mx-auto mb-6 overflow-scroll bg-white shadow-md md:overflow-auto md:justify-between md:max-w-5xl md:space-x-1 md:rounded-3xl">
               {uniqueTags.map((tag) => (
