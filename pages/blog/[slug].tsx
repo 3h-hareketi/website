@@ -160,6 +160,28 @@ const BlogPost = ({ post, similarPosts }: Props) => {
                       <h4 className="text-lg font-bold">{children}</h4>
                     ),
                     bold: ({ children }) => <strong>{children}</strong>,
+                    a: ({ children, openInNewTab, href, rel, ...rest }) => {
+                      if (href?.match(/^https?:\/\/|^\/\//i)) {
+                        return (
+                          // eslint-disable-next-line react/jsx-no-target-blank
+                          <a
+                            href={href}
+                            target={openInNewTab ? "_blank" : "_self"}
+                            rel={rel || "noopener noreferrer"}
+                            className="text-primary-500"
+                            {...rest}
+                          >
+                            {children}
+                          </a>
+                        );
+                      }
+
+                      return (
+                        <Link href={href || "#"} passHref>
+                          <a {...rest}>{children}</a>
+                        </Link>
+                      );
+                    },
                   }}
                 />
               )}
